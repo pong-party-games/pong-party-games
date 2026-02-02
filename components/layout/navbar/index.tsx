@@ -1,5 +1,5 @@
 import CartModal from "components/cart/modal";
-import LogoSquare from "components/logo-square";
+import LogoIcon from "components/icons/logo";
 import { getMenu } from "lib/shopify";
 import { Menu } from "lib/shopify/types";
 import Link from "next/link";
@@ -20,19 +20,22 @@ export async function Navbar() {
         </Suspense>
       </div>
       <div className="flex w-full items-center">
-        <div className="flex w-full md:w-1/3">
+        {/* Desktop Only - Logo and Menu */}
+        <div className="hidden md:flex md:w-1/3">
           <Link
             href="/"
             prefetch={true}
-            className="mr-2 flex w-full items-center justify-center md:w-auto lg:mr-6"
+            className="flex items-center mr-2 lg:mr-6"
           >
-            <LogoSquare />
-            <div className="ml-2 flex-none text-sm font-medium uppercase md:hidden lg:block">
+            <div className="flex flex-none items-center justify-center border border-neutral-200 bg-white dark:border-neutral-700 dark:bg-black h-[50px] w-[50px] rounded-xl">
+              <LogoIcon className="h-[20px] w-[20px]" />
+            </div>
+            <div className="ml-2 flex-none text-sm font-medium uppercase lg:block">
               {SITE_NAME}
             </div>
           </Link>
           {menu.length ? (
-            <ul className="hidden gap-6 text-sm md:flex md:items-center">
+            <ul className="flex gap-6 text-sm items-center">
               {menu.map((item: Menu) => (
                 <li key={item.title}>
                   <Link
@@ -47,12 +50,14 @@ export async function Navbar() {
             </ul>
           ) : null}
         </div>
+        {/* Desktop Only - Search */}
         <div className="hidden justify-center md:flex md:w-1/3">
           <Suspense fallback={<SearchSkeleton />}>
             <Search />
           </Suspense>
         </div>
-        <div className="flex justify-end md:w-1/3">
+        {/* Mobile & Desktop - Cart */}
+        <div className="flex justify-end w-full md:w-1/3">
           <CartModal />
         </div>
       </div>

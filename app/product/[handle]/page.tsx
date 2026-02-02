@@ -1,11 +1,9 @@
-import { GridTileImage } from "components/grid/tile";
-import Footer from "components/layout/footer";
-import { Gallery } from "components/product/gallery";
-import { ProductDescription } from "components/product/product-description";
+import { AddToCart } from "components/cart/add-to-cart";
 import { HIDDEN_PRODUCT_TAG } from "lib/constants";
 import { getProduct, getProductRecommendations } from "lib/shopify";
-import type { Image } from "lib/shopify/types";
+import { Shield, Star } from "lucide-react";
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
@@ -34,15 +32,15 @@ export async function generateMetadata(props: {
     },
     openGraph: url
       ? {
-          images: [
-            {
-              url,
-              width,
-              height,
-              alt,
-            },
-          ],
-        }
+        images: [
+          {
+            url,
+            width,
+            height,
+            alt,
+          },
+        ],
+      }
       : null,
   };
 }
@@ -54,6 +52,12 @@ export default async function ProductPage(props: {
   const product = await getProduct(params.handle);
 
   if (!product) return notFound();
+
+  const price = parseFloat(product.priceRange.maxVariantPrice.amount);
+  const compareAtPrice = product.compareAtPriceRange?.maxVariantPrice?.amount
+    ? parseFloat(product.compareAtPriceRange.maxVariantPrice.amount)
+    : null;
+  const hasDiscount = compareAtPrice && compareAtPrice > price;
 
   const productJsonLd = {
     "@context": "https://schema.org",
@@ -80,32 +84,134 @@ export default async function ProductPage(props: {
           __html: JSON.stringify(productJsonLd),
         }}
       />
-      <div className="mx-auto max-w-(--breakpoint-2xl) px-4">
-        <div className="flex flex-col rounded-lg border border-neutral-200 bg-white p-8 md:p-12 lg:flex-row lg:gap-8 dark:border-neutral-800 dark:bg-black">
-          <div className="h-full w-full basis-full lg:basis-4/6">
-            <Suspense
-              fallback={
-                <div className="relative aspect-square h-full max-h-[550px] w-full overflow-hidden" />
-              }
-            >
-              <Gallery
-                images={product.images.slice(0, 5).map((image: Image) => ({
-                  src: image.url,
-                  altText: image.altText,
-                }))}
-              />
-            </Suspense>
+
+      <div className="bg-gradient-to-b from-white via-[#f8f9fb] to-white min-h-screen pt-32 pb-20 px-4 sm:px-6">
+        <div className="max-w-7xl mx-auto">
+          {/* Breadcrumb */}
+          <nav className="mb-8 flex items-center gap-2 text-sm font-body text-[#6b7280]">
+            <Link href="/" className="hover:text-[#1a2b4a]">Home</Link>
+            <span>/</span>
+            <Link href="/shop" className="hover:text-[#1a2b4a]">Shop</Link>
+            <span>/</span>
+            <span className="text-[#1a2b4a]">{product.title}</span>
+          </nav>
+
+          {/* Product Section */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
+            {/* Image Gallery */}
+            <div className="space-y-4">
+              {/* Main Image */}
+              <div className="relative aspect-square bg-white rounded-2xl overflow-hidden border border-[#e5e7eb] shadow-[0_4px_16px_rgba(0,0,0,0.08)]">
+                {product.featuredImage?.url && (
+                  <Image
+                    src={product.featuredImage.url}
+                    alt={product.title}
+                    fill
+                    className="object-contain p-8"
+                    priority
+                  />
+                )}
+                {hasDiscount && (
+                  <div className="absolute top-6 right-6 bg-gradient-to-br from-[#2d0808] to-[#6b1414] text-white px-4 py-2 rounded-full text-base font-bold shadow-lg">
+                    Save {Math.round(((compareAtPrice! - price) / compareAtPrice!) * 100)}%
+                  </div>
+                )}
+              </div>
+
+              {/* Thumbnail Images */}
+              {product.images.length > 1 && (
+                <div className="grid grid-cols-4 gap-3">
+                  {product.images.slice(0, 4).map((image, index) => (
+                    <div key={index} className="relative aspect-square bg-white rounded-xl overflow-hidden border border-[#e5e7eb] hover:border-[#1a2b4a] cursor-pointer transition-colors">
+                      <Image
+                        src={image.url}
+                        alt={`${product.title} - Image ${index + 1}`}
+                        fill
+                        className="object-contain p-2"
+                      />
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* Product Info */}
+            <div className="flex flex-col">
+              <h1 className="font-display text-4xl sm:text-5xl font-bold text-[#1a2b4a] mb-4">
+                {product.title}
+              </h1>
+
+              {/* Rating */}
+              <div className="flex items-center gap-2 mb-6">
+                <div className="flex items-center gap-1">
+                  {[1, 2, 3, 4, 5].map((star) => (
+                    <Star key={star} className="w-5 h-5 fill-[#f59e0b] text-[#f59e0b]" />
+                  ))}
+                </div>
+                <span className="font-body text-sm text-[#6b7280]">(128 reviews)</span>
+              </div>
+
+              {/* Price */}
+              <div className="mb-6">
+                <div className="flex items-baseline gap-3">
+                  <span className="font-display text-5xl font-bold text-[#1a2b4a]">
+                    ${price.toFixed(2)}
+                  </span>
+                  {hasDiscount && (
+                    <>
+                      <span className="font-body text-2xl text-[#6b7280] line-through">
+                        ${compareAtPrice!.toFixed(2)}
+                      </span>
+                      <span className="font-body text-lg font-semibold text-[#6b1414]">
+                        You Save ${(compareAtPrice! - price).toFixed(2)}
+                      </span>
+                    </>
+                  )}
+                </div>
+              </div>
+
+              {/* Description */}
+              {product.description && (
+                <div className="mb-8">
+                  <p className="font-body text-lg text-[#4a5568] leading-relaxed">
+                    {product.description}
+                  </p>
+                </div>
+              )}
+
+              {/* Features */}
+              <div className="grid grid-cols-2 gap-4 mb-8">
+                <div className="flex items-start gap-3 p-4 bg-gradient-to-br from-white to-[#f8f9fb] rounded-xl border border-[#e5e7eb]">
+                  <Shield className="w-5 h-5 text-[#1a2b4a] flex-shrink-0 mt-0.5" />
+                  <div>
+                    <p className="font-body font-semibold text-sm text-[#1a2b4a]">Quality</p>
+                    <p className="font-body text-xs text-[#6b7280]">Guaranteed</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3 p-4 bg-gradient-to-br from-white to-[#f8f9fb] rounded-xl border border-[#e5e7eb]">
+                  <Star className="w-5 h-5 text-[#1a2b4a] flex-shrink-0 mt-0.5" />
+                  <div>
+                    <p className="font-body font-semibold text-sm text-[#1a2b4a]">USA Made</p>
+                    <p className="font-body text-xs text-[#6b7280]">Premium quality</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Add to Cart */}
+              <div className="sticky bottom-6 bg-white rounded-2xl border border-[#e5e7eb] p-6 shadow-[0_4px_16px_rgba(0,0,0,0.08)]">
+                <Suspense fallback={<div className="h-12 bg-[#f8f9fb] rounded-xl animate-pulse" />}>
+                  <AddToCart product={product} />
+                </Suspense>
+              </div>
+            </div>
           </div>
 
-          <div className="basis-full lg:basis-2/6">
-            <Suspense fallback={null}>
-              <ProductDescription product={product} />
-            </Suspense>
-          </div>
+          {/* Related Products */}
+          <Suspense fallback={null}>
+            <RelatedProducts id={product.id} />
+          </Suspense>
         </div>
-        <RelatedProducts id={product.id} />
       </div>
-      <Footer />
     </>
   );
 }
@@ -116,34 +222,39 @@ async function RelatedProducts({ id }: { id: string }) {
   if (!relatedProducts.length) return null;
 
   return (
-    <div className="py-8">
-      <h2 className="mb-4 text-2xl font-bold">Related Products</h2>
-      <ul className="flex w-full gap-4 overflow-x-auto pt-1">
-        {relatedProducts.map((product) => (
-          <li
-            key={product.handle}
-            className="aspect-square w-full flex-none min-[475px]:w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5"
-          >
+    <div className="mt-20">
+      <h2 className="font-display text-3xl font-bold text-[#1a2b4a] mb-8">You May Also Like</h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        {relatedProducts.slice(0, 4).map((product) => {
+          const price = parseFloat(product.priceRange.maxVariantPrice.amount);
+          return (
             <Link
-              className="relative h-full w-full"
+              key={product.handle}
               href={`/product/${product.handle}`}
-              prefetch={true}
+              className="group bg-white rounded-xl overflow-hidden border border-[#e5e7eb] hover:shadow-[0_8px_24px_rgba(0,0,0,0.12)] transition-all duration-300 hover:translate-y-[-4px]"
             >
-              <GridTileImage
-                alt={product.title}
-                label={{
-                  title: product.title,
-                  amount: product.priceRange.maxVariantPrice.amount,
-                  currencyCode: product.priceRange.maxVariantPrice.currencyCode,
-                }}
-                src={product.featuredImage?.url}
-                fill
-                sizes="(min-width: 1024px) 20vw, (min-width: 768px) 25vw, (min-width: 640px) 33vw, (min-width: 475px) 50vw, 100vw"
-              />
+              <div className="relative aspect-square bg-gradient-to-br from-[#f8f9fb] to-white">
+                {product.featuredImage?.url && (
+                  <Image
+                    src={product.featuredImage.url}
+                    alt={product.title}
+                    fill
+                    className="object-contain p-4"
+                  />
+                )}
+              </div>
+              <div className="p-4">
+                <h3 className="font-body text-base font-semibold text-[#1a2b4a] mb-2 line-clamp-2">
+                  {product.title}
+                </h3>
+                <p className="font-body text-xl font-bold text-[#1a2b4a]">
+                  ${price.toFixed(2)}
+                </p>
+              </div>
             </Link>
-          </li>
-        ))}
-      </ul>
+          );
+        })}
+      </div>
     </div>
   );
 }

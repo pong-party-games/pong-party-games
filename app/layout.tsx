@@ -1,4 +1,5 @@
 import { CartProvider } from 'components/cart/cart-context';
+import CartModal from 'components/cart/modal';
 import { BrandLogo, MobileBrandLogo } from 'components/home/brand-logo';
 import { FloatingNav, MobileNav } from 'components/home/floating-nav';
 import Footer from 'components/layout/footer';
@@ -47,6 +48,7 @@ export default async function RootLayout({
           </header>
           <FloatingNav />
           <MobileNav />
+          <CartModal />
           <main>
             {children}
             <Toaster closeButton />

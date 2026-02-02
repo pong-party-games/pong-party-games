@@ -1,4 +1,5 @@
 import { HeroSection } from 'components/home/hero-section';
+import { VideoSection } from 'components/home/video-section';
 import WhyBuySection from 'components/home/why-buy-section';
 
 export const metadata = {
@@ -15,6 +16,7 @@ export default function HomePage() {
     <>
       <HeroSection />
       <WhyBuySection />
+      <VideoSection />
     </>
   );
 }

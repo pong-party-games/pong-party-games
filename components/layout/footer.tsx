@@ -1,4 +1,4 @@
-import { MapPin, Phone, Mail, Clock, Facebook, Instagram } from 'lucide-react';
+import { Clock, Facebook, Instagram, Mail, MapPin, Phone } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import LogoImage from '../../app/assets/images/logo.png';
@@ -23,19 +23,19 @@ export default function Footer() {
       {/* Main Footer Content */}
       <div className="max-w-[1280px] mx-auto px-4 sm:px-6 py-12 sm:py-16 lg:py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
-          
+
           {/* Logo & Description */}
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center gap-2 mb-6">
               <Image
                 src={LogoImage}
                 alt="Pong Party Games"
-                width={50}
-                height={50}
+                width={70}
+                height={70}
                 className="rounded-none"
               />
             </Link>
-            <p className="font-body text-[15px] leading-relaxed text-gray-300 mb-4">
+            <p className="font-body text-[15px] leading-relaxed text-gray-300 mb-2">
               The ultimate baseball party game for all ages. Handcrafted in the USA with premium quality materials.
             </p>
             <Image
@@ -58,14 +58,14 @@ export default function Footer() {
                   <p className="text-gray-200">Downingtown, PA 19335</p>
                 </div>
               </div>
-              
+
               <div className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-[#0066cc] flex-shrink-0" strokeWidth={2} />
                 <a href="tel:484-356-4377" className="text-gray-200 hover:text-white transition-colors">
                   484-356-4377
                 </a>
               </div>
-              
+
               <div className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-[#0066cc] flex-shrink-0" strokeWidth={2} />
                 <a href="mailto:info@pongpartygames.com" className="text-gray-200 hover:text-white transition-colors">
@@ -109,9 +109,9 @@ export default function Footer() {
               <Link href="/custom-games" className="block text-gray-200 hover:text-white transition-colors">
                 Custom Games
               </Link>
-              <a 
-                href="https://ah2s1r-3i.myshopify.com/" 
-                target="_blank" 
+              <a
+                href="https://ah2s1r-3i.myshopify.com/"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="block text-gray-200 hover:text-white transition-colors"
               >
@@ -121,33 +121,33 @@ export default function Footer() {
 
             <h4 className="font-display text-[16px] font-semibold mb-4">Follow Us</h4>
             <div className="flex gap-4">
-              <a 
-                href="https://facebook.com/pongpartygames" 
-                target="_blank" 
+              <a
+                href="https://facebook.com/pongpartygames"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-[#0066cc] flex items-center justify-center hover:bg-[#0052a3] transition-colors"
                 aria-label="Facebook"
               >
                 <Facebook className="w-5 h-5" strokeWidth={2} />
               </a>
-              <a 
-                href="https://instagram.com/pongpartygames" 
-                target="_blank" 
+              <a
+                href="https://instagram.com/pongpartygames"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-[#0066cc] flex items-center justify-center hover:bg-[#0052a3] transition-colors"
                 aria-label="Instagram"
               >
                 <Instagram className="w-5 h-5" strokeWidth={2} />
               </a>
-              <a 
-                href="https://tiktok.com/@pongpartygames" 
-                target="_blank" 
+              <a
+                href="https://tiktok.com/@pongpartygames"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-[#0066cc] flex items-center justify-center hover:bg-[#0052a3] transition-colors"
                 aria-label="TikTok"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+                  <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" />
                 </svg>
               </a>
             </div>

@@ -10,7 +10,7 @@ import UsaFlagImage from '../../app/assets/images/usa-flag.png';
 
 export function HeroSection() {
     return (
-        <section className="relative px-4 sm:px-6 lg:px-16 pt-[80px] sm:pt-[20px] pb-[15px] sm:pb-[20px] md:pb-[15px] lg:pb-[20px] bg-[var(--color-white)] flex items-center">
+        <section className="relative px-4 sm:px-6 lg:px-16 pt-[60px] sm:pt-[20px] pb-[15px] sm:pb-[20px] md:pb-[15px] lg:pb-[20px] bg-[var(--color-white)] flex items-center">
             <div className="flex flex-col lg:grid lg:grid-cols-2 gap-3 sm:gap-3 md:gap-2 lg:gap-4 xl:gap-12 items-center max-w-[1400px] mx-auto w-full">
                 {/* Mobile: Title & Subtitle */}
                 <div className="flex flex-col gap-2 sm:gap-1.5 md:gap-1.5 w-full lg:hidden items-center text-center">
@@ -130,9 +130,7 @@ function CTAButtons() {
     return (
         <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 mt-1 sm:mt-1 lg:mt-1 w-full sm:w-auto">
             <Link
-                href="https://ah2s1r-3i.myshopify.com/"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/shop"
                 className="inline-flex items-center justify-center px-6 sm:px-9 py-3 sm:py-4 bg-[var(--color-red)] text-[var(--color-white)] font-[family-name:var(--font-family-body)] text-[14px] sm:text-[17px] font-bold rounded-[32px] transition-all duration-[var(--duration-normal)] shadow-[0_4px_12px_rgba(230,57,70,0.3)] hover:bg-[#d62839] hover:translate-y-[-3px] hover:shadow-[0_8px_20px_rgba(230,57,70,0.4)]"
             >
                 Buy Now

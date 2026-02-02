@@ -35,7 +35,7 @@ const features = [
 
 export default function WhyBuySection() {
     return (
-        <section className="bg-[#f5f5f7] py-16 sm:py-20 md:py-24 lg:py-24 px-4 sm:px-6">
+        <section className="bg-gradient-to-b from-[#f8f9fb] via-[#f5f5f7] to-white py-16 sm:py-20 md:py-24 lg:py-24 px-4 sm:px-6">
             <div className="max-w-[1280px] mx-auto">
                 {/* Section Header */}
                 <div className="text-center mb-12 sm:mb-14 md:mb-16">
@@ -51,10 +51,10 @@ export default function WhyBuySection() {
                         return (
                             <div
                                 key={index}
-                                className="bg-white rounded-xl p-6 sm:p-7 md:p-8 shadow-[0_2px_8px_rgba(0,0,0,0.08)] transition-all duration-250 hover:translate-y-[-4px] hover:shadow-[0_8px_24px_rgba(0,0,0,0.12)]"
+                                className="bg-gradient-to-br from-white via-[#f8f9fb] to-[#f0f2f5] rounded-2xl p-6 sm:p-7 md:p-8 shadow-[0_8px_24px_rgba(0,0,0,0.12),0_2px_8px_rgba(0,0,0,0.08),inset_0_1px_0_rgba(255,255,255,0.8)] transition-all duration-300 hover:translate-y-[-6px] hover:shadow-[0_16px_40px_rgba(0,0,0,0.16),0_4px_12px_rgba(0,0,0,0.1)] border border-[#e5e7eb]"
                             >
                                 {/* Icon Container */}
-                                <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-[#0066cc] to-[#1a2b4a] flex items-center justify-center mb-5">
+                                <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-[#003d99] to-[#0066ff] shadow-[0_4px_16px_rgba(0,61,153,0.3),inset_0_1px_0_rgba(255,255,255,0.3)] flex items-center justify-center mb-5">
                                     <Icon className="w-8 h-8 text-white" strokeWidth={2} />
                                 </div>
 
@@ -64,7 +64,7 @@ export default function WhyBuySection() {
                                 </h3>
 
                                 {/* Description */}
-                                <p className="font-body text-[15px] sm:text-[15.5px] md:text-[16px] leading-relaxed text-[#2d3748]">
+                                <p className="font-body text-[15px] sm:text-[15.5px] md:text-[16px] leading-relaxed text-[#4a5568]">
                                     {feature.description}
                                 </p>
                             </div>

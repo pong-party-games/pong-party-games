@@ -22,18 +22,5 @@ export function BrandLogo() {
 }
 
 export function MobileBrandLogo() {
-    return (
-        <Link
-            href="/"
-            className="hidden"
-        >
-            <Image
-                src={LogoImage}
-                alt="Pong Party Games Logo"
-                width={40}
-                height={40}
-                className="rounded-none"
-            />
-        </Link>
-    );
+    return null;
 }
