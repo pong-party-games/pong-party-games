@@ -1,12 +1,13 @@
-import { CartProvider } from "components/cart/cart-context";
-import { Navbar } from "components/layout/navbar";
-import { WelcomeToast } from "components/welcome-toast";
-import { GeistSans } from "geist/font/sans";
-import { getCart } from "lib/shopify";
-import { ReactNode } from "react";
-import { Toaster } from "sonner";
-import "./globals.css";
-import { baseUrl } from "lib/utils";
+import { CartProvider } from 'components/cart/cart-context';
+import { BrandLogo, MobileBrandLogo } from 'components/home/brand-logo';
+import { FloatingNav, MobileNav } from 'components/home/floating-nav';
+import { WelcomeToast } from 'components/welcome-toast';
+import { GeistSans } from 'geist/font/sans';
+import { getCart } from 'lib/shopify';
+import { baseUrl } from 'lib/utils';
+import { ReactNode } from 'react';
+import { Toaster } from 'sonner';
+import './globals.css';
 
 const { SITE_NAME } = process.env;
 
@@ -32,9 +33,17 @@ export default async function RootLayout({
 
   return (
     <html lang="en" className={GeistSans.variable}>
-      <body className="bg-neutral-50 text-black selection:bg-teal-300 dark:bg-neutral-900 dark:text-white dark:selection:bg-pink-500 dark:selection:text-white">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+      </head>
+      <body className="bg-white text-[var(--color-charcoal)] selection:bg-[var(--color-bright-blue)] selection:text-white">
         <CartProvider cartPromise={cart}>
-          <Navbar />
+          <BrandLogo />
+          <MobileBrandLogo />
+          <FloatingNav />
+          <MobileNav />
           <main>
             {children}
             <Toaster closeButton />

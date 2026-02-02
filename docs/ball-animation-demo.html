@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ball Throw Animation - Demo</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      padding: 20px;
+      min-height: 200vh; /* Allow scrolling */
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .hero {
+      background: white;
+      border-radius: 20px;
+      padding: 60px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      position: relative; /* Required for animation */
+      min-height: 600px;
+    }
+    
+    .content h1 {
+      font-size: 48px;
+      color: #1a2b4a;
+      margin-bottom: 20px;
+    }
+    
+    .content p {
+      font-size: 20px;
+      color: #6b7280;
+      margin-bottom: 30px;
+    }
+    
+    .btn {
+      display: inline-block;
+      padding: 16px 32px;
+      background: #0066cc;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: transform 0.2s;
+    }
+    
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+    
+    .product-image {
+      text-align: center;
+    }
+    
+    .product-image img {
+      max-width: 100%;
+      height: auto;
+      filter: drop-shadow(0 10px 30px rgba(0,0,0,0.2));
+    }
+    
+    .instructions {
+      background: rgba(255,255,255,0.95);
+      padding: 30px;
+      border-radius: 15px;
+      margin-top: 40px;
+    }
+    
+    .instructions h2 {
+      color: #1a2b4a;
+      margin-bottom: 15px;
+    }
+    
+    .instructions ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    
+    .instructions li {
+      padding: 8px 0;
+      color: #4b5563;
+    }
+    
+    .instructions li:before {
+      content: "✓ ";
+      color: #10b981;
+      font-weight: bold;
+      margin-right: 8px;
+    }
+    
+    .config-panel {
+      background: rgba(255,255,255,0.95);
+      padding: 30px;
+      border-radius: 15px;
+      margin-top: 20px;
+    }
+    
+    .control {
+      margin-bottom: 20px;
+    }
+    
+    .control label {
+      display: block;
+      color: #1a2b4a;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+    
+    .control input[type="range"] {
+      width: 100%;
+    }
+    
+    .control .value {
+      display: inline-block;
+      background: #0066cc;
+      color: white;
+      padding: 4px 12px;
+      border-radius: 4px;
+      font-size: 14px;
+      margin-left: 10px;
+    }
+    
+    @media (max-width: 768px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 30px;
+      }
+      
+      .content h1 {
+        font-size: 32px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="hero" id="hero-container">
+      <div class="content">
+        <h1>The Ultimate Baseball Party Game</h1>
+        <p>All Ages can play! Watch the ball fly into the cup as you scroll down.</p>
+        <a href="#" class="btn">Buy Now - $395.99</a>
+      </div>
+      
+      <div class="product-image">
+        <!-- Placeholder product image -->
+        <svg width="400" height="400" viewBox="0 0 400 400">
+          <!-- Cup -->
+          <ellipse cx="200" cy="340" rx="60" ry="15" fill="#e63946"/>
+          <rect x="150" y="200" width="100" height="140" fill="#dc2626" rx="5"/>
+          <ellipse cx="200" cy="200" rx="50" ry="15" fill="#b91c1c"/>
+          
+          <!-- Stand -->
+          <rect x="180" y="340" width="40" height="40" fill="#6b7280"/>
+          <rect x="160" y="380" width="80" height="10" fill="#4b5563"/>
+          
+          <!-- Label -->
+          <text x="200" y="270" text-anchor="middle" fill="white" font-family="Arial" font-size="20" font-weight="bold">PONG</text>
+          <text x="200" y="295" text-anchor="middle" fill="white" font-family="Arial" font-size="20" font-weight="bold">PARTY</text>
+        </svg>
+      </div>
+    </div>
+    
+    <div class="instructions">
+      <h2>🎯 How This Animation Works</h2>
+      <ul>
+        <li>Scroll down to see the baseball fly into the cup</li>
+        <li>The ball follows a realistic parabolic trajectory</li>
+        <li>A colored trail appears behind the ball as it moves</li>
+        <li>The ball rotates, shrinks, and casts a growing shadow</li>
+        <li>At the end, the ball goes behind the cup rim (z-index magic!)</li>
+      </ul>
+    </div>
+    
+    <div class="config-panel">
+      <h2>🎮 Live Configuration</h2>
+      <p style="color: #6b7280; margin-bottom: 20px;">Adjust these settings and scroll again to see changes:</p>
+      
+      <div class="control">
+        <label>
+          Curve Height: <span class="value" id="curveHeightValue">-0.3</span>
+        </label>
+        <input type="range" id="curveHeight" min="-0.5" max="0.3" step="0.1" value="-0.3">
+        <small style="color: #6b7280;">Negative = upward arc</small>
+      </div>
+      
+      <div class="control">
+        <label>
+          Animation Speed: <span class="value" id="maxScrollValue">200px</span>
+        </label>
+        <input type="range" id="maxScroll" min="100" max="500" step="50" value="200">
+        <small style="color: #6b7280;">Lower = faster animation</small>
+      </div>
+      
+      <div class="control">
+        <label>
+          Start X Position: <span class="value" id="startXValue">0%</span>
+        </label>
+        <input type="range" id="startX" min="0" max="1" step="0.1" value="0">
+        <small style="color: #6b7280;">0 = left, 1 = right</small>
+      </div>
+      
+      <div class="control">
+        <label>
+          Start Y Position: <span class="value" id="startYValue">30%</span>
+        </label>
+        <input type="range" id="startY" min="0" max="1" step="0.1" value="0.3">
+        <small style="color: #6b7280;">0 = top, 1 = bottom</small>
+      </div>
+      
+      <div class="control">
+        <label>
+          End X Position: <span class="value" id="endXValue">50%</span>
+        </label>
+        <input type="range" id="endX" min="0" max="1" step="0.1" value="0.5">
+      </div>
+      
+      <div class="control">
+        <label>
+          End Y Position: <span class="value" id="endYValue">40%</span>
+        </label>
+        <input type="range" id="endY" min="0" max="1" step="0.1" value="0.4">
+      </div>
+      
+      <button onclick="resetAnimation()" class="btn" style="margin-top: 20px;">Reset to Defaults</button>
+    </div>
+  </div>
+  
+  <!-- Ball image (using SVG for demo) -->
+  <svg id="baseball" width="50" height="50" viewBox="0 0 50 50" style="display: none;">
+    <circle cx="25" cy="25" r="24" fill="#ffffff" stroke="#333" stroke-width="1"/>
+    <path d="M 10 15 Q 25 20, 40 15" stroke="#cc0000" stroke-width="2" fill="none"/>
+    <path d="M 10 35 Q 25 30, 40 35" stroke="#cc0000" stroke-width="2" fill="none"/>
+  </svg>
+  
+  <script>
+    // Import the animation class (in real implementation, use proper module import)
+    class BallThrowAnimation {
+      constructor(container, config = {}) {
+        this.config = {
+          startX: 0,
+          startY: 0.3,
+          endX: 0.5,
+          endY: 0.4,
+          curveHeight: -0.3,
+          maxScroll: 200,
+          ballImageUrl: '#baseball',
+          ballSize: 50,
+          trailWidth: 3,
+          trailColors: [
+            { offset: 0, color: '#FF6B6B', opacity: 0.7 },
+            { offset: 50, color: '#FFA500', opacity: 0.8 },
+            { offset: 100, color: '#FF4444', opacity: 0.9 }
+          ],
+          enableRotation: true,
+          enableScale: true,
+          enableShadow: true,
+          enableZIndexSwitch: true,
+          zIndexSwitchPoint: 0.8,
+          ...config
+        };
+        
+        this.container = container;
+        this.scrollProgress = 0;
+        this.pathData = { path: '', ballPos: { x: 0, y: 0 }, pathLength: 0 };
+        this.init();
+      }
+      
+      init() {
+        this.createElements();
+        this.attachEventListeners();
+        setTimeout(() => this.calculatePath(), 100);
+      }
+      
+      createElements() {
+        this.wrapper = document.createElement('div');
+        this.wrapper.style.cssText = `
+          position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+          pointer-events: none; z-index: 10;
+        `;
+        
+        this.svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+        this.svg.setAttribute('width', '100%');
+        this.svg.setAttribute('height', '100%');
+        this.svg.style.cssText = 'position: absolute; top: 0; left: 0;';
+        
+        const defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
+        const gradient = document.createElementNS('http://www.w3.org/2000/svg', 'linearGradient');
+        gradient.setAttribute('id', 'pathGradient');
+        gradient.setAttribute('x1', '0%');
+        gradient.setAttribute('y1', '0%');
+        gradient.setAttribute('x2', '100%');
+        gradient.setAttribute('y2', '100%');
+        
+        this.config.trailColors.forEach(stop => {
+          const stopEl = document.createElementNS('http://www.w3.org/2000/svg', 'stop');
+          stopEl.setAttribute('offset', `${stop.offset}%`);
+          stopEl.setAttribute('style', `stop-color: ${stop.color}; stop-opacity: ${stop.opacity}`);
+          gradient.appendChild(stopEl);
+        });
+        
+        defs.appendChild(gradient);
+        this.svg.appendChild(defs);
+        
+        this.path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+        this.path.setAttribute('stroke', 'url(#pathGradient)');
+        this.path.setAttribute('stroke-width', this.config.trailWidth);
+        this.path.setAttribute('fill', 'none');
+        this.path.setAttribute('stroke-linecap', 'round');
+        this.path.setAttribute('opacity', '0.8');
+        this.svg.appendChild(this.path);
+        
+        this.ball = document.createElement('div');
+        this.ball.style.cssText = 'position: absolute; will-change: transform;';
+        
+        // Clone the baseball SVG
+        const baseballTemplate = document.getElementById('baseball');
+        const ballSvg = baseballTemplate.cloneNode(true);
+        ballSvg.style.display = 'block';
+        ballSvg.removeAttribute('id');
+        this.ball.appendChild(ballSvg);
+        
+        this.wrapper.appendChild(this.svg);
+        this.wrapper.appendChild(this.ball);
+        this.container.style.position = 'relative';
+        this.container.appendChild(this.wrapper);
+      }
+      
+      attachEventListeners() {
+        this.handleScroll = this.handleScroll.bind(this);
+        this.handleResize = this.handleResize.bind(this);
+        window.addEventListener('scroll', this.handleScroll);
+        window.addEventListener('resize', this.handleResize);
+      }
+      
+      handleScroll() {
+        const scrollY = window.scrollY;
+        const progress = Math.min(scrollY / this.config.maxScroll, 1);
+        if (progress !== this.scrollProgress) {
+          this.scrollProgress = progress;
+          this.calculatePath();
+        }
+      }
+      
+      handleResize() {
+        this.calculatePath();
+      }
+      
+      calculatePath() {
+        const rect = this.container.getBoundingClientRect();
+        const width = rect.width;
+        const height = rect.height;
+        
+        const startX = width * this.config.startX;
+        const startY = height * this.config.startY;
+        const endX = width * this.config.endX;
+        const endY = height * this.config.endY;
+        
+        const midX = (startX + endX) / 2;
+        const midY = Math.min(startY, endY) + (height * this.config.curveHeight);
+        
+        const pathString = `M ${startX} ${startY} Q ${midX} ${midY}, ${endX} ${endY}`;
+        this.path.setAttribute('d', pathString);
+        
+        const t = this.scrollProgress;
+        const ballX = Math.pow(1 - t, 2) * startX + 2 * (1 - t) * t * midX + Math.pow(t, 2) * endX;
+        const ballY = Math.pow(1 - t, 2) * startY + 2 * (1 - t) * t * midY + Math.pow(t, 2) * endY;
+        
+        const pathLength = this.path.getTotalLength();
+        this.pathData = { path: pathString, ballPos: { x: ballX, y: ballY }, pathLength };
+        
+        this.updateTrail();
+        this.updateBall();
+      }
+      
+      updateTrail() {
+        const visibleLength = (1 - this.scrollProgress) * this.pathData.pathLength;
+        const totalLength = this.pathData.pathLength;
+        this.path.setAttribute('stroke-dasharray', `${visibleLength} ${totalLength}`);
+        this.path.setAttribute('stroke-dashoffset', -this.scrollProgress * this.pathData.pathLength);
+      }
+      
+      updateBall() {
+        const { x, y } = this.pathData.ballPos;
+        const progress = this.scrollProgress;
+        
+        let transform = `translate(-50%, -50%)`;
+        if (this.config.enableScale) {
+          transform += ` scale(${1 - progress * 0.4})`;
+        }
+        if (this.config.enableRotation) {
+          transform += ` rotate(${progress * 720}deg)`;
+        }
+        
+        this.ball.style.transform = transform;
+        this.ball.style.left = `${x}px`;
+        this.ball.style.top = `${y}px`;
+        
+        if (this.config.enableShadow) {
+          const offsetY = 4 + progress * 8;
+          const blur = 8 + progress * 12;
+          const opacity = 0.3 + progress * 0.2;
+          this.ball.style.filter = `drop-shadow(0 ${offsetY}px ${blur}px rgba(0,0,0,${opacity}))`;
+        }
+        
+        if (this.config.enableZIndexSwitch) {
+          this.ball.style.zIndex = progress > this.config.zIndexSwitchPoint ? '1' : '100';
+        }
+      }
+      
+      updateConfig(newConfig) {
+        this.config = { ...this.config, ...newConfig };
+        this.calculatePath();
+      }
+      
+      destroy() {
+        window.removeEventListener('scroll', this.handleScroll);
+        window.removeEventListener('resize', this.handleResize);
+        if (this.wrapper && this.wrapper.parentNode) {
+          this.wrapper.parentNode.removeChild(this.wrapper);
+        }
+      }
+    }
+    
+    // Initialize animation
+    const container = document.getElementById('hero-container');
+    let animation = new BallThrowAnimation(container);
+    
+    // Setup control panel
+    const controls = {
+      curveHeight: { input: document.getElementById('curveHeight'), value: document.getElementById('curveHeightValue') },
+      maxScroll: { input: document.getElementById('maxScroll'), value: document.getElementById('maxScrollValue') },
+      startX: { input: document.getElementById('startX'), value: document.getElementById('startXValue') },
+      startY: { input: document.getElementById('startY'), value: document.getElementById('startY') },
+      endX: { input: document.getElementById('endX'), value: document.getElementById('endXValue') },
+      endY: { input: document.getElementById('endY'), value: document.getElementById('endYValue') }
+    };
+    
+    Object.keys(controls).forEach(key => {
+      controls[key].input.addEventListener('input', (e) => {
+        const value = parseFloat(e.target.value);
+        const display = key === 'maxScroll' ? `${value}px` : 
+                       key.includes('X') || key.includes('Y') ? `${Math.round(value * 100)}%` : value;
+        controls[key].value.textContent = display;
+        
+        animation.updateConfig({ [key]: value });
+      });
+    });
+    
+    function resetAnimation() {
+      animation.destroy();
+      animation = new BallThrowAnimation(container);
+      
+      controls.curveHeight.input.value = -0.3;
+      controls.curveHeight.value.textContent = '-0.3';
+      controls.maxScroll.input.value = 200;
+      controls.maxScroll.value.textContent = '200px';
+      controls.startX.input.value = 0;
+      controls.startX.value.textContent = '0%';
+      controls.startY.input.value = 0.3;
+      controls.startY.value.textContent = '30%';
+      controls.endX.input.value = 0.5;
+      controls.endX.value.textContent = '50%';
+      controls.endY.input.value = 0.4;
+      controls.endY.value.textContent = '40%';
+      
+      window.scrollTo(0, 0);
+    }
+  </script>
+</body>
+</html>

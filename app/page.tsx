@@ -1,18 +1,21 @@
-import { Carousel } from "components/carousel";
-import { ThreeItemGrid } from "components/grid/three-items";
-import Footer from "components/layout/footer";
+import { Carousel } from 'components/carousel';
+import { ThreeItemGrid } from 'components/grid/three-items';
+import { HeroSection } from 'components/home/hero-section';
+import Footer from 'components/layout/footer';
 
 export const metadata = {
+  title: 'Pong Party Games | The Ultimate Baseball Party Game',
   description:
-    "High-performance ecommerce store built with Next.js, Vercel, and Shopify.",
+    'Premium handcrafted party games for all ages. Ready in 5 minutes, 2-8 players. Made in USA with quality materials.',
   openGraph: {
-    type: "website",
+    type: 'website',
   },
 };
 
 export default function HomePage() {
   return (
     <>
+      <HeroSection />
       <ThreeItemGrid />
       <Carousel />
       <Footer />
