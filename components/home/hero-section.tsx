@@ -169,10 +169,10 @@ function BaseballAnimation() {
     const config = {
         startX: 0,       // Start left side
         startY: 0.1,       // Start top
-        endX: 0.5,         // End at exact center (product center)
+        endX: 0.45,         // End at exact center (product center)
         endY: 0.4,         // End at exact center (product center)
         curveHeight: -0.25, // Negative = upward arc
-        maxScroll: 300     // Pixels to scroll for full animation
+        maxScroll: 400     // Pixels to scroll for full animation
     };
 
     const calculatePath = () => {
