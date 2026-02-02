@@ -25,12 +25,19 @@ type MerchandiseSearchParams = {
 export default function CartModal() {
   const { cart, updateCartItem } = useCart();
   const [isOpen, setIsOpen] = useState(false);
+  const [showEmptyCartNotification, setShowEmptyCartNotification] = useState(false);
   const quantityRef = useRef(cart?.totalQuantity);
   const router = useRouter();
   const openCart = () => {
     // Redirect to /shop if cart is empty
     if (!cart || cart.lines.length === 0) {
-      router.push('/shop');
+      setShowEmptyCartNotification(true);
+      setTimeout(() => {
+        router.push('/shop');
+      }, 1500);
+      setTimeout(() => {
+        setShowEmptyCartNotification(false);
+      }, 2000);
       return;
     }
     setIsOpen(true);
@@ -61,6 +68,32 @@ export default function CartModal() {
       <button aria-label="Open cart" onClick={openCart}>
         <OpenCart quantity={cart?.totalQuantity} />
       </button>
+
+      {/* Empty Cart Notification */}
+      <Transition show={showEmptyCartNotification}>
+        <div className="fixed inset-0 z-50 flex items-center justify-center pointer-events-none">
+          <Transition.Child
+            as={Fragment}
+            enter="transition-all ease-out duration-300"
+            enterFrom="opacity-0 scale-90"
+            enterTo="opacity-100 scale-100"
+            leave="transition-all ease-in duration-200"
+            leaveFrom="opacity-100 scale-100"
+            leaveTo="opacity-0 scale-90"
+          >
+            <div className="bg-gradient-to-br from-[#0a1420] via-[#1a2438] to-[#0f1e35] text-white px-8 py-6 rounded-2xl shadow-[0_20px_60px_rgba(0,0,0,0.5)] border border-white/10 max-w-md mx-4">
+              <div className="flex items-center gap-4">
+                <ShoppingCartIcon className="w-8 h-8 flex-shrink-0" />
+                <div>
+                  <p className="font-display text-lg font-semibold mb-1">Your cart is empty</p>
+                  <p className="font-body text-sm text-gray-300">Redirecting you to shop...</p>
+                </div>
+              </div>
+            </div>
+          </Transition.Child>
+        </div>
+      </Transition>
+
       <Transition show={isOpen}>
         <Dialog onClose={closeCart} className="relative z-50">
           <Transition.Child
