@@ -10,10 +10,10 @@ import UsaFlagImage from '../../app/assets/images/usa-flag.png';
 
 export function HeroSection() {
     return (
-        <section className="relative px-4 sm:px-6 lg:px-16 pt-[20px] sm:pt-[30px] pb-[20px] sm:pb-[30px] bg-[var(--color-white)] flex items-center">
-            <div className="flex flex-col lg:grid lg:grid-cols-2 gap-3 sm:gap-4 md:gap-5 lg:gap-12 items-center max-w-[1400px] mx-auto w-full">
+        <section className="relative px-4 sm:px-6 lg:px-16 pt-[80px] sm:pt-[20px] pb-[15px] sm:pb-[20px] md:pb-[15px] lg:pb-[20px] bg-[var(--color-white)] flex items-center">
+            <div className="flex flex-col lg:grid lg:grid-cols-2 gap-3 sm:gap-3 md:gap-2 lg:gap-4 xl:gap-12 items-center max-w-[1400px] mx-auto w-full">
                 {/* Mobile: Title & Subtitle */}
-                <div className="flex flex-col gap-2 sm:gap-3 md:gap-3 w-full lg:hidden items-center text-center">
+                <div className="flex flex-col gap-2 sm:gap-1.5 md:gap-1.5 w-full lg:hidden items-center text-center">
                     <MadeInUSABadge />
                     <Headline />
                     <Subheadline />
@@ -29,14 +29,14 @@ export function HeroSection() {
                         width={1792}
                         height={2400}
                         priority
-                        className="w-full h-auto max-w-[320px] sm:max-w-[400px] lg:max-w-[480px] animate-[float_4s_ease-in-out_infinite] [filter:drop-shadow(0_20px_40px_rgba(0,0,0,0.2))_drop-shadow(0_10px_15px_rgba(0,0,0,0.1))] sm:[filter:drop-shadow(0_30px_60px_rgba(0,0,0,0.25))_drop-shadow(0_10px_20px_rgba(0,0,0,0.15))]"
+                        className="w-full h-auto max-w-[280px] sm:max-w-[320px] md:max-w-[360px] lg:max-w-[480px] animate-[float_4s_ease-in-out_infinite] [filter:drop-shadow(0_20px_40px_rgba(0,0,0,0.2))_drop-shadow(0_10px_15px_rgba(0,0,0,0.1))] sm:[filter:drop-shadow(0_30px_60px_rgba(0,0,0,0.25))_drop-shadow(0_10px_20px_rgba(0,0,0,0.15))]"
                     />
                 </div>
 
                 {/* Desktop: Left Column - Content / Mobile: Price Below Image */}
-                <div className="flex flex-col gap-2 sm:gap-3 md:gap-4 lg:gap-6 w-full lg:order-1 items-center lg:items-start text-center lg:text-left">
+                <div className="flex flex-col gap-1.5 sm:gap-2 md:gap-2 lg:gap-2.5 xl:gap-6 w-full lg:order-1 items-center lg:items-start text-center lg:text-left">
                     {/* Desktop only: Badge, Title, Subtitle, Features */}
-                    <div className="hidden lg:flex lg:flex-col lg:gap-6">
+                    <div className="hidden lg:flex lg:flex-col lg:gap-2 xl:gap-6">
                         <MadeInUSABadge />
                         <Headline />
                         <Subheadline />
@@ -55,7 +55,7 @@ export function HeroSection() {
 
 function MadeInUSABadge() {
     return (
-        <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-[var(--color-white)] border-[2.5px] border-[var(--color-navy)] rounded-[20px] font-[family-name:var(--font-family-body)] text-[11px] sm:text-[13px] font-bold text-[var(--color-navy)] uppercase tracking-[0.05em] w-fit mb-2">
+        <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-[var(--color-white)] border-[2.5px] border-[var(--color-navy)] rounded-[20px] font-[family-name:var(--font-family-body)] text-[11px] sm:text-[13px] font-bold text-[var(--color-navy)] uppercase tracking-[0.05em] w-fit">
             <Image
                 src={UsaFlagImage}
                 alt="USA Flag"
@@ -70,7 +70,7 @@ function MadeInUSABadge() {
 
 function Headline() {
     return (
-        <h1 className="font-[family-name:var(--font-family-display)] text-[32px] sm:text-[42px] md:text-[52px] lg:text-[72px] font-semibold leading-[1.05] text-[var(--color-navy)] tracking-[-0.01em] max-w-[700px]">
+        <h1 className="font-[family-name:var(--font-family-display)] text-[36px] sm:text-[42px] md:text-[52px] lg:text-[72px] font-semibold leading-[1.05] text-[var(--color-navy)] tracking-[-0.01em] max-w-[700px]">
             The Ultimate Baseball Party Game
         </h1>
     );
@@ -92,7 +92,7 @@ function FeatureRow() {
     ];
 
     return (
-        <div className="flex flex-wrap gap-4 sm:gap-6 lg:gap-8 my-1 sm:my-2 justify-center lg:justify-start">
+        <div className="flex flex-wrap gap-4 sm:gap-6 lg:gap-8 my-1 sm:my-0 justify-center lg:justify-start">
             {features.map((feature, index) => {
                 const Icon = feature.icon;
                 return (
@@ -110,7 +110,7 @@ function FeatureRow() {
 
 function PricingBoxes() {
     return (
-        <div className="flex flex-row gap-3 sm:gap-4 my-2 sm:my-3 lg:my-4 justify-center lg:justify-start">
+        <div className="flex flex-row gap-3 sm:gap-4 my-2 sm:my-1 lg:my-2 justify-center lg:justify-start">
             {/* WAS Price Box */}
             <div className="relative flex flex-col gap-1 px-4 sm:px-5 py-3 sm:py-3.5 bg-gradient-to-br from-[#f8f9fa] to-[#e9ecef] rounded-[12px] sm:rounded-[16px] border border-[rgba(26,43,74,0.12)] shadow-[0_2px_8px_rgba(0,0,0,0.04),inset_0_1px_0_rgba(255,255,255,0.8)] transition-transform duration-[var(--duration-normal)] hover:translate-y-[-2px] hover:shadow-[0_4px_12px_rgba(0,0,0,0.08)] before:content-[''] before:absolute before:top-0 before:left-0 before:right-0 before:h-[2px] before:bg-gradient-to-r before:from-transparent before:via-[rgba(26,43,74,0.1)] before:to-transparent">
                 <span className="text-[10px] sm:text-[12px] font-bold text-[#6c757d] uppercase tracking-[0.12em]">Was</span>
@@ -128,18 +128,18 @@ function PricingBoxes() {
 
 function CTAButtons() {
     return (
-        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-2 sm:mt-3 lg:mt-4 w-full sm:w-auto">
+        <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 mt-1 sm:mt-1 lg:mt-1 w-full sm:w-auto">
             <Link
                 href="https://ah2s1r-3i.myshopify.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center px-8 sm:px-9 py-3.5 sm:py-4 bg-[var(--color-red)] text-[var(--color-white)] font-[family-name:var(--font-family-body)] text-[15px] sm:text-[17px] font-bold rounded-[32px] transition-all duration-[var(--duration-normal)] shadow-[0_4px_12px_rgba(230,57,70,0.3)] hover:bg-[#d62839] hover:translate-y-[-3px] hover:shadow-[0_8px_20px_rgba(230,57,70,0.4)]"
+                className="inline-flex items-center justify-center px-6 sm:px-9 py-3 sm:py-4 bg-[var(--color-red)] text-[var(--color-white)] font-[family-name:var(--font-family-body)] text-[14px] sm:text-[17px] font-bold rounded-[32px] transition-all duration-[var(--duration-normal)] shadow-[0_4px_12px_rgba(230,57,70,0.3)] hover:bg-[#d62839] hover:translate-y-[-3px] hover:shadow-[0_8px_20px_rgba(230,57,70,0.4)]"
             >
                 Buy Now
             </Link>
             <Link
                 href="/custom-games"
-                className="inline-flex items-center justify-center px-8 sm:px-9 py-3.5 sm:py-4 bg-transparent text-[var(--color-navy)] font-[family-name:var(--font-family-body)] text-[15px] sm:text-[17px] font-bold border-2 border-[var(--color-navy)] rounded-[32px] transition-all duration-[var(--duration-normal)] hover:bg-[var(--color-navy)] hover:text-[var(--color-white)] hover:translate-y-[-3px] hover:shadow-[0_6px_16px_rgba(26,43,74,0.25)]"
+                className="inline-flex items-center justify-center px-6 sm:px-9 py-3 sm:py-4 bg-transparent text-[var(--color-navy)] font-[family-name:var(--font-family-body)] text-[14px] sm:text-[17px] font-bold border-2 border-[var(--color-navy)] rounded-[32px] transition-all duration-[var(--duration-normal)] hover:bg-[var(--color-navy)] hover:text-[var(--color-white)] hover:translate-y-[-3px] hover:shadow-[0_6px_16px_rgba(26,43,74,0.25)]"
             >
                 Customize Game
             </Link>
@@ -167,7 +167,7 @@ function BaseballAnimation() {
 
     // Configuration
     const config = {
-        startX: 0.1,       // Start left side
+        startX: 0,       // Start left side
         startY: 0.1,       // Start top
         endX: 0.5,         // End at exact center (product center)
         endY: 0.4,         // End at exact center (product center)
