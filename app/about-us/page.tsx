@@ -49,7 +49,7 @@ export default function AboutUsPage() {
         <div className="bg-gradient-to-b from-[#f8f9fb] via-white to-[#f5f7fa] min-h-screen -mt-[200px]">
             {/* Hero Section */}
             <div className="bg-gradient-to-br from-[#0a1420] via-[#0f1e35] to-[#1a2b4a] text-white py-20 sm:py-20 lg:py-24 shadow-[0_20px_60px_rgba(10,20,32,0.4),inset_0_1px_0_rgba(255,255,255,0.1)]">
-                <div className="max-w-[1200px] mx-auto px-4 sm:px-6 text-center pt-24 sm:pt-16 lg:pt-12">
+                <div className="max-w-[1200px] mx-auto px-4 sm:px-6 text-center pt-44 sm:pt-16 lg:pt-12">
                     <h1 className="font-display text-[48px] sm:text-[58px] md:text-[72px] font-semibold mb-4 sm:mb-5 lg:mb-6">
                         About Us
                     </h1>
@@ -86,7 +86,7 @@ export default function AboutUsPage() {
                             </div>
                         </div>
                         <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
-                            <div className="relative rounded-2xl overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.2)] ring-2 ring-gray-200 max-w-[400px] w-full">
+                            <div className="relative rounded-2xl overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.2)] ring-2 ring-gray-200 max-w-[280px] sm:max-w-[350px] lg:max-w-[400px] w-full">
                                 <Image
                                     src={MikeFounderImage}
                                     alt="Mike Whelan - Founder of Pong Party Games"
