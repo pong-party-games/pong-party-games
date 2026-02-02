@@ -172,7 +172,7 @@ function BaseballAnimation() {
         endX: 0.5,         // End at exact center (product center)
         endY: 0.4,         // End at exact center (product center)
         curveHeight: -0.25, // Negative = upward arc
-        maxScroll: 200     // Pixels to scroll for full animation
+        maxScroll: 300     // Pixels to scroll for full animation
     };
 
     const calculatePath = () => {
