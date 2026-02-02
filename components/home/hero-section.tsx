@@ -4,36 +4,49 @@ import { Star as StarIcon, Users, Zap } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
-import UsaFlagImage from '../../app/assets/images/usa-flag.png';
 import BaseballImage from '../../app/assets/images/pong-party-game-ball-image.png';
+import HeroProductImage from '../../app/assets/images/pongpartygame_heroproduct.png';
+import UsaFlagImage from '../../app/assets/images/usa-flag.png';
 
 export function HeroSection() {
     return (
-        <section className="relative px-16 pt-[50px] pb-[30px] bg-[var(--color-white)] min-h-screen flex items-center md:px-6 lg:px-16">
+        <section className="relative px-4 sm:px-6 lg:px-16 pt-[140px] sm:pt-[160px] lg:pt-[50px] pb-[30px] bg-[var(--color-white)] min-h-screen flex items-center">
             <BaseballAnimation />
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-[1400px] mx-auto w-full">
-                {/* Left Column - Content */}
-                <div className="flex flex-col gap-6 lg:order-1 order-2">
+            <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center max-w-[1400px] mx-auto w-full">
+                {/* Mobile: Title & Subtitle */}
+                <div className="flex flex-col gap-4 w-full lg:hidden items-center text-center">
                     <MadeInUSABadge />
                     <Headline />
                     <Subheadline />
                     <FeatureRow />
-                    <PricingBoxes />
-                    <CTAButtons />
-                    <FreeShippingText />
                 </div>
 
-                {/* Right Column - Product Image */}
-                <div className="flex items-center justify-center relative lg:order-2 order-1">
+                {/* Product Image */}
+                <div className="flex items-center justify-center relative w-full lg:order-2">
                     <Image
-                        src="/images/pongpartygame_heroproduct.png"
+                        src={HeroProductImage}
                         alt="Pong Party Games Product"
                         width={1792}
                         height={2400}
                         priority
-                        unoptimized
-                        className="w-full h-auto max-w-[480px] animate-[float_4s_ease-in-out_infinite] [filter:drop-shadow(0_30px_60px_rgba(0,0,0,0.25))_drop-shadow(0_10px_20px_rgba(0,0,0,0.15))]"
+                        className="w-full h-auto max-w-[320px] sm:max-w-[400px] lg:max-w-[480px] animate-[float_4s_ease-in-out_infinite] [filter:drop-shadow(0_20px_40px_rgba(0,0,0,0.2))_drop-shadow(0_10px_15px_rgba(0,0,0,0.1))] sm:[filter:drop-shadow(0_30px_60px_rgba(0,0,0,0.25))_drop-shadow(0_10px_20px_rgba(0,0,0,0.15))]"
                     />
+                </div>
+
+                {/* Desktop: Left Column - Content / Mobile: Price Below Image */}
+                <div className="flex flex-col gap-4 sm:gap-6 w-full lg:order-1 items-center lg:items-start text-center lg:text-left">
+                    {/* Desktop only: Badge, Title, Subtitle, Features */}
+                    <div className="hidden lg:flex lg:flex-col lg:gap-6">
+                        <MadeInUSABadge />
+                        <Headline />
+                        <Subheadline />
+                        <FeatureRow />
+                    </div>
+
+                    {/* All screens: Pricing & CTA */}
+                    <PricingBoxes />
+                    <CTAButtons />
+                    <FreeShippingText />
                 </div>
             </div>
         </section>
@@ -42,13 +55,13 @@ export function HeroSection() {
 
 function MadeInUSABadge() {
     return (
-        <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-[var(--color-white)] border-[2.5px] border-[var(--color-navy)] rounded-[20px] font-[family-name:var(--font-family-body)] text-[13px] font-bold text-[var(--color-navy)] uppercase tracking-[0.05em] w-fit mb-2">
+        <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-[var(--color-white)] border-[2.5px] border-[var(--color-navy)] rounded-[20px] font-[family-name:var(--font-family-body)] text-[11px] sm:text-[13px] font-bold text-[var(--color-navy)] uppercase tracking-[0.05em] w-fit mb-2">
             <Image
                 src={UsaFlagImage}
                 alt="USA Flag"
-                width={24}
-                height={24}
-                className="rounded-none"
+                width={20}
+                height={20}
+                className="rounded-none sm:w-6 sm:h-6"
             />
             <span>Made in USA</span>
         </div>
@@ -57,7 +70,7 @@ function MadeInUSABadge() {
 
 function Headline() {
     return (
-        <h1 className="font-[family-name:var(--font-family-display)] text-[72px] md:text-[52px] sm:text-[42px] font-semibold leading-[1.05] text-[var(--color-navy)] tracking-[-0.01em] max-w-[700px]">
+        <h1 className="font-[family-name:var(--font-family-display)] text-[32px] sm:text-[42px] md:text-[52px] lg:text-[72px] font-semibold leading-[1.05] text-[var(--color-navy)] tracking-[-0.01em] max-w-[700px]">
             The Ultimate Baseball Party Game
         </h1>
     );
@@ -65,7 +78,7 @@ function Headline() {
 
 function Subheadline() {
     return (
-        <p className="font-[family-name:var(--font-family-body)] text-[22px] md:text-[18px] font-bold leading-[1.5] text-[var(--color-charcoal)]">
+        <p className="font-[family-name:var(--font-family-body)] text-[16px] sm:text-[18px] lg:text-[22px] font-bold leading-[1.5] text-[var(--color-charcoal)]">
             All Ages can play!
         </p>
     );
@@ -79,13 +92,13 @@ function FeatureRow() {
     ];
 
     return (
-        <div className="flex flex-col md:flex-row gap-8 md:gap-8 my-2">
+        <div className="flex flex-wrap gap-4 sm:gap-6 lg:gap-8 my-2 justify-center lg:justify-start">
             {features.map((feature, index) => {
                 const Icon = feature.icon;
                 return (
-                    <div key={index} className="flex items-center gap-3">
-                        <Icon size={24} strokeWidth={2} className="text-[var(--color-navy)] flex-shrink-0" />
-                        <span className="font-[family-name:var(--font-family-body)] text-[17px] font-semibold text-[var(--color-charcoal)]">
+                    <div key={index} className="flex items-center gap-2 sm:gap-3">
+                        <Icon size={20} strokeWidth={2} className="text-[var(--color-navy)] flex-shrink-0 sm:w-6 sm:h-6" />
+                        <span className="font-[family-name:var(--font-family-body)] text-[14px] sm:text-[16px] lg:text-[17px] font-semibold text-[var(--color-charcoal)]">
                             {feature.text}
                         </span>
                     </div>
@@ -97,17 +110,17 @@ function FeatureRow() {
 
 function PricingBoxes() {
     return (
-        <div className="flex flex-col md:flex-row gap-4 my-4">
+        <div className="flex flex-row gap-3 sm:gap-4 my-4 justify-center lg:justify-start">
             {/* WAS Price Box */}
-            <div className="relative flex flex-col gap-1 px-5 py-3.5 bg-gradient-to-br from-[#f8f9fa] to-[#e9ecef] rounded-[16px] border border-[rgba(26,43,74,0.12)] shadow-[0_2px_8px_rgba(0,0,0,0.04),inset_0_1px_0_rgba(255,255,255,0.8)] transition-transform duration-[var(--duration-normal)] hover:translate-y-[-2px] hover:shadow-[0_4px_12px_rgba(0,0,0,0.08)] before:content-[''] before:absolute before:top-0 before:left-0 before:right-0 before:h-[2px] before:bg-gradient-to-r before:from-transparent before:via-[rgba(26,43,74,0.1)] before:to-transparent">
-                <span className="text-[12px] font-bold text-[#6c757d] uppercase tracking-[0.12em]">Was</span>
-                <span className="text-[24px] font-semibold text-[#6c757d] line-through opacity-70">$49.99</span>
+            <div className="relative flex flex-col gap-1 px-4 sm:px-5 py-3 sm:py-3.5 bg-gradient-to-br from-[#f8f9fa] to-[#e9ecef] rounded-[12px] sm:rounded-[16px] border border-[rgba(26,43,74,0.12)] shadow-[0_2px_8px_rgba(0,0,0,0.04),inset_0_1px_0_rgba(255,255,255,0.8)] transition-transform duration-[var(--duration-normal)] hover:translate-y-[-2px] hover:shadow-[0_4px_12px_rgba(0,0,0,0.08)] before:content-[''] before:absolute before:top-0 before:left-0 before:right-0 before:h-[2px] before:bg-gradient-to-r before:from-transparent before:via-[rgba(26,43,74,0.1)] before:to-transparent">
+                <span className="text-[10px] sm:text-[12px] font-bold text-[#6c757d] uppercase tracking-[0.12em]">Was</span>
+                <span className="text-[20px] sm:text-[24px] font-semibold text-[#6c757d] line-through opacity-70">$479.95</span>
             </div>
 
             {/* NOW Price Box */}
-            <div className="relative flex flex-col gap-1 px-6 py-4 bg-gradient-to-br from-[var(--color-bright-blue)] to-[#0052a3] rounded-[16px] border border-[rgba(255,255,255,0.15)] shadow-[0_6px_20px_rgba(0,102,204,0.4),0_2px_8px_rgba(0,102,204,0.2),inset_0_1px_0_rgba(255,255,255,0.2)] transition-all duration-[var(--duration-normal)] hover:translate-y-[-3px] hover:scale-[1.02] hover:shadow-[0_10px_28px_rgba(0,102,204,0.5)] before:content-[''] before:absolute before:top-0 before:left-0 before:right-0 before:h-[2px] before:bg-gradient-to-r before:from-transparent before:via-[rgba(255,255,255,0.4)] before:to-transparent">
-                <span className="text-[12px] font-bold text-white uppercase tracking-[0.12em] [text-shadow:0_1px_2px_rgba(0,0,0,0.2)]">Now</span>
-                <span className="text-[36px] font-extrabold text-white [text-shadow:0_2px_4px_rgba(0,0,0,0.2)] tracking-[-0.02em]">$34.99</span>
+            <div className="relative flex flex-col gap-1 px-5 sm:px-6 py-3.5 sm:py-4 bg-gradient-to-br from-[var(--color-bright-blue)] to-[#0052a3] rounded-[12px] sm:rounded-[16px] border border-[rgba(255,255,255,0.15)] shadow-[0_6px_20px_rgba(0,102,204,0.4),0_2px_8px_rgba(0,102,204,0.2),inset_0_1px_0_rgba(255,255,255,0.2)] transition-all duration-[var(--duration-normal)] hover:translate-y-[-3px] hover:scale-[1.02] hover:shadow-[0_10px_28px_rgba(0,102,204,0.5)] before:content-[''] before:absolute before:top-0 before:left-0 before:right-0 before:h-[2px] before:bg-gradient-to-r before:from-transparent before:via-[rgba(255,255,255,0.4)] before:to-transparent">
+                <span className="text-[10px] sm:text-[12px] font-bold text-white uppercase tracking-[0.12em] [text-shadow:0_1px_2px_rgba(0,0,0,0.2)]">Now</span>
+                <span className="text-[28px] sm:text-[36px] font-extrabold text-white [text-shadow:0_2px_4px_rgba(0,0,0,0.2)] tracking-[-0.02em]">$395.99</span>
             </div>
         </div>
     );
@@ -115,18 +128,18 @@ function PricingBoxes() {
 
 function CTAButtons() {
     return (
-        <div className="flex flex-col md:flex-row gap-4 mt-4 w-full md:w-auto">
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-4 w-full sm:w-auto">
             <Link
                 href="https://ah2s1r-3i.myshopify.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center px-9 py-4 bg-[var(--color-red)] text-[var(--color-white)] font-[family-name:var(--font-family-body)] text-[17px] font-bold rounded-[32px] transition-all duration-[var(--duration-normal)] shadow-[0_4px_12px_rgba(230,57,70,0.3)] hover:bg-[#d62839] hover:translate-y-[-3px] hover:shadow-[0_8px_20px_rgba(230,57,70,0.4)]"
+                className="inline-flex items-center justify-center px-8 sm:px-9 py-3.5 sm:py-4 bg-[var(--color-red)] text-[var(--color-white)] font-[family-name:var(--font-family-body)] text-[15px] sm:text-[17px] font-bold rounded-[32px] transition-all duration-[var(--duration-normal)] shadow-[0_4px_12px_rgba(230,57,70,0.3)] hover:bg-[#d62839] hover:translate-y-[-3px] hover:shadow-[0_8px_20px_rgba(230,57,70,0.4)]"
             >
                 Buy Now
             </Link>
             <Link
                 href="/custom-games"
-                className="inline-flex items-center justify-center px-9 py-4 bg-transparent text-[var(--color-navy)] font-[family-name:var(--font-family-body)] text-[17px] font-bold border-2 border-[var(--color-navy)] rounded-[32px] transition-all duration-[var(--duration-normal)] hover:bg-[var(--color-navy)] hover:text-[var(--color-white)] hover:translate-y-[-3px] hover:shadow-[0_6px_16px_rgba(26,43,74,0.25)]"
+                className="inline-flex items-center justify-center px-8 sm:px-9 py-3.5 sm:py-4 bg-transparent text-[var(--color-navy)] font-[family-name:var(--font-family-body)] text-[15px] sm:text-[17px] font-bold border-2 border-[var(--color-navy)] rounded-[32px] transition-all duration-[var(--duration-normal)] hover:bg-[var(--color-navy)] hover:text-[var(--color-white)] hover:translate-y-[-3px] hover:shadow-[0_6px_16px_rgba(26,43,74,0.25)]"
             >
                 Customize Game
             </Link>
@@ -136,7 +149,7 @@ function CTAButtons() {
 
 function FreeShippingText() {
     return (
-        <p className="font-[family-name:var(--font-family-body)] text-[17px] font-medium text-[var(--color-charcoal)] mt-4">
+        <p className="font-[family-name:var(--font-family-body)] text-[13px] sm:text-[15px] lg:text-[17px] font-medium text-[var(--color-charcoal)] mt-4">
             <strong className="font-bold text-[var(--color-navy)]">Handcrafted Quality</strong> ensured on all products
         </p>
     );
@@ -186,11 +199,11 @@ function BaseballAnimation() {
         // Calculate ball position using Quadratic Bezier formula
         const t = scrollProgress;
         const ballX = Math.pow(1 - t, 2) * startX +
-                      2 * (1 - t) * t * midX +
-                      Math.pow(t, 2) * endX;
+            2 * (1 - t) * t * midX +
+            Math.pow(t, 2) * endX;
         const ballY = Math.pow(1 - t, 2) * startY +
-                      2 * (1 - t) * t * midY +
-                      Math.pow(t, 2) * endY;
+            2 * (1 - t) * t * midY +
+            Math.pow(t, 2) * endY;
 
         // Get path length from SVG element
         let pathLength = 0;
