@@ -3,7 +3,6 @@ import CartModal from 'components/cart/modal';
 import { BrandLogo, MobileBrandLogo } from 'components/home/brand-logo';
 import { FloatingNav, MobileNav } from 'components/home/floating-nav';
 import Footer from 'components/layout/footer';
-import { WelcomeToast } from 'components/welcome-toast';
 import { GeistSans } from 'geist/font/sans';
 import { getCart } from 'lib/shopify';
 import { baseUrl } from 'lib/utils';
@@ -52,7 +51,6 @@ export default async function RootLayout({
           <main>
             {children}
             <Toaster closeButton />
-            <WelcomeToast />
           </main>
           <Footer />
         </CartProvider>

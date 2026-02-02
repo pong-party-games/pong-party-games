@@ -10,6 +10,7 @@ export function VideoSection() {
                 <div className="max-w-[1200px] mx-auto overflow-hidden rounded-2xl shadow-[0_25px_50px_rgba(0,0,0,0.2)]">
                     <video
                         autoPlay
+                        muted
                         loop
                         playsInline
                         className="w-full h-auto max-h-[70vh] block"
