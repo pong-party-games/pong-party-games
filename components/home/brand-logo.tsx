@@ -12,7 +12,7 @@ export function BrandLogo() {
     return (
         <Link
             href="/"
-            className="fixed top-5 left-16 z-50 hidden md:flex items-center gap-2"
+            className="hidden md:flex items-center gap-2 pt-5 px-16"
         >
             <Image
                 src={LogoImage}
@@ -44,7 +44,7 @@ export function MobileBrandLogo() {
     return (
         <Link
             href="/"
-            className="fixed top-[72px] left-4 z-50 md:hidden flex items-center gap-2"
+            className="hidden"
         >
             <Image
                 src={LogoImage}

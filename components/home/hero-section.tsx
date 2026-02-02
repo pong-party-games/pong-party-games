@@ -10,11 +10,10 @@ import UsaFlagImage from '../../app/assets/images/usa-flag.png';
 
 export function HeroSection() {
     return (
-        <section className="relative px-4 sm:px-6 lg:px-16 pt-[140px] sm:pt-[160px] lg:pt-[50px] pb-[30px] bg-[var(--color-white)] min-h-screen flex items-center">
-            <BaseballAnimation />
-            <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center max-w-[1400px] mx-auto w-full">
+        <section className="relative px-4 sm:px-6 lg:px-16 pt-[20px] sm:pt-[30px] pb-[20px] sm:pb-[30px] bg-[var(--color-white)] flex items-center">
+            <div className="flex flex-col lg:grid lg:grid-cols-2 gap-3 sm:gap-4 md:gap-5 lg:gap-12 items-center max-w-[1400px] mx-auto w-full">
                 {/* Mobile: Title & Subtitle */}
-                <div className="flex flex-col gap-4 w-full lg:hidden items-center text-center">
+                <div className="flex flex-col gap-2 sm:gap-3 md:gap-3 w-full lg:hidden items-center text-center">
                     <MadeInUSABadge />
                     <Headline />
                     <Subheadline />
@@ -23,6 +22,7 @@ export function HeroSection() {
 
                 {/* Product Image */}
                 <div className="flex items-center justify-center relative w-full lg:order-2">
+                    <BaseballAnimation />
                     <Image
                         src={HeroProductImage}
                         alt="Pong Party Games Product"
@@ -34,7 +34,7 @@ export function HeroSection() {
                 </div>
 
                 {/* Desktop: Left Column - Content / Mobile: Price Below Image */}
-                <div className="flex flex-col gap-4 sm:gap-6 w-full lg:order-1 items-center lg:items-start text-center lg:text-left">
+                <div className="flex flex-col gap-2 sm:gap-3 md:gap-4 lg:gap-6 w-full lg:order-1 items-center lg:items-start text-center lg:text-left">
                     {/* Desktop only: Badge, Title, Subtitle, Features */}
                     <div className="hidden lg:flex lg:flex-col lg:gap-6">
                         <MadeInUSABadge />
@@ -92,7 +92,7 @@ function FeatureRow() {
     ];
 
     return (
-        <div className="flex flex-wrap gap-4 sm:gap-6 lg:gap-8 my-2 justify-center lg:justify-start">
+        <div className="flex flex-wrap gap-4 sm:gap-6 lg:gap-8 my-1 sm:my-2 justify-center lg:justify-start">
             {features.map((feature, index) => {
                 const Icon = feature.icon;
                 return (
@@ -110,7 +110,7 @@ function FeatureRow() {
 
 function PricingBoxes() {
     return (
-        <div className="flex flex-row gap-3 sm:gap-4 my-4 justify-center lg:justify-start">
+        <div className="flex flex-row gap-3 sm:gap-4 my-2 sm:my-3 lg:my-4 justify-center lg:justify-start">
             {/* WAS Price Box */}
             <div className="relative flex flex-col gap-1 px-4 sm:px-5 py-3 sm:py-3.5 bg-gradient-to-br from-[#f8f9fa] to-[#e9ecef] rounded-[12px] sm:rounded-[16px] border border-[rgba(26,43,74,0.12)] shadow-[0_2px_8px_rgba(0,0,0,0.04),inset_0_1px_0_rgba(255,255,255,0.8)] transition-transform duration-[var(--duration-normal)] hover:translate-y-[-2px] hover:shadow-[0_4px_12px_rgba(0,0,0,0.08)] before:content-[''] before:absolute before:top-0 before:left-0 before:right-0 before:h-[2px] before:bg-gradient-to-r before:from-transparent before:via-[rgba(26,43,74,0.1)] before:to-transparent">
                 <span className="text-[10px] sm:text-[12px] font-bold text-[#6c757d] uppercase tracking-[0.12em]">Was</span>
@@ -128,7 +128,7 @@ function PricingBoxes() {
 
 function CTAButtons() {
     return (
-        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-4 w-full sm:w-auto">
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-2 sm:mt-3 lg:mt-4 w-full sm:w-auto">
             <Link
                 href="https://ah2s1r-3i.myshopify.com/"
                 target="_blank"
@@ -149,7 +149,7 @@ function CTAButtons() {
 
 function FreeShippingText() {
     return (
-        <p className="font-[family-name:var(--font-family-body)] text-[13px] sm:text-[15px] lg:text-[17px] font-medium text-[var(--color-charcoal)] mt-4">
+        <p className="font-[family-name:var(--font-family-body)] text-[13px] sm:text-[15px] lg:text-[17px] font-medium text-[var(--color-charcoal)] mt-2 sm:mt-3 lg:mt-4">
             <strong className="font-bold text-[var(--color-navy)]">Handcrafted Quality</strong> ensured on all products
         </p>
     );
@@ -167,11 +167,11 @@ function BaseballAnimation() {
 
     // Configuration
     const config = {
-        startX: 0.85,      // Start top-right (85% from left)
-        startY: 0.15,      // 15% from top
-        endX: 0.5,         // End at center (50% from left)
-        endY: 0.4,         // 40% from top
-        curveHeight: -0.3, // Negative = upward arc
+        startX: 0.1,       // Start left side
+        startY: 0.1,       // Start top
+        endX: 0.5,         // End at exact center (product center)
+        endY: 0.4,         // End at exact center (product center)
+        curveHeight: -0.25, // Negative = upward arc
         maxScroll: 200     // Pixels to scroll for full animation
     };
 
@@ -196,19 +196,24 @@ function BaseballAnimation() {
         // Create SVG path (Quadratic Bezier curve)
         const pathString = `M ${startX} ${startY} Q ${midX} ${midY}, ${endX} ${endY}`;
 
-        // Calculate ball position using Quadratic Bezier formula
-        const t = scrollProgress;
-        const ballX = Math.pow(1 - t, 2) * startX +
-            2 * (1 - t) * t * midX +
-            Math.pow(t, 2) * endX;
-        const ballY = Math.pow(1 - t, 2) * startY +
-            2 * (1 - t) * t * midY +
-            Math.pow(t, 2) * endY;
+        // Update path first to get accurate length
+        if (pathRef.current) {
+            pathRef.current.setAttribute('d', pathString);
+        }
 
         // Get path length from SVG element
         let pathLength = 0;
+        let ballX = startX;
+        let ballY = startY;
+
         if (pathRef.current) {
             pathLength = pathRef.current.getTotalLength();
+
+            // Use getPointAtLength to get exact position along the path
+            // This ensures ball is at the exact endpoint of the visible trail
+            const pointAlongPath = pathRef.current.getPointAtLength(scrollProgress * pathLength);
+            ballX = pointAlongPath.x;
+            ballY = pointAlongPath.y;
         }
 
         setPathData({
@@ -247,7 +252,7 @@ function BaseballAnimation() {
     }, [scrollProgress]);
 
     return (
-        <div ref={containerRef} className="absolute inset-0 pointer-events-none overflow-hidden z-10">
+        <div ref={containerRef} className="absolute inset-0 pointer-events-none overflow-visible z-10 p-4">
             {/* SVG Trail */}
             <svg width="100%" height="100%" className="absolute inset-0">
                 <defs>
@@ -276,8 +281,8 @@ function BaseballAnimation() {
                 style={{
                     left: `${pathData.ballPos.x}px`,
                     top: `${pathData.ballPos.y}px`,
-                    transform: `translate(-50%, -50%) scale(${1 - scrollProgress * 0.4}) rotate(${scrollProgress * 720}deg)`,
-                    filter: `drop-shadow(0 ${4 + scrollProgress * 8}px ${8 + scrollProgress * 12}px rgba(0,0,0,${0.3 + scrollProgress * 0.2}))`,
+                    transform: `translate(-50%, -50%) scale(${1 - scrollProgress * 0.3}) rotate(${scrollProgress * 720}deg)`,
+                    filter: `drop-shadow(0 ${2 + scrollProgress * 4}px ${4 + scrollProgress * 6}px rgba(0,0,0,${0.15 + scrollProgress * 0.1}))`,
                     zIndex: scrollProgress > 0.8 ? 1 : 100
                 }}
             >

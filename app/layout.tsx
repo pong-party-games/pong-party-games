@@ -40,8 +40,10 @@ export default async function RootLayout({
       </head>
       <body className="bg-white text-[var(--color-charcoal)] selection:bg-[var(--color-bright-blue)] selection:text-white">
         <CartProvider cartPromise={cart}>
-          <BrandLogo />
-          <MobileBrandLogo />
+          <header className="w-full bg-white">
+            <BrandLogo />
+            <MobileBrandLogo />
+          </header>
           <FloatingNav />
           <MobileNav />
           <main>
