@@ -8,7 +8,7 @@ export function BrandLogo() {
     return (
         <Link
             href="/"
-            className="hidden md:flex items-center gap-2 pt-5 px-16"
+            className="hidden lg:flex items-center gap-2 pt-5 px-16"
         >
             <Image
                 src={LogoImage}
