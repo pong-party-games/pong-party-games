@@ -1,11 +1,13 @@
+import { FAQSection } from 'components/home/faq-section';
 import { HeroSection } from 'components/home/hero-section';
 import { VideoSection } from 'components/home/video-section';
 import WhyBuySection from 'components/home/why-buy-section';
 
 export const metadata = {
-  title: 'Pong Party Games | The Ultimate Baseball Party Game',
+  title: 'Pong Party Games | Best Tailgate & Outdoor Party Games',
   description:
-    'Premium handcrafted party games for all ages. Ready in 5 minutes, 2-8 players. Made in USA with quality materials.',
+    'Premium tailgating games and outdoor party games for all ages. Perfect for football tailgating, backyard parties, and family fun. Portable, easy setup, Made in USA. Best outdoor lawn games for game day activities.',
+  keywords: 'tailgating games, tailgate party games, outdoor tailgating games, football tailgating games, outdoor lawn games, backyard party games, portable tailgate games, family outdoor games, baseball party games',
   openGraph: {
     type: 'website',
   },
@@ -17,6 +19,7 @@ export default function HomePage() {
       <HeroSection />
       <WhyBuySection />
       <VideoSection />
+      <FAQSection />
     </>
   );
 }

@@ -7,8 +7,8 @@ import MikeFounderImage from '../assets/images/mike-founder.jpeg';
 import MikeWithLopezImage from '../assets/images/mike-with-lopez.png';
 
 export const metadata: Metadata = {
-    title: 'About Us | Pong Party Games',
-    description: 'Learn about Pong Party Games - handcrafted quality party games made in the USA by Mike Whelan.',
+    title: 'About Us | Premium Tailgate & Outdoor Party Games',
+    description: 'Learn about Pong Party Games - Premium tailgating games and outdoor party games handcrafted in the USA. Perfect for football tailgating, backyard parties, corporate events, and family outdoor games.',
 };
 
 const features = [

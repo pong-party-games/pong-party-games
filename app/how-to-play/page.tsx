@@ -2,8 +2,8 @@ import { AlertCircle, Award, Target, TrendingUp, Users, Zap } from 'lucide-react
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: 'How To Play | Pong Party Games',
-    description: 'Learn how to play Pong Party Games - The ultimate baseball party game. Complete rules, setup instructions, and gameplay guide.',
+    title: 'How To Play | Best Tailgate & Outdoor Party Game Rules',
+    description: 'Learn how to play the ultimate tailgating games and outdoor party games. Easy setup in 5 minutes. Perfect for football tailgating, backyard parties, and family outdoor games. Complete rules and gameplay guide.',
 };
 
 export default function HowToPlayPage() {

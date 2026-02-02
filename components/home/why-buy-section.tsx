@@ -3,33 +3,33 @@ import { Award, CloudSun, CreditCard, Megaphone, Package, Users } from 'lucide-r
 const features = [
     {
         icon: Users,
-        title: 'All ages can play',
-        description: 'Great family bonding experience while playing a fun & competitive game of skill and luck. Everyone has a chance to win!'
+        title: 'Perfect for All Ages',
+        description: 'Great family outdoor games experience! Ideal for tailgate family games and backyard party games. Everyone has a chance to win in this competitive party game!'
     },
     {
         icon: CloudSun,
-        title: 'Indoor & outdoor use',
-        description: 'No limitations on where your event may be. Made to handle any weather and takes up little space.'
+        title: 'Indoor & Outdoor Tailgating',
+        description: 'One of the most versatile outdoor tailgating games! Perfect for football tailgating games, parking lot tailgating, or backyard parties in any weather.'
     },
     {
         icon: CreditCard,
-        title: 'Magnetic scorecard',
-        description: 'Player handheld magnetic scorecard makes game scoring easy for all players and helps teach the game concept.'
+        title: 'Easy-to-Use Scorecard',
+        description: 'Player handheld magnetic scorecard makes this one of the easiest setup games for all ages. Great for teaching kids outdoor games and sports concepts.'
     },
     {
         icon: Package,
-        title: 'Easy setup & storage',
-        description: 'Set up takes minutes and a custom box makes it easy for transportation and storage.'
+        title: 'Portable & Compact Design',
+        description: 'Among the most travel-friendly games! This compact tailgate game sets up in minutes. Custom box makes it perfect for portable tailgate games storage.'
     },
     {
         icon: Megaphone,
-        title: 'Custom advertising',
-        description: 'The game can be customized to promote your company, promotion, or services.'
+        title: 'Custom Corporate Games',
+        description: 'Available as branded tailgate games! Perfect for corporate tailgate games, corporate party games, and promotional events with your logo.'
     },
     {
         icon: Award,
-        title: 'Patented & USA made',
-        description: 'Unique concept has a Patent and manufacturing is in the United States.'
+        title: 'Patented & USA Made',
+        description: 'One of the newest tailgate games with a unique patented design. Proudly manufactured in the United States with premium quality materials.'
     }
 ];
 
@@ -40,8 +40,11 @@ export default function WhyBuySection() {
                 {/* Section Header */}
                 <div className="text-center mb-12 sm:mb-14 md:mb-16">
                     <h2 className="font-display text-[32px] sm:text-[38px] md:text-[44px] lg:text-[48px] font-semibold text-[#1a2b4a] mb-3 sm:mb-4">
-                        Why Buy Pong Party Games
+                        Why Choose Our Tailgate Games
                     </h2>
+                    <p className="font-body text-lg text-[#6b7280] max-w-2xl mx-auto">
+                        The best outdoor party games for tailgating, family gatherings, and game day activities
+                    </p>
                 </div>
 
                 {/* Features Grid */}

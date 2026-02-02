@@ -3,8 +3,8 @@ import ProductGridItems from 'components/layout/product-grid-items';
 import { getProducts } from 'lib/shopify';
 
 export const metadata = {
-    title: 'Shop | Pong Party Games',
-    description: 'Browse our collection of premium party games and accessories.'
+    title: 'Shop Tailgate Games | Best Outdoor Party Games',
+    description: 'Shop premium tailgating games and outdoor party games. Perfect for football tailgating, backyard parties, and family fun. Portable, easy setup, Made in USA. Best outdoor lawn games for all ages.'
 };
 
 export default async function ShopPage() {

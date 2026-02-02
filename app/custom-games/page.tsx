@@ -5,8 +5,8 @@ import CustomFieldPanel from '../assets/images/custom-left-and-right.png';
 import CustomScoreboard from '../assets/images/custom-stadium.png';
 
 export const metadata: Metadata = {
-    title: 'Custom Games | Pong Party Games',
-    description: 'Create your personalized Pong Party Game with custom team names, logos, and colors. Perfect for corporate events, parties, and special occasions.',
+    title: 'Custom Tailgate Games | Branded Corporate Party Games',
+    description: 'Create custom tailgate games with your logo. Perfect for corporate tailgate games, branded party games, and promotional events. Best corporate party games for team building and trade shows.',
 };
 
 export default function CustomGamesPage() {

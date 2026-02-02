@@ -3,8 +3,8 @@ import Image from 'next/image';
 import MomCerraImage from '../assets/images/momcerra.webp';
 
 export const metadata = {
-    title: 'Reviews | Pong Party Games',
-    description: 'See what our customers are saying about Pong Party Games.'
+    title: 'Reviews | Best Tailgate Games Customer Reviews',
+    description: 'Read customer reviews for the best tailgate games and outdoor party games. See why families love our portable tailgating games for football games, backyard parties, and outdoor events.'
 };
 
 const reviews = [
