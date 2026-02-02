@@ -10,6 +10,7 @@ export function VideoSection() {
     const [currentTime, setCurrentTime] = useState(0);
     const [duration, setDuration] = useState(0);
     const [isHovered, setIsHovered] = useState(false);
+    const [userMutedManually, setUserMutedManually] = useState(false);
 
     useEffect(() => {
         const video = videoRef.current;
@@ -27,10 +28,46 @@ export function VideoSection() {
         };
     }, []);
 
+    // Intersection Observer to auto-mute/unmute based on visibility
+    useEffect(() => {
+        const video = videoRef.current;
+        if (!video) return;
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    // Only auto-mute/unmute if user hasn't manually toggled
+                    if (!userMutedManually) {
+                        if (entry.isIntersecting) {
+                            // Video is in viewport - unmute
+                            video.muted = false;
+                            setIsMuted(false);
+                        } else {
+                            // Video is out of viewport - mute
+                            video.muted = true;
+                            setIsMuted(true);
+                        }
+                    }
+                });
+            },
+            {
+                threshold: 0.5, // Trigger when 50% of video is visible
+            }
+        );
+
+        observer.observe(video);
+
+        return () => {
+            observer.disconnect();
+        };
+    }, [userMutedManually]);
+
     const toggleMute = () => {
         if (videoRef.current) {
             videoRef.current.muted = !isMuted;
             setIsMuted(!isMuted);
+            // Mark that user manually toggled mute
+            setUserMutedManually(true);
         }
     };
 

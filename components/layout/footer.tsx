@@ -109,6 +109,9 @@ export default function Footer() {
               <Link href="/custom-games" className="block text-gray-200 hover:text-white transition-colors">
                 Custom Games
               </Link>
+              <Link href="/refund-policy" className="block text-gray-200 hover:text-white transition-colors">
+                Refund Policy
+              </Link>
               <a
                 href="https://ah2s1r-3i.myshopify.com/"
                 target="_blank"

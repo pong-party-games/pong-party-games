@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 export default function RefundPolicyPage() {
     return (
         <div className="bg-white min-h-screen">
-            <div className="max-w-[900px] mx-auto px-4 sm:px-6 py-12 sm:py-16 lg:py-20">
+            <div className="max-w-[900px] mx-auto px-4 sm:px-6 py-12 sm:py-16 lg:py-20 pt-32 sm:pt-24 lg:pt-28">
                 {/* Header */}
                 <div className="mb-10">
                     <h1 className="font-display text-[36px] sm:text-[42px] md:text-[48px] font-semibold text-[#1a2b4a] mb-4">
