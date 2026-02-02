@@ -86,7 +86,7 @@ export default async function ProductPage(props: {
         }}
       />
 
-      <div className="bg-gradient-to-b from-white via-[#f8f9fb] to-white min-h-screen pt-32 pb-20 px-4 sm:px-6">
+      <div className="bg-gradient-to-b from-white via-[#f8f9fb] to-white min-h-screen pt-16 pb-20 px-4 sm:px-6">
         <div className="max-w-7xl mx-auto">
           {/* Breadcrumb */}
           <nav className="mb-8 flex items-center gap-2 text-sm font-body text-[#6b7280]">
