@@ -48,9 +48,9 @@ function ThreeItemGridItem({
 }
 
 export async function ThreeItemGrid() {
-  // Collections that start with `hidden-*` are hidden from the search page.
+  // Display products from the pong-party-games collection
   const homepageItems = await getCollectionProducts({
-    collection: "hidden-homepage-featured-items",
+    collection: "pong-party-games",
   });
 
   if (!homepageItems[0] || !homepageItems[1] || !homepageItems[2]) return null;

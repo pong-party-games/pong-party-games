@@ -1,8 +1,5 @@
-import { Carousel } from 'components/carousel';
-import { ThreeItemGrid } from 'components/grid/three-items';
 import { HeroSection } from 'components/home/hero-section';
 import WhyBuySection from 'components/home/why-buy-section';
-import Footer from 'components/layout/footer';
 
 export const metadata = {
   title: 'Pong Party Games | The Ultimate Baseball Party Game',
@@ -18,9 +15,6 @@ export default function HomePage() {
     <>
       <HeroSection />
       <WhyBuySection />
-      <ThreeItemGrid />
-      <Carousel />
-      <Footer />
     </>
   );
 }
