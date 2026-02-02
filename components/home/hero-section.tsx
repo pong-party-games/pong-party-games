@@ -29,6 +29,7 @@ export function HeroSection() {
                         width={1792}
                         height={2400}
                         priority
+                        loading="eager"
                         className="w-full h-auto max-w-[280px] sm:max-w-[320px] md:max-w-[360px] lg:max-w-[480px] animate-[float_4s_ease-in-out_infinite] [filter:drop-shadow(0_20px_40px_rgba(0,0,0,0.2))_drop-shadow(0_10px_15px_rgba(0,0,0,0.1))] sm:[filter:drop-shadow(0_30px_60px_rgba(0,0,0,0.25))_drop-shadow(0_10px_20px_rgba(0,0,0,0.15))]"
                     />
                 </div>
@@ -61,6 +62,7 @@ function MadeInUSABadge() {
                 alt="USA Flag"
                 width={20}
                 height={20}
+                loading="lazy"
                 className="rounded-none sm:w-6 sm:h-6"
             />
             <span>Made in USA</span>
@@ -131,7 +133,7 @@ function CTAButtons() {
         <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 mt-1 sm:mt-1 lg:mt-1 w-full sm:w-auto">
             <Link
                 href="/shop"
-                className="inline-flex items-center justify-center px-6 sm:px-9 py-3 sm:py-4 bg-[var(--color-red)] text-[var(--color-white)] font-[family-name:var(--font-family-body)] text-[14px] sm:text-[17px] font-bold rounded-[32px] transition-all duration-[var(--duration-normal)] shadow-[0_4px_12px_rgba(230,57,70,0.3)] hover:bg-[#d62839] hover:translate-y-[-3px] hover:shadow-[0_8px_20px_rgba(230,57,70,0.4)]"
+                className="inline-flex items-center justify-center px-6 sm:px-9 py-3 sm:py-4 bg-gradient-to-br from-[#cb0c0c] via-[#b91515] to-[#6e1212] text-white font-[family-name:var(--font-family-body)] text-[14px] sm:text-[17px] font-bold rounded-[32px] transition-all duration-[var(--duration-normal)] shadow-[0_8px_20px_rgba(107,20,20,0.5),0_4px_12px_rgba(107,20,20,0.3),inset_0_2px_0_rgba(255,255,255,0.15),inset_0_-2px_4px_rgba(0,0,0,0.2)] hover:shadow-[0_12px_32px_rgba(107,20,20,0.6),0_6px_16px_rgba(107,20,20,0.4),0_0_40px_rgba(107,20,20,0.3),inset_0_2px_0_rgba(255,255,255,0.2)] hover:translate-y-[-4px] hover:scale-[1.02] relative before:absolute before:inset-0 before:rounded-[32px] before:bg-gradient-to-t before:from-transparent before:to-white/10 before:pointer-events-none"
             >
                 Buy Now
             </Link>
@@ -289,6 +291,7 @@ function BaseballAnimation() {
                     alt="Baseball"
                     width={50}
                     height={50}
+                    loading="lazy"
                     className="rounded-none"
                 />
             </div>

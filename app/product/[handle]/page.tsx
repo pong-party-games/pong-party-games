@@ -128,6 +128,7 @@ export default async function ProductPage(props: {
                         src={image.url}
                         alt={`${product.title} - Image ${index + 1}`}
                         fill
+                        loading="lazy"
                         className="object-contain p-2"
                       />
                     </div>
@@ -243,6 +244,7 @@ async function RelatedProducts({ id }: { id: string }) {
                     src={product.featuredImage.url}
                     alt={product.title}
                     fill
+                    loading="lazy"
                     className="object-contain p-4"
                   />
                 )}

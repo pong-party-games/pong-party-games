@@ -83,6 +83,7 @@ export function Gallery({
                     src={image.src}
                     width={80}
                     height={80}
+                    loading="lazy"
                     active={isActive}
                   />
                 </button>

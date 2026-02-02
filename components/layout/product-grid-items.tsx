@@ -85,6 +85,7 @@ export default function ProductGridItems({
                     src={product.featuredImage.url}
                     alt={product.title}
                     fill
+                    loading="lazy"
                     className="object-contain p-6 transition-transform duration-300 group-hover:scale-105"
                     sizes="(min-width: 768px) 33vw, (min-width: 640px) 50vw, 100vw"
                   />
