@@ -1,4 +1,5 @@
 import { AddToCart } from "components/cart/add-to-cart";
+import { BuyNow } from "components/cart/buy-now-button";
 import { HIDDEN_PRODUCT_TAG } from "lib/constants";
 import { getProduct, getProductRecommendations } from "lib/shopify";
 import { Shield, Star } from "lucide-react";
@@ -197,8 +198,11 @@ export default async function ProductPage(props: {
                 </div>
               </div>
 
-              {/* Add to Cart */}
-              <div className="sticky bottom-6 bg-white rounded-2xl border border-[#e5e7eb] p-6 shadow-[0_4px_16px_rgba(0,0,0,0.08)]">
+              {/* Action Buttons */}
+              <div className="sticky bottom-6 bg-white rounded-2xl border border-[#e5e7eb] p-6 shadow-[0_4px_16px_rgba(0,0,0,0.08)] space-y-3">
+                <Suspense fallback={<div className="h-12 bg-[#f8f9fb] rounded-xl animate-pulse" />}>
+                  <BuyNow product={product} />
+                </Suspense>
                 <Suspense fallback={<div className="h-12 bg-[#f8f9fb] rounded-xl animate-pulse" />}>
                   <AddToCart product={product} />
                 </Suspense>

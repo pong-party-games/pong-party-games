@@ -1,17 +1,68 @@
 'use client';
 
-import { AddToCart } from "components/cart/add-to-cart";
+import { addItem, buyNow } from "components/cart/actions";
+import { useCart } from "components/cart/cart-context";
 import Grid from "components/grid";
 import { Product } from "lib/shopify/types";
-import { Plus, ShoppingBag } from "lucide-react";
+import { Loader2, Plus, ShoppingBag } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 
 export default function ProductGridItems({
   products,
 }: {
   products: Product[];
 }) {
+  const router = useRouter();
+  const { addCartItem } = useCart();
+  const [loadingProduct, setLoadingProduct] = useState<string | null>(null);
+  const [addingToCart, setAddingToCart] = useState<string | null>(null);
+
+  const handleBuyNow = async (e: React.MouseEvent, product: Product) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    // Get the default variant (assuming single variant products)
+    const variant = product.variants[0];
+    if (!variant) return;
+
+    setLoadingProduct(product.handle);
+    try {
+      // Buy now - creates a new cart with only this product and goes to checkout
+      await buyNow(variant.id);
+    } catch (error) {
+      setLoadingProduct(null);
+    }
+  };
+
+  const handleAddToCart = async (e: React.MouseEvent, product: Product) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    const variant = product.variants[0];
+    if (!variant) return;
+
+    setAddingToCart(product.handle);
+    try {
+      // Add to cart - this will trigger the cart modal to open via the cart context
+      addCartItem(variant, product);
+      await addItem(null, variant.id);
+    } finally {
+      setAddingToCart(null);
+    }
+  };
+
+  const handleCardClick = (e: React.MouseEvent, handle: string) => {
+    // Only navigate if clicking on the card background, not on buttons
+    if (
+      e.target === e.currentTarget ||
+      (e.target as HTMLElement).closest('.card-clickable-area')
+    ) {
+      router.push(`/product/${handle}`);
+    }
+  };
+
   return (
     <>
       {products.map((product) => {
@@ -23,9 +74,12 @@ export default function ProductGridItems({
 
         return (
           <Grid.Item key={product.handle} className="animate-fadeIn">
-            <div className="group bg-white rounded-2xl overflow-hidden border border-[#e5e7eb] shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.12)] transition-all duration-300 hover:translate-y-[-4px]">
+            <div
+              className="group bg-white rounded-2xl overflow-hidden border border-[#e5e7eb] shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.12)] transition-all duration-300 hover:translate-y-[-4px] cursor-pointer"
+              onClick={(e) => handleCardClick(e, product.handle)}
+            >
               {/* Image Container */}
-              <Link href={`/product/${product.handle}`} className="block relative aspect-square bg-gradient-to-br from-[#f8f9fb] to-white overflow-hidden">
+              <div className="card-clickable-area block relative aspect-square bg-gradient-to-br from-[#f8f9fb] to-white overflow-hidden">
                 {product.featuredImage?.url && (
                   <Image
                     src={product.featuredImage.url}
@@ -40,15 +94,15 @@ export default function ProductGridItems({
                     {Math.round(((compareAtPrice! - price) / compareAtPrice!) * 100)}% OFF
                   </div>
                 )}
-              </Link>
+              </div>
 
               {/* Content */}
               <div className="p-5">
-                <Link href={`/product/${product.handle}`}>
+                <div className="card-clickable-area">
                   <h3 className="font-display text-lg font-semibold text-[#1a2b4a] mb-3 line-clamp-2 hover:text-[#0a1420] transition-colors">
                     {product.title}
                   </h3>
-                </Link>
+                </div>
 
                 {/* Price Section */}
                 <div className="flex items-baseline gap-2 mb-4">
@@ -70,34 +124,30 @@ export default function ProductGridItems({
 
                 {/* Buttons */}
                 <div className="flex gap-2">
-                  <Link
-                    href={`/product/${product.handle}`}
-                    className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-gradient-to-br from-[#0a1420] via-[#1a2438] to-[#0f1e35] text-white font-body font-semibold text-sm rounded-xl hover:from-[#152840] hover:to-[#1a2b4a] transition-all duration-300 shadow-[0_2px_8px_rgba(0,0,0,0.15)]"
-                  >
-                    <ShoppingBag className="w-4 h-4" />
-                    Buy Now
-                  </Link>
                   <button
-                    onClick={(e) => {
-                      e.preventDefault();
-                      const form = e.currentTarget.closest('.group')?.querySelector('form');
-                      if (form) {
-                        const submitButton = form.querySelector('button[type="submit"]');
-                        if (submitButton) {
-                          (submitButton as HTMLButtonElement).click();
-                        }
-                      }
-                    }}
-                    className="p-2.5 bg-gradient-to-br from-white to-[#f8f9fb] border border-[#e5e7eb] text-[#1a2b4a] rounded-xl hover:border-[#1a2b4a] hover:bg-white transition-all duration-300 shadow-[0_2px_8px_rgba(0,0,0,0.04)]"
+                    onClick={(e) => handleBuyNow(e, product)}
+                    disabled={loadingProduct === product.handle}
+                    className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-gradient-to-br from-[#6b1414] via-[#8b1a1a] to-[#6b1414] text-white font-body font-semibold text-sm rounded-xl hover:from-[#7d1818] hover:to-[#5a1010] transition-all duration-300 shadow-[0_2px_8px_rgba(107,20,20,0.3)] hover:shadow-[0_4px_12px_rgba(107,20,20,0.4)] disabled:opacity-60 disabled:cursor-not-allowed"
+                  >
+                    {loadingProduct === product.handle ? (
+                      <Loader2 className="w-4 h-4 animate-spin" />
+                    ) : (
+                      <ShoppingBag className="w-4 h-4" />
+                    )}
+                    {loadingProduct === product.handle ? "Processing..." : "Buy Now"}
+                  </button>
+                  <button
+                    onClick={(e) => handleAddToCart(e, product)}
+                    disabled={addingToCart === product.handle}
+                    className="p-2.5 bg-gradient-to-br from-[#0a1420] via-[#1a2438] to-[#0f1e35] text-white rounded-xl hover:from-[#152840] hover:to-[#1a2b4a] transition-all duration-300 shadow-[0_2px_8px_rgba(0,0,0,0.15)] hover:shadow-[0_4px_12px_rgba(0,0,0,0.25)] disabled:opacity-60 disabled:cursor-not-allowed"
                     aria-label="Add to cart"
                   >
-                    <Plus className="w-5 h-5" />
+                    {addingToCart === product.handle ? (
+                      <Loader2 className="w-5 h-5 animate-spin" />
+                    ) : (
+                      <Plus className="w-5 h-5" />
+                    )}
                   </button>
-                </div>
-
-                {/* Hidden Add to Cart Form */}
-                <div className="hidden">
-                  <AddToCart product={product} />
                 </div>
               </div>
             </div>

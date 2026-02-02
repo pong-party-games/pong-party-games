@@ -6,8 +6,12 @@ import {
   createCart,
   getCart,
   removeFromCart,
+  reshapeCart,
+  shopifyFetch,
   updateCart,
 } from "lib/shopify";
+import { createCartMutation } from "lib/shopify/mutations/cart";
+import { ShopifyCreateCartOperation } from "lib/shopify/types";
 import { updateTag } from "next/cache";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
@@ -98,6 +102,20 @@ export async function updateItemQuantity(
 export async function redirectToCheckout() {
   let cart = await getCart();
   redirect(cart!.checkoutUrl);
+}
+
+export async function buyNow(merchandiseId: string) {
+  // Create a new cart with only the selected product
+  const res = await shopifyFetch<ShopifyCreateCartOperation>({
+    query: createCartMutation,
+    variables: {
+      lineItems: [{ merchandiseId, quantity: 1 }],
+    },
+  });
+
+  const cart = reshapeCart(res.body.data.cartCreate.cart);
+  // Redirect to checkout without saving cart to cookies
+  redirect(cart.checkoutUrl);
 }
 
 export async function createCartAndSetCookie() {

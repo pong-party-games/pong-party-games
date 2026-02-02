@@ -4,6 +4,7 @@ import { PlusIcon } from "@heroicons/react/24/outline";
 import clsx from "clsx";
 import { addItem } from "components/cart/actions";
 import { Product, ProductVariant } from "lib/shopify/types";
+import { Loader2 } from "lucide-react";
 import { useSearchParams } from "next/navigation";
 import { useActionState } from "react";
 import { useCart } from "./cart-context";
@@ -11,9 +12,11 @@ import { useCart } from "./cart-context";
 function SubmitButton({
   availableForSale,
   selectedVariantId,
+  isPending,
 }: {
   availableForSale: boolean;
   selectedVariantId: string | undefined;
+  isPending: boolean;
 }) {
   const buttonClasses =
     "relative flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-br from-[#0a1420] via-[#1a2438] to-[#0f1e35] p-4 tracking-wide text-white font-body font-bold text-lg shadow-[0_4px_16px_rgba(0,0,0,0.2)] transition-all duration-300";
@@ -44,10 +47,15 @@ function SubmitButton({
   return (
     <button
       aria-label="Add to cart"
-      className={clsx(buttonClasses, activeClasses)}
+      disabled={isPending}
+      className={clsx(buttonClasses, isPending ? disabledClasses : activeClasses)}
     >
-      <PlusIcon className="h-5 w-5" />
-      Add To Cart
+      {isPending ? (
+        <Loader2 className="h-5 w-5 animate-spin" />
+      ) : (
+        <PlusIcon className="h-5 w-5" />
+      )}
+      {isPending ? "Adding..." : "Add To Cart"}
     </button>
   );
 }
@@ -56,7 +64,7 @@ export function AddToCart({ product }: { product: Product }) {
   const { variants, availableForSale } = product;
   const { addCartItem } = useCart();
   const searchParams = useSearchParams();
-  const [message, formAction] = useActionState(addItem, null);
+  const [message, formAction, isPending] = useActionState(addItem, null);
 
   const variant = variants.find((variant: ProductVariant) =>
     variant.selectedOptions.every(
@@ -80,6 +88,7 @@ export function AddToCart({ product }: { product: Product }) {
       <SubmitButton
         availableForSale={availableForSale}
         selectedVariantId={selectedVariantId}
+        isPending={isPending}
       />
       <p aria-live="polite" className="sr-only" role="status">
         {message}
