@@ -113,6 +113,7 @@ export function VideoSection() {
                         muted
                         loop
                         playsInline
+                        preload="metadata"
                         className="w-full h-auto max-h-[70vh] block"
                     >
                         <source src="/Pong-Party-Games.mov" type="video/mp4" />
@@ -134,6 +135,7 @@ export function VideoSection() {
                                 max={duration || 0}
                                 value={currentTime}
                                 onChange={handleSeek}
+                                aria-label="Video progress"
                                 className="w-full h-1.5 bg-white/30 rounded-lg appearance-none cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-3.5 [&::-webkit-slider-thumb]:h-3.5 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-white [&::-webkit-slider-thumb]:cursor-pointer [&::-webkit-slider-thumb]:shadow-lg [&::-moz-range-thumb]:w-3.5 [&::-moz-range-thumb]:h-3.5 [&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:bg-white [&::-moz-range-thumb]:cursor-pointer [&::-moz-range-thumb]:border-0 [&::-moz-range-thumb]:shadow-lg hover:[&::-webkit-slider-thumb]:scale-110 hover:[&::-moz-range-thumb]:scale-110 transition-all"
                                 style={{
                                     background: `linear-gradient(to right, white ${(currentTime / duration) * 100}%, rgba(255,255,255,0.3) ${(currentTime / duration) * 100}%)`

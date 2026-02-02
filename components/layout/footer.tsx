@@ -85,7 +85,7 @@ export default function Footer() {
               {officeHours.map((schedule) => (
                 <div key={schedule.day} className="flex gap-4">
                   <span className="text-gray-300 min-w-[90px]">{schedule.day}:</span>
-                  <span className={schedule.hours === 'Closed' ? 'text-gray-500' : 'text-gray-200'}>
+                  <span className={schedule.hours === 'Closed' ? 'text-gray-300' : 'text-gray-200'}>
                     {schedule.hours}
                   </span>
                 </div>

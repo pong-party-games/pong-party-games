@@ -29,7 +29,7 @@ export function HeroSection() {
                         width={1792}
                         height={2400}
                         priority
-                        loading="eager"
+                        fetchPriority="high"
                         className="w-full h-auto max-w-[280px] sm:max-w-[320px] md:max-w-[360px] lg:max-w-[480px] animate-[float_4s_ease-in-out_infinite] [filter:drop-shadow(0_20px_40px_rgba(0,0,0,0.2))_drop-shadow(0_10px_15px_rgba(0,0,0,0.1))] sm:[filter:drop-shadow(0_30px_60px_rgba(0,0,0,0.25))_drop-shadow(0_10px_20px_rgba(0,0,0,0.15))]"
                     />
                 </div>
@@ -60,10 +60,10 @@ function MadeInUSABadge() {
             <Image
                 src={UsaFlagImage}
                 alt="USA Flag"
-                width={20}
-                height={20}
+                width={47}
+                height={25}
                 loading="lazy"
-                className="rounded-none sm:w-6 sm:h-6"
+                className="rounded-none w-[20px] h-auto sm:w-6"
             />
             <span>Made in USA</span>
         </div>
