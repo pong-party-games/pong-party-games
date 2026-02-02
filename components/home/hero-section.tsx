@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 import BaseballImage from '../../app/assets/images/pong-party-game-ball-image.png';
-import HeroProductImage from '../../app/assets/images/pongpartygame_heroproduct.png';
+import HeroProductImage from '../../app/assets/images/pong-party-game-hero.png';
 import UsaFlagImage from '../../app/assets/images/usa-flag.png';
 
 export function HeroSection() {

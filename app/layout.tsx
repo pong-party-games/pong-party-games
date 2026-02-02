@@ -30,7 +30,11 @@ export default async function RootLayout({
   children: ReactNode;
 }) {
   // Don't await the fetch, pass the Promise to the context provider
-  const cart = getCart();
+  // Wrap in a promise that catches errors to prevent layout crashes
+  const cart = getCart().catch((error) => {
+    console.error('Failed to load cart:', error);
+    return undefined;
+  });
 
   return (
     <html lang="en" className={GeistSans.variable}>
