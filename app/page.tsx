@@ -6,8 +6,8 @@ import WhyBuySection from 'components/home/why-buy-section';
 export const metadata = {
   title: 'Pong Party Games | Best Tailgate & Outdoor Party Games',
   description:
-    'Premium tailgating games and outdoor party games for all ages. Perfect for football tailgating, backyard parties, and family fun. Portable, easy setup, Made in USA. Best outdoor lawn games for game day activities.',
-  keywords: 'tailgating games, tailgate party games, outdoor tailgating games, football tailgating games, outdoor lawn games, backyard party games, portable tailgate games, family outdoor games, baseball party games',
+    'Premium tailgating games and outdoor party games for all ages. Perfect for baseball tailgating, backyard parties, and family fun. Portable, easy setup, Made in USA. Best outdoor lawn games for game day activities.',
+  keywords: 'tailgating games, tailgate party games, outdoor tailgating games, baseball tailgating games, outdoor lawn games, backyard party games, portable tailgate games, family outdoor games, baseball party games',
   openGraph: {
     type: 'website',
   },
