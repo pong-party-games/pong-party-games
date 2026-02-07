@@ -97,9 +97,9 @@ export function VideoSection() {
     };
 
     return (
-        <section className="py-20 sm:py-24 bg-white">
+        <section className="py-8 sm:py-14 lg:py-16 bg-white">
             <div className="container mx-auto px-4 sm:px-6">
-                <h2 className="font-display text-4xl sm:text-5xl font-semibold text-[#1a2b4a] text-center mb-8 sm:mb-12 tracking-tight leading-tight">
+                <h2 className="font-display text-4xl sm:text-5xl font-semibold text-[#1a2b4a] text-center mb-6 sm:mb-10 tracking-tight leading-tight sm:leading-tight leading-[1.15]">
                     See Pong Party Games in Action
                 </h2>
                 <div

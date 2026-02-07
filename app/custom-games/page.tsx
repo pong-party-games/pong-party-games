@@ -1,15 +1,96 @@
+'use client';
+
 import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useState } from 'react';
 import CustomFieldPanel from '../assets/images/custom-left-and-right.png';
 import CustomScoreboard from '../assets/images/custom-stadium.png';
 
-export const metadata: Metadata = {
-    title: 'Custom Tailgate Games | Branded Corporate Party Games',
-    description: 'Create custom tailgate games with your logo. Perfect for corporate tailgate games, branded party games, and promotional events. Best corporate party games for team building and trade shows.',
-};
+// Import custom panel images
+import ThreeTreeBack from '../assets/images/custom-panels/3tree-backpanel.jpeg';
+import ThreeTreeSide from '../assets/images/custom-panels/3tree-side.jpeg';
+import ThreeTreeSidePanel from '../assets/images/custom-panels/3tree-sidepanel.jpeg';
+import AllstateBack from '../assets/images/custom-panels/allstate-back.jpg';
+import AllstateSide from '../assets/images/custom-panels/allstate-side.jpeg';
+import CarlsonBack from '../assets/images/custom-panels/carlson-back.jpeg';
+import CarlsonSide from '../assets/images/custom-panels/carlson-side.jpeg';
+import RebelBack from '../assets/images/custom-panels/rebel-back.jpeg';
+import RebelFront from '../assets/images/custom-panels/rebel-front.jpeg';
+import RebelSide from '../assets/images/custom-panels/rebel-side.jpeg';
+
+interface CustomPanel {
+    src: any;
+    alt: string;
+    company: string;
+    side: string;
+}
+
+const customPanels: CustomPanel[] = [
+    {
+        src: ThreeTreeBack,
+        alt: '3Tree Marketing Back Panel',
+        company: '3Tree Marketing',
+        side: 'Back Panel'
+    },
+    {
+        src: ThreeTreeSide,
+        alt: '3Tree Marketing Side Panel',
+        company: '3Tree Marketing',
+        side: 'Side Panel'
+    },
+    {
+        src: ThreeTreeSidePanel,
+        alt: '3Tree Marketing Side Panel',
+        company: '3Tree Marketing',
+        side: 'Side Panel'
+    },
+    {
+        src: AllstateBack,
+        alt: 'Allstate Back Panel',
+        company: 'Allstate',
+        side: 'Back Panel'
+    },
+    {
+        src: AllstateSide,
+        alt: 'Allstate Side Panel',
+        company: 'Allstate',
+        side: 'Side Panel'
+    },
+    {
+        src: CarlsonBack,
+        alt: 'Carlson Back Panel',
+        company: 'Carlson',
+        side: 'Back Panel'
+    },
+    {
+        src: CarlsonSide,
+        alt: 'Carlson Side Panel',
+        company: 'Carlson',
+        side: 'Side Panel'
+    },
+    {
+        src: RebelBack,
+        alt: 'Rebel Back Panel',
+        company: 'Rebel',
+        side: 'Back Panel'
+    },
+    {
+        src: RebelFront,
+        alt: 'Rebel Front Panel',
+        company: 'Rebel',
+        side: 'Front Panel'
+    },
+    {
+        src: RebelSide,
+        alt: 'Rebel Side Panel',
+        company: 'Rebel',
+        side: 'Side Panel'
+    }
+];
 
 export default function CustomGamesPage() {
+    const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
     return (
         <div className="bg-gradient-to-b from-[#f8f9fb] via-white to-[#f5f7fa] min-h-screen -mt-[200px]">
             {/* Hero Section */}
@@ -92,16 +173,55 @@ export default function CustomGamesPage() {
             {/* Sample Customer Section */}
             <div className="py-16 sm:py-20 bg-white">
                 <div className="container mx-auto px-4 sm:px-6">
-                    <div className="max-w-4xl mx-auto">
+                    <div className="max-w-6xl mx-auto">
                         <div className="text-center mb-12">
                             <h2 className="font-display text-4xl sm:text-5xl font-bold text-[#1a2b4a] mb-6">
-                                Custom Creations
+                                Custom Creations Gallery
                             </h2>
-                            <p className="font-body text-lg text-[#4a5568]">
-                                See how our customers have made Pong Party Games their own
+                            <p className="font-body text-lg text-[#4a5568] max-w-3xl mx-auto">
+                                See how our customers have transformed their Pong Party Games with custom branding. 
+                                Hover over each image to see company details.
                             </p>
                         </div>
 
+                        {/* Masonry Grid */}
+                        <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4 mb-12">
+                            {customPanels.map((panel, index) => (
+                                <div
+                                    key={index}
+                                    className="relative break-inside-avoid group cursor-pointer"
+                                    onMouseEnter={() => setHoveredIndex(index)}
+                                    onMouseLeave={() => setHoveredIndex(null)}
+                                >
+                                    <div className="relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+                                        <Image
+                                            src={panel.src}
+                                            alt={panel.alt}
+                                            className="w-full h-auto object-cover"
+                                            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                                        />
+                                        
+                                        {/* Overlay with company info on hover */}
+                                        <div
+                                            className={`absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent transition-opacity duration-300 ${
+                                                hoveredIndex === index ? 'opacity-100' : 'opacity-0'
+                                            }`}
+                                        >
+                                            <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
+                                                <h3 className="font-display text-[20px] font-bold mb-1">
+                                                    {panel.company}
+                                                </h3>
+                                                <p className="font-body text-[14px] text-white/90">
+                                                    {panel.side}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+
+                        {/* Testimonial Card */}
                         <div className="bg-gradient-to-br from-white via-[#f8f9fb] to-[#f0f2f5] rounded-2xl p-8 sm:p-10 shadow-[0_4px_16px_rgba(0,0,0,0.08)] border border-[#e5e7eb]">
                             <div className="flex items-start gap-6 mb-6">
                                 <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#003d99] to-[#0066ff] flex items-center justify-center flex-shrink-0 text-2xl font-bold text-white shadow-lg">
