@@ -163,12 +163,10 @@ export default function ReviewsPage() {
                             Share your experience with us! Your feedback helps us continue to create amazing party games.
                         </p>
                         <a
-                            href="https://ah2s1r-3i.myshopify.com/"
-                            target="_blank"
-                            rel="noopener noreferrer"
+                            href="/shop"
                             className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-[#003d99] to-[#0066ff] text-white font-body font-bold text-[17px] rounded-full hover:from-[#002b6b] hover:to-[#004499] transition-all duration-300 shadow-[0_8px_20px_rgba(0,61,153,0.4)] hover:shadow-[0_12px_28px_rgba(0,61,153,0.5)] hover:-translate-y-1"
                         >
-                            Write a Review
+                            Shop Now
                         </a>
                     </div>
                 </div>

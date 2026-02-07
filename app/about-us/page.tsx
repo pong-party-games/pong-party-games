@@ -228,9 +228,7 @@ export default function AboutUsPage() {
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
                             <a
-                                href="https://ah2s1r-3i.myshopify.com/"
-                                target="_blank"
-                                rel="noopener noreferrer"
+                                href="/shop"
                                 className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-[#b31b2b] to-[#e63946] text-white font-body font-bold text-[17px] rounded-full hover:from-[#991725] hover:to-[#cc1f33] transition-all duration-300 shadow-[0_8px_20px_rgba(230,57,70,0.4)] hover:shadow-[0_12px_28px_rgba(230,57,70,0.5)] hover:-translate-y-1"
                             >
                                 Shop Now

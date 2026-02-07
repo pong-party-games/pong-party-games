@@ -270,9 +270,7 @@ export default function HowToPlayPage() {
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         <a
-                            href="https://ah2s1r-3i.myshopify.com/"
-                            target="_blank"
-                            rel="noopener noreferrer"
+                            href="/shop"
                             className="inline-flex items-center justify-center px-8 py-4 bg-[#e63946] text-white font-body font-bold text-[17px] rounded-full hover:bg-[#d62839] transition-colors shadow-lg"
                         >
                             Shop Now

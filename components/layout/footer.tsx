@@ -112,14 +112,12 @@ export default function Footer() {
               <Link href="/refund-policy" className="block text-gray-200 hover:text-white transition-colors">
                 Refund Policy
               </Link>
-              <a
-                href="https://ah2s1r-3i.myshopify.com/"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                href="/shop"
                 className="block text-gray-200 hover:text-white transition-colors"
               >
                 Shop Now
-              </a>
+              </Link>
             </nav>
 
             <h4 className="font-display text-[16px] font-semibold mb-4">Follow Us</h4>
