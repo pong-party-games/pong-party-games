@@ -98,7 +98,7 @@ export function CustomPanelsSection() {
                         Customize Your Panel
                     </h2>
                     <p className="font-body text-[16px] sm:text-[20px] text-[#4a5568] max-w-[700px] mx-auto leading-relaxed">
-                        Make your game truly unique with custom branding for your company or team. 
+                        Make your game truly unique with custom branding for your company or team.
                         Perfect for corporate events, team building, and brand promotion.
                     </p>
                 </div>
@@ -119,12 +119,11 @@ export function CustomPanelsSection() {
                                     className="w-full h-auto object-cover"
                                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
                                 />
-                                
+
                                 {/* Overlay with company info on hover */}
                                 <div
-                                    className={`absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent transition-opacity duration-300 ${
-                                        hoveredIndex === index ? 'opacity-100' : 'opacity-0'
-                                    }`}
+                                    className={`absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent transition-opacity duration-300 ${hoveredIndex === index ? 'opacity-100' : 'opacity-0'
+                                        }`}
                                 >
                                     <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
                                         <h3 className="font-display text-[20px] font-bold mb-1">
