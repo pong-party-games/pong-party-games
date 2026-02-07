@@ -35,11 +35,11 @@ const features = [
 
 export default function WhyBuySection() {
     return (
-        <section className="bg-gradient-to-b from-[#f8f9fb] via-[#f5f5f7] to-white py-16 sm:py-20 md:py-24 lg:py-24 px-4 sm:px-6">
+        <section className="bg-gradient-to-b from-[#f8f9fb] via-[#f5f5f7] to-white py-8 sm:py-20 md:py-24 lg:py-24 px-4 sm:px-6">
             <div className="max-w-[1280px] mx-auto">
                 {/* Section Header */}
-                <div className="text-center mb-12 sm:mb-14 md:mb-16">
-                    <h2 className="font-display text-[32px] sm:text-[38px] md:text-[44px] lg:text-[48px] font-semibold text-[#1a2b4a] mb-3 sm:mb-4">
+                <div className="text-center mb-8 sm:mb-14 md:mb-16">
+                    <h2 className="font-display text-[28px] sm:text-[38px] md:text-[44px] lg:text-[48px] font-semibold text-[#1a2b4a] mb-2 sm:mb-4 leading-[1.15] sm:leading-tight">
                         Why Choose Our Tailgate Games
                     </h2>
                     <p className="font-body text-lg text-[#6b7280] max-w-2xl mx-auto">

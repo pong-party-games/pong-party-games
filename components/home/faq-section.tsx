@@ -46,10 +46,10 @@ export function FAQSection() {
     };
 
     return (
-        <section className="py-20 sm:py-24 bg-gradient-to-b from-white via-[#f8f9fb] to-white">
+        <section className="py-8 sm:py-24 bg-gradient-to-b from-white via-[#f8f9fb] to-white">
             <div className="container mx-auto px-4 sm:px-6 max-w-[1000px]">
-                <div className="text-center mb-12 sm:mb-16">
-                    <h2 className="font-display text-4xl sm:text-5xl font-semibold text-[#1a2b4a] mb-4 tracking-tight">
+                <div className="text-center mb-8 sm:mb-16">
+                    <h2 className="font-display text-[28px] sm:text-5xl font-semibold text-[#1a2b4a] mb-2 sm:mb-4 tracking-tight leading-[1.15] sm:leading-tight">
                         Frequently Asked Questions
                     </h2>
                     <p className="font-body text-lg text-[#6b7280] max-w-2xl mx-auto">

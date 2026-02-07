@@ -72,7 +72,7 @@ function MadeInUSABadge() {
 
 function Headline() {
     return (
-        <h1 className="font-[family-name:var(--font-family-display)] text-[36px] sm:text-[42px] md:text-[52px] lg:text-[72px] font-semibold leading-[1.05] text-[var(--color-navy)] tracking-[-0.01em] max-w-[700px]">
+        <h1 className="font-[family-name:var(--font-family-display)] text-[36px] sm:text-[42px] md:text-[52px] lg:text-[72px] font-semibold leading-[1] sm:leading-[1.05] text-[var(--color-navy)] tracking-[-0.01em] max-w-[700px]">
             Pong Party Games
         </h1>
     );
