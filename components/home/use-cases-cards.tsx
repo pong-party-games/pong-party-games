@@ -77,7 +77,19 @@ export function UseCasesCards() {
                     position: relative;
                     backdrop-filter: blur(2px);
                     background: rgba(255, 255, 255, 0.7);
-                    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+                    box-shadow: 
+                        0 4px 16px rgba(59, 159, 243, 0.15),
+                        0 2px 8px rgba(77, 166, 255, 0.1),
+                        0 0 20px rgba(94, 184, 255, 0.08),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+                }
+                
+                .glass-card:hover {
+                    box-shadow: 
+                        0 8px 32px rgba(59, 159, 243, 0.25),
+                        0 4px 16px rgba(77, 166, 255, 0.2),
+                        0 0 40px rgba(94, 184, 255, 0.15),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.9);
                 }
                 
                 .glass-card::before {
@@ -88,11 +100,11 @@ export function UseCasesCards() {
                     margin: -2px;
                     padding: 2px;
                     background-image: conic-gradient(
-                        #ffffff 78deg,
-                        #d2d2d2 85deg 95deg,
-                        #ffffff 102deg 258deg,
-                        #c3c3c3 265deg 275deg,
-                        #ffffff 282deg
+                        #b3d9ff 78deg,
+                        #99ccff 85deg 95deg,
+                        #b3d9ff 102deg 258deg,
+                        #a3d2ff 265deg 275deg,
+                        #b3d9ff 282deg
                     );
                     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
                     -webkit-mask-composite: xor;
@@ -101,11 +113,11 @@ export function UseCasesCards() {
                 
                 .glass-card:hover::before {
                     background-image: conic-gradient(
-                        #0066ff 78deg,
-                        #66a3ff 85deg 95deg,
-                        #0066ff 102deg 258deg,
-                        #3385ff 265deg 275deg,
-                        #0066ff 282deg
+                        #3b9ff3 78deg,
+                        #4da6ff 85deg 95deg,
+                        #3b9ff3 102deg 258deg,
+                        #5eb8ff 265deg 275deg,
+                        #3b9ff3 282deg
                     );
                 }
                 

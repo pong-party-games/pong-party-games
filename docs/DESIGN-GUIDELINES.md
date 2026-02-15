@@ -385,11 +385,11 @@ const routes = [
 ```
 
 **Features:**
-- ⚡ Ready in 5 Minutes
-- 👥 2-8 Players
-- ⭐ Premium Quality
+- 🕐 Designed for quick setup
+- 📦 Easy to transport
+- ⬇️ Compact footprint
 
-**Icons:** Lucide React (Zap, Users, StarIcon) - 24px, strokeWidth: 2, color: #1a2b4a
+**Icons:** Lucide React (Clock, Package, Minimize2) - 24px, strokeWidth: 2, color: #1a2b4a
 
 #### 5. Pricing Boxes
 
@@ -559,7 +559,7 @@ const routes = [
   color: var(--color-navy);
 }
 ```
-**Text:** "**Handcrafted Quality** ensured on all products"
+**Text:** "**Premium Quality** — Weather-resistant construction for year-round use"
 
 ### Right Column - Product Image
 

@@ -1,6 +1,6 @@
 'use client';
 
-import { Star as StarIcon, Users, Zap } from 'lucide-react';
+import { Clock, Minimize2, Package } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
@@ -81,16 +81,16 @@ function Headline() {
 function Subheadline() {
     return (
         <p className="font-[family-name:var(--font-family-body)] text-[16px] sm:text-[18px] lg:text-[22px] font-bold leading-[1.5] text-[var(--color-charcoal)]">
-            The Ultimate Baseball Party Game - All Ages!
+            Fun for ALL AGES and the perfect game for family entertainment
         </p>
     );
 }
 
 function FeatureRow() {
     const features = [
-        { icon: Zap, text: 'Ready in 5 Minutes' },
-        { icon: Users, text: '2-8 Players' },
-        { icon: StarIcon, text: 'Premium Quality' }
+        { icon: Clock, text: 'Designed for quick setup' },
+        { icon: Package, text: 'Easy to transport' },
+        { icon: Minimize2, text: 'Compact footprint' }
     ];
 
     return (
@@ -150,7 +150,7 @@ function CTAButtons() {
 function FreeShippingText() {
     return (
         <p className="font-[family-name:var(--font-family-body)] text-[13px] sm:text-[15px] lg:text-[17px] font-medium text-[var(--color-charcoal)] mt-2 sm:mt-3 lg:mt-4">
-            <strong className="font-bold text-[var(--color-navy)]">Handcrafted Quality</strong> ensured on all products
+            <strong className="font-bold text-[var(--color-navy)]">Premium Quality</strong> — Weather-resistant construction for year-round use
         </p>
     );
 }

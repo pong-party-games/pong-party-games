@@ -331,20 +331,20 @@ Premium handcrafted party game combining sports nostalgia with modern design sen
 
 #### Icon Usage Examples (From Homepage)
 
-**Lightning Bolt (Speed/Quick Setup)**
-- Usage: "Ready in 5 Minutes" feature
+**Clock Icon (Speed/Quick Setup)**
+- Usage: "Designed for quick setup" feature
 - Size: 24px
 - Placement: Left of text
 - Color: Navy (#1a2b4a)
 
-**People/Users Icon (Multiplayer)**
-- Usage: "2-8 Players" feature
+**Package Icon (Portability)**
+- Usage: "Easy to transport" feature
 - Size: 24px
 - Placement: Left of text
 - Color: Navy (#1a2b4a)
 
-**Star Icon (Quality)**
-- Usage: "Premium Quality" feature
+**Minimize2 Icon (Compact)**
+- Usage: "Compact footprint" feature
 - Size: 24px
 - Placement: Left of text
 - Color: Navy (#1a2b4a)
