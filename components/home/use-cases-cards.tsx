@@ -97,14 +97,12 @@ export function UseCasesCards() {
                     position: absolute;
                     inset: 0;
                     border-radius: inherit;
-                    margin: -2px;
-                    padding: 2px;
-                    background-image: conic-gradient(
-                        #b3d9ff 78deg,
-                        #99ccff 85deg 95deg,
-                        #b3d9ff 102deg 258deg,
-                        #a3d2ff 265deg 275deg,
-                        #b3d9ff 282deg
+                    margin: -1px;
+                    padding: 1px;
+                    background-image: linear-gradient(
+                        to bottom,
+                        rgba(200, 210, 220, 0.3),
+                        rgba(180, 190, 200, 0.2)
                     );
                     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
                     -webkit-mask-composite: xor;
@@ -112,12 +110,10 @@ export function UseCasesCards() {
                 }
                 
                 .glass-card:hover::before {
-                    background-image: conic-gradient(
-                        #3b9ff3 78deg,
-                        #4da6ff 85deg 95deg,
-                        #3b9ff3 102deg 258deg,
-                        #5eb8ff 265deg 275deg,
-                        #3b9ff3 282deg
+                    background-image: linear-gradient(
+                        to bottom,
+                        rgba(59, 159, 243, 0.3),
+                        rgba(77, 166, 255, 0.2)
                     );
                 }
                 
