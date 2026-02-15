@@ -81,7 +81,7 @@ function Headline() {
 function Subheadline() {
     return (
         <p className="font-[family-name:var(--font-family-body)] text-[16px] sm:text-[18px] lg:text-[22px] font-bold leading-[1.5] text-[var(--color-charcoal)]">
-            Perfect for Tailgating & Backyard Parties - All Ages!
+            The Ultimate Baseball Party Game - All Ages!
         </p>
     );
 }

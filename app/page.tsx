@@ -1,6 +1,7 @@
 import { CustomPanelsSection } from 'components/home/custom-panels-section';
 import { FAQSection } from 'components/home/faq-section';
 import { HeroSection } from 'components/home/hero-section';
+import { UseCasesCards } from 'components/home/use-cases-cards';
 import { VideoSection } from 'components/home/video-section';
 import WhyBuySection from 'components/home/why-buy-section';
 
@@ -18,6 +19,7 @@ export default function HomePage() {
   return (
     <>
       <HeroSection />
+      <UseCasesCards />
       <WhyBuySection />
       <VideoSection />
       <CustomPanelsSection />
