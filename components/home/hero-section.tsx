@@ -59,14 +59,14 @@ export function HeroSection() {
 
 function MadeInUSABadge() {
     return (
-        <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-[var(--color-white)] border-[2.5px] border-[var(--color-navy)] rounded-[20px] font-[family-name:var(--font-family-body)] text-[11px] sm:text-[13px] font-bold text-[var(--color-navy)] uppercase tracking-[0.05em] w-fit">
+        <div className="inline-flex items-center gap-2 sm:gap-2.5 md:gap-3 lg:gap-3.5 px-2.5 sm:px-3 md:px-4 lg:px-5 py-1.5 sm:py-1.5 md:py-2 lg:py-2.5 bg-[var(--color-white)] border-[2px] sm:border-[2.5px] lg:border-[3px] border-[var(--color-navy)] rounded-[16px] sm:rounded-[18px] md:rounded-[20px] lg:rounded-[24px] font-[family-name:var(--font-family-body)] text-[11px] sm:text-[13px] md:text-[15px] lg:text-[18px] xl:text-[20px] font-bold text-[var(--color-navy)] uppercase tracking-[0.05em] w-fit">
             <Image
                 src={UsaFlagImage}
                 alt="USA Flag"
                 width={47}
                 height={25}
                 loading="lazy"
-                className="rounded-none w-[20px] h-auto sm:w-6"
+                className="rounded-none w-[20px] sm:w-[24px] md:w-[28px] lg:w-[34px] xl:w-[38px] h-auto"
             />
             <span>Made in USA</span>
         </div>
@@ -75,7 +75,7 @@ function MadeInUSABadge() {
 
 function TrademarkPatentBadge() {
     return (
-        <div className="absolute -right-2 sm:-right-4 lg:-right-8 top-[60%] -translate-y-1/2 inline-flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2 sm:py-2.5 bg-gradient-to-br from-[var(--color-bright-blue)] to-[#0052a3] rounded-full shadow-[0_4px_16px_rgba(0,102,204,0.4)] w-fit z-20">
+        <div className="absolute -right-2 sm:-right-4 lg:-right-8 top-[70%] -translate-y-1/2 inline-flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2 sm:py-2.5 bg-gradient-to-br from-[var(--color-bright-blue)] to-[#0052a3] rounded-full shadow-[0_4px_16px_rgba(0,102,204,0.4)] w-fit z-20">
             {/* Ribbon Seal Icon */}
             <div className="relative flex items-center justify-center">
                 <svg
