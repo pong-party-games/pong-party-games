@@ -146,14 +146,14 @@ export function CustomPanelsSection() {
                     <h3 className="font-display text-[24px] sm:text-[36px] font-bold text-white mb-2 sm:mb-3 leading-[1.2] sm:leading-tight">
                         Ready to Create Your Custom Game?
                     </h3>
-                    <p className="font-body text-[15px] sm:text-[18px] text-white/80 mb-6 sm:mb-8 max-w-[600px] mx-auto leading-relaxed">
-                        Transform your Pong Party Game with custom branding. Get a personalized quote in 24 hours.
+                    <p className="font-body text-[15px] sm:text-[18px] text-white/80 mb-6 sm:mb-8 max-w-[700px] mx-auto leading-relaxed">
+                        Bring the excitement with a Custom Pong Party Game — the ultimate way to attract clients and potential customers, boost brand visibility, and engage the crowd with a fun, interactive baseball game everyone loves.
                     </p>
                     <Link
-                        href="/custom-games"
+                        href="/custom-games/#contact"
                         className="inline-flex items-center justify-center px-8 sm:px-10 py-3.5 sm:py-4 bg-gradient-to-r from-[#e63946] to-[#ff4757] text-white font-body font-bold text-[16px] sm:text-[18px] rounded-full hover:from-[#d62839] hover:to-[#e63946] transition-all duration-300 shadow-[0_8px_24px_rgba(230,57,70,0.4)] hover:shadow-[0_12px_32px_rgba(230,57,70,0.6)] hover:-translate-y-1 transform"
                     >
-                        Get Your Custom Quote
+                        Let's Design Your Custom Game
                     </Link>
                 </div>
             </div>

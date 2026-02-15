@@ -254,30 +254,37 @@ export default function CustomGamesPage() {
             </div>
 
             {/* CTA Section */}
-            <div className="py-16 sm:py-20 bg-gradient-to-br from-[#1a2438] via-[#0f1e35] to-[#0a1420]">
+            <div id="contact" className="py-16 sm:py-20 bg-gradient-to-br from-[#1a2438] via-[#0f1e35] to-[#0a1420] scroll-mt-24">
                 <div className="container mx-auto px-4 sm:px-6">
                     <div className="max-w-3xl mx-auto text-center">
                         <h2 className="font-display text-4xl sm:text-5xl font-bold text-white mb-6">
-                            Ready to Create Your Custom Game?
+                            Let's Get On the Field with Your Custom Pong Party Game
                         </h2>
-                        <p className="font-body text-lg text-white/90 mb-10 leading-relaxed">
-                            Email us your ideas, logo, and preferred colors. We'll create a design mockup and provide a custom quote within 24 hours.
+                        <p className="font-body text-2xl text-white/90 mb-10 leading-relaxed font-semibold">
+                            It's simple & fast:
                         </p>
 
-                        <div className="bg-white/10 rounded-2xl p-6 mb-8 border border-white/20">
-                            <h3 className="font-display text-xl font-bold text-white mb-4">Contact Information</h3>
-                            <div className="space-y-2 font-body text-base text-white/90">
-                                <p><span className="font-semibold">Email:</span> <a href="mailto:Mike@pongpartygames.com" className="underline hover:text-white">Mike@pongpartygames.com</a></p>
-                                <p><span className="font-semibold">Phone:</span> <a href="tel:4142305806" className="underline hover:text-white">(414) 230-5806</a></p>
+                        <div className="bg-white/10 rounded-2xl p-8 mb-8 border border-white/20">
+                            <div className="text-left space-y-4">
+                                <p className="font-body text-lg text-white/90 leading-relaxed">
+                                    <span className="font-bold text-white">1.</span> Email us at{' '}
+                                    <a href="mailto:info@pongpartygames.com" className="text-[#ff4757] font-semibold underline hover:text-white transition-colors">
+                                        info@pongpartygames.com
+                                    </a>
+                                    {' '}with your name, company, and contact number.
+                                </p>
+                                <p className="font-body text-lg text-white/90 leading-relaxed">
+                                    <span className="font-bold text-white">2.</span> We will contact you & help you design your Custom Pong Party Game for <span className="font-bold text-[#ff4757]">GRAND SLAM</span> results.
+                                </p>
                             </div>
                         </div>
 
-                        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
+                        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                             <Link
-                                href="mailto:Mike@pongpartygames.com"
+                                href="mailto:info@pongpartygames.com"
                                 className="inline-flex items-center justify-center px-8 py-4 bg-[#e63946] text-white font-body text-lg font-bold rounded-full transition-all duration-300 shadow-[0_4px_16px_rgba(230,57,70,0.3)] hover:bg-[#d62839] hover:translate-y-[-2px] hover:shadow-[0_8px_24px_rgba(230,57,70,0.4)]"
                             >
-                                Email for Custom Quote
+                                Email Us Now
                             </Link>
                             <Link
                                 href="/shop"
@@ -286,9 +293,6 @@ export default function CustomGamesPage() {
                                 View Standard Games
                             </Link>
                         </div>
-                        <p className="font-body text-base text-white/70">
-                            Minimum order: 1 game • Typical turnaround: 2-3 weeks • Bulk discounts available
-                        </p>
                     </div>
                 </div>
             </div>
