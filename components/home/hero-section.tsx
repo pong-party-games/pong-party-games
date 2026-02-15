@@ -68,7 +68,7 @@ function MadeInUSABadge() {
                 loading="lazy"
                 className="rounded-none w-[20px] sm:w-[24px] md:w-[28px] lg:w-[34px] xl:w-[38px] h-auto"
             />
-            <span>Made in USA</span>
+            <span>100% Made in USA</span>
         </div>
     );
 }
