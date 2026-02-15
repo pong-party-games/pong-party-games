@@ -1,41 +1,46 @@
 'use client';
 
-import { Briefcase, PartyPopper, Truck, Users } from 'lucide-react';
+import { Clock, Hammer, Minimize2, Package, Shield } from 'lucide-react';
 
 const useCases = [
     {
-        icon: Truck,
-        title: 'Made for Tailgating',
+        icon: Clock,
+        title: 'Designed for quick setup',
         gradient: 'from-[#3b9ff3] via-[#4da6ff] to-[#2575B3]'
     },
     {
-        icon: PartyPopper,
-        title: 'Backyard Parties',
+        icon: Package,
+        title: 'Easy to transport',
         gradient: 'from-[#3b9ff3] via-[#4da6ff] to-[#2575B3]'
     },
     {
-        icon: Users,
-        title: 'Family Fun',
+        icon: Minimize2,
+        title: 'Compact footprint',
         gradient: 'from-[#3b9ff3] via-[#4da6ff] to-[#2575B3]'
     },
     {
-        icon: Briefcase,
-        title: 'Corporate Events',
+        icon: Shield,
+        title: 'Weather-resistant',
+        gradient: 'from-[#3b9ff3] via-[#4da6ff] to-[#2575B3]'
+    },
+    {
+        icon: Hammer,
+        title: 'Durable construction',
         gradient: 'from-[#3b9ff3] via-[#4da6ff] to-[#2575B3]'
     }
 ];
 
 export function UseCasesCards() {
     return (
-        <section className="bg-gradient-to-b from-white to-[#f8f9fb] py-4 sm:py-6 md:py-8 px-4 sm:px-6">
-            <div className="max-w-[1000px] mx-auto">
-                <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+        <section className="bg-gradient-to-b from-white to-[#f8f9fb] py-4 sm:py-5 md:py-6 px-4 sm:px-6">
+            <div className="max-w-[1200px] mx-auto">
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2 sm:gap-3">
                     {useCases.map((useCase, index) => {
                         const Icon = useCase.icon;
                         return (
                             <div
                                 key={index}
-                                className="glass-card group relative rounded-lg sm:rounded-xl p-3 sm:p-4 md:p-5 transition-all duration-500 hover:translate-y-[-4px] overflow-hidden"
+                                className="glass-card group relative rounded-lg sm:rounded-xl p-2.5 sm:p-3 md:p-3.5 transition-all duration-500 hover:translate-y-[-4px] overflow-hidden"
                             >
                                 {/* Animated Glow Background */}
                                 <div
@@ -43,22 +48,22 @@ export function UseCasesCards() {
                                 />
 
                                 {/* Content */}
-                                <div className="relative z-10 flex flex-col md:flex-row items-center text-center md:text-left gap-2 sm:gap-3">
+                                <div className="relative z-10 flex flex-row items-center gap-2 sm:gap-3">
                                     {/* Icon Container with Glow */}
                                     <div
-                                        className={`w-10 h-10 sm:w-12 sm:h-12 md:w-12 md:h-12 flex-shrink-0 rounded-lg bg-gradient-to-br ${useCase.gradient} flex items-center justify-center transition-all duration-500 group-hover:scale-110`}
+                                        className={`w-9 h-9 sm:w-10 sm:h-10 flex-shrink-0 rounded-lg bg-gradient-to-br ${useCase.gradient} flex items-center justify-center transition-all duration-500 group-hover:scale-110`}
                                         style={{
                                             boxShadow: '0 2px 8px rgba(0, 61, 153, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.3)'
                                         }}
                                     >
                                         <Icon
-                                            className="w-5 h-5 sm:w-6 sm:h-6 md:w-6 md:h-6 text-white transition-transform duration-500 group-hover:scale-110"
+                                            className="w-5 h-5 sm:w-5 sm:h-5 text-white transition-transform duration-500 group-hover:scale-110"
                                             strokeWidth={2}
                                         />
                                     </div>
 
                                     {/* Title */}
-                                    <h3 className="font-display text-[13px] sm:text-[14px] md:text-[15px] lg:text-[16px] font-semibold text-[#1a2b4a] transition-colors duration-300 group-hover:text-[#0066ff] leading-tight">
+                                    <h3 className="font-display text-[14px] sm:text-[15px] md:text-[16px] lg:text-[17px] font-semibold text-[#1a2b4a] transition-colors duration-300 group-hover:text-[#0066ff] leading-tight">
                                         {useCase.title}
                                     </h3>
                                 </div>

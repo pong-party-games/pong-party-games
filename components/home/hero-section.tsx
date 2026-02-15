@@ -17,7 +17,6 @@ export function HeroSection() {
                     <MadeInUSABadge />
                     <Headline />
                     <Subheadline />
-                    <FeatureRow />
                 </div>
 
                 {/* Product Image */}
@@ -44,7 +43,6 @@ export function HeroSection() {
                         <MadeInUSABadge />
                         <Headline />
                         <Subheadline />
-                        <FeatureRow />
                     </div>
 
                     {/* All screens: Pricing & CTA */}
@@ -163,9 +161,14 @@ function Headline() {
 
 function Subheadline() {
     return (
-        <p className="font-[family-name:var(--font-family-body)] text-[16px] sm:text-[18px] lg:text-[22px] font-bold leading-[1.5] text-[var(--color-charcoal)]">
-            Fun for ALL AGES and the perfect game for family entertainment
-        </p>
+        <div className="flex flex-col gap-1 sm:gap-1.5">
+            <p className="font-[family-name:var(--font-family-body)] text-[16px] sm:text-[18px] lg:text-[22px] font-bold leading-[1.5] text-[var(--color-charcoal)]">
+                Made for Tailgating - Backyard Parties - Family Fun & Corporate Events
+            </p>
+            <p className="font-[family-name:var(--font-family-body)] text-[14px] sm:text-[16px] lg:text-[18px] font-semibold leading-[1.5] text-[var(--color-charcoal)] opacity-90">
+                Fun for ALL AGES and the perfect game for family entertainment
+            </p>
+        </div>
     );
 }
 
