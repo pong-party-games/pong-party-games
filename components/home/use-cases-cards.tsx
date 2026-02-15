@@ -1,6 +1,6 @@
 'use client';
 
-import { Clock, Hammer, Minimize2, Package, Shield } from 'lucide-react';
+import { Clock, Flag, Hammer, Minimize2, Package, Shield } from 'lucide-react';
 
 const useCases = [
     {
@@ -27,6 +27,11 @@ const useCases = [
         icon: Hammer,
         title: 'Durable construction',
         gradient: 'from-[#3b9ff3] via-[#4da6ff] to-[#2575B3]'
+    },
+    {
+        icon: Flag,
+        title: 'American Parts',
+        gradient: 'from-[#3b9ff3] via-[#4da6ff] to-[#2575B3]'
     }
 ];
 
@@ -34,7 +39,7 @@ export function UseCasesCards() {
     return (
         <section className="bg-gradient-to-b from-white to-[#f8f9fb] py-4 sm:py-5 md:py-6 px-4 sm:px-6">
             <div className="max-w-[1200px] mx-auto">
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2 sm:gap-3">
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2 sm:gap-3">
                     {useCases.map((useCase, index) => {
                         const Icon = useCase.icon;
                         return (

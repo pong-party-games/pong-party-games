@@ -73,7 +73,7 @@ function MadeInUSABadge() {
 
 function TrademarkPatentBadge() {
     return (
-        <div className="absolute -right-1 sm:-right-2 lg:-right-8 top-[78%] -translate-y-1/2 inline-flex items-center gap-1.5 sm:gap-2 md:gap-3 px-2 sm:px-3 md:px-4 py-1.5 sm:py-2 md:py-2.5 bg-gradient-to-br from-[var(--color-bright-blue)] to-[#0052a3] rounded-full shadow-[0_4px_16px_rgba(0,102,204,0.4)] w-fit z-20">
+        <div className="absolute -right-3 sm:-right-4 lg:-right-12 top-[78%] -translate-y-1/2 inline-flex items-center gap-1.5 sm:gap-2 md:gap-3 px-2.5 sm:px-3 md:px-4 lg:px-5 py-1.5 sm:py-2 md:py-2.5 lg:py-3 bg-gradient-to-br from-[var(--color-bright-blue)] to-[#0052a3] rounded-full shadow-[0_5px_18px_rgba(0,102,204,0.45)] w-fit z-20">
             {/* Ribbon Seal Icon */}
             <div className="relative flex items-center justify-center">
                 <svg
@@ -82,7 +82,7 @@ function TrademarkPatentBadge() {
                     viewBox="0 0 48 48"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
-                    className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-8 lg:h-8"
+                    className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-9 lg:h-9"
                 >
                     {/* Seal Badge Circle */}
                     <circle
@@ -140,10 +140,10 @@ function TrademarkPatentBadge() {
 
             {/* Text Content */}
             <div className="flex flex-col gap-0.5">
-                <span className="font-[family-name:var(--font-family-body)] text-white text-[8px] sm:text-[9px] md:text-[10px] font-semibold uppercase tracking-[0.08em] opacity-95">
+                <span className="font-[family-name:var(--font-family-body)] text-white text-[10px] sm:text-[11px] md:text-[13px] lg:text-[14px] font-extrabold uppercase tracking-[0.05em] leading-[1]">
                     Trademarked &amp;
                 </span>
-                <span className="font-[family-name:var(--font-family-body)] text-white text-[11px] sm:text-[13px] md:text-[15px] lg:text-[16px] font-extrabold uppercase tracking-[0.05em] leading-[1]">
+                <span className="font-[family-name:var(--font-family-body)] text-white text-[10px] sm:text-[11px] md:text-[13px] lg:text-[14px] font-extrabold uppercase tracking-[0.05em] leading-[1]">
                     Patented
                 </span>
             </div>
