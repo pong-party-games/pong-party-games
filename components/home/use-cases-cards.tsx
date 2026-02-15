@@ -1,8 +1,13 @@
 'use client';
 
-import { Clock, Flag, Hammer, Minimize2, Package, Shield } from 'lucide-react';
+import { Clock, Flag, Hammer, Minimize2, Package, Users } from 'lucide-react';
 
 const useCases = [
+    {
+        icon: Users,
+        title: 'Family Fun – All Ages',
+        gradient: 'from-[#3b9ff3] via-[#4da6ff] to-[#2575B3]'
+    },
     {
         icon: Clock,
         title: 'Designed for quick setup',
@@ -16,11 +21,6 @@ const useCases = [
     {
         icon: Minimize2,
         title: 'Compact footprint',
-        gradient: 'from-[#3b9ff3] via-[#4da6ff] to-[#2575B3]'
-    },
-    {
-        icon: Shield,
-        title: 'Weather-resistant',
         gradient: 'from-[#3b9ff3] via-[#4da6ff] to-[#2575B3]'
     },
     {

@@ -163,10 +163,10 @@ function Subheadline() {
     return (
         <div className="flex flex-col gap-1 sm:gap-1.5">
             <p className="font-[family-name:var(--font-family-body)] text-[16px] sm:text-[18px] lg:text-[22px] font-bold leading-[1.5] text-[var(--color-charcoal)]">
-                Made for Tailgating - Backyard Parties - Family Fun & Corporate Events
+                Made for Tailgating - Backyard Parties - Family Fun &amp; Corporate Events
             </p>
             <p className="font-[family-name:var(--font-family-body)] text-[14px] sm:text-[16px] lg:text-[18px] font-semibold leading-[1.5] text-[var(--color-charcoal)] opacity-90">
-                Fun for ALL AGES and the perfect game for family entertainment
+                Fun for ALL AGES — the perfect game for family &amp; friends bonding, entertainment, and lasting memories.
             </p>
         </div>
     );
