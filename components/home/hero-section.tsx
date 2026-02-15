@@ -139,7 +139,7 @@ function TrademarkPatentBadge() {
                     />
                 </svg>
             </div>
-            
+
             {/* Text Content */}
             <div className="flex flex-col gap-0.5">
                 <span className="font-[family-name:var(--font-family-body)] text-white text-[9px] sm:text-[10px] font-semibold uppercase tracking-[0.08em] opacity-95">
