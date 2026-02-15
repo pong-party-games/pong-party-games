@@ -196,18 +196,22 @@ function FeatureRow() {
 function PricingBoxes() {
     return (
         <div className="flex flex-row gap-3 sm:gap-4 my-2 sm:my-1 lg:my-2 justify-center lg:justify-start">
-            {/* Standard Price Box */}
-            <div className="relative flex flex-col gap-1 px-4 sm:px-5 py-3 sm:py-3.5 bg-gradient-to-br from-[#f8f9fa] to-[#e9ecef] rounded-[12px] sm:rounded-[16px] border border-[rgba(26,43,74,0.12)] shadow-[0_2px_8px_rgba(0,0,0,0.04),inset_0_1px_0_rgba(255,255,255,0.8)] transition-transform duration-[var(--duration-normal)] hover:translate-y-[-2px] hover:shadow-[0_4px_12px_rgba(0,0,0,0.08)] before:content-[''] before:absolute before:top-0 before:left-0 before:right-0 before:h-[2px] before:bg-gradient-to-r before:from-transparent before:via-[rgba(26,43,74,0.1)] before:to-transparent">
-                <span className="text-[10px] sm:text-[12px] font-bold text-[#6c757d] uppercase tracking-[0.12em]">Standard</span>
-                <span className="text-[24px] sm:text-[28px] font-extrabold text-[var(--color-navy)] tracking-[-0.02em]">$295.99</span>
-                <span className="text-[9px] sm:text-[10px] font-semibold text-[#6c757d] uppercase tracking-[0.08em]">Baseball Game</span>
+            {/* Regular Price Box */}
+            <div className="relative flex flex-col gap-1 px-4 sm:px-5 py-3 sm:py-3.5 bg-gradient-to-br from-[#f8f9fa] to-[#e9ecef] rounded-[12px] sm:rounded-[16px] border border-[rgba(26,43,74,0.12)] shadow-[0_2px_8px_rgba(0,0,0,0.04),inset_0_1px_0_rgba(255,255,255,0.8)] transition-all duration-[var(--duration-normal)] hover:translate-y-[-2px] hover:shadow-[0_4px_12px_rgba(0,0,0,0.08)] before:content-[''] before:absolute before:top-0 before:left-0 before:right-0 before:h-[2px] before:bg-gradient-to-r before:from-transparent before:via-[rgba(26,43,74,0.1)] before:to-transparent">
+                <span className="text-[13px] sm:text-[15px] md:text-[16px] font-bold text-[var(--color-charcoal)] tracking-[0.05em] uppercase">Regular</span>
+                <div className="flex items-baseline gap-2">
+                    <span className="text-[22px] sm:text-[26px] font-extrabold text-[var(--color-navy)] tracking-[-0.02em]">$395.99</span>
+                    <span className="text-[14px] sm:text-[16px] font-semibold text-[#6c757d] line-through">$479.95</span>
+                </div>
             </div>
 
-            {/* Custom Price Box */}
-            <div className="relative flex flex-col gap-1 px-4 sm:px-5 py-3 sm:py-3.5 bg-gradient-to-br from-[var(--color-bright-blue)] to-[#0052a3] rounded-[12px] sm:rounded-[16px] border border-[rgba(255,255,255,0.15)] shadow-[0_6px_20px_rgba(0,102,204,0.4),0_2px_8px_rgba(0,102,204,0.2),inset_0_1px_0_rgba(255,255,255,0.2)] transition-all duration-[var(--duration-normal)] hover:translate-y-[-3px] hover:scale-[1.02] hover:shadow-[0_10px_28px_rgba(0,102,204,0.5)] before:content-[''] before:absolute before:top-0 before:left-0 before:right-0 before:h-[2px] before:bg-gradient-to-r before:from-transparent before:via-[rgba(255,255,255,0.4)] before:to-transparent">
-                <span className="text-[10px] sm:text-[12px] font-bold text-white uppercase tracking-[0.12em] [text-shadow:0_1px_2px_rgba(0,0,0,0.2)]">Custom</span>
-                <span className="text-[24px] sm:text-[28px] font-extrabold text-white [text-shadow:0_2px_4px_rgba(0,0,0,0.2)] tracking-[-0.02em]">$395.99</span>
-                <span className="text-[9px] sm:text-[10px] font-semibold text-white uppercase tracking-[0.08em] [text-shadow:0_1px_2px_rgba(0,0,0,0.2)]">Baseball Game</span>
+            {/* Corporate Custom Price Box - HIGHLIGHTED */}
+            <div className="relative flex flex-col gap-1 px-4 sm:px-5 py-3 sm:py-3.5 bg-gradient-to-br from-[var(--color-bright-blue)] to-[#0052a3] rounded-[12px] sm:rounded-[16px] border-2 border-[#FFD700] shadow-[0_6px_20px_rgba(0,102,204,0.4),0_2px_8px_rgba(0,102,204,0.2),0_0_0_3px_rgba(255,215,0,0.3),inset_0_1px_0_rgba(255,255,255,0.2)] transition-all duration-[var(--duration-normal)] hover:translate-y-[-3px] hover:scale-[1.05] hover:shadow-[0_10px_28px_rgba(0,102,204,0.5),0_0_0_3px_rgba(255,215,0,0.5)] before:content-[''] before:absolute before:top-0 before:left-0 before:right-0 before:h-[2px] before:bg-gradient-to-r before:from-transparent before:via-[rgba(255,255,255,0.4)] before:to-transparent">
+                <div className="absolute -top-2 left-1/2 -translate-x-1/2 bg-[#FFD700] text-[var(--color-navy)] text-[9px] sm:text-[10px] font-extrabold uppercase tracking-[0.08em] px-2 py-0.5 rounded-full shadow-lg">
+                    Popular
+                </div>
+                <span className="text-[13px] sm:text-[15px] md:text-[16px] font-bold text-white tracking-[0.05em] [text-shadow:0_1px_2px_rgba(0,0,0,0.2)] uppercase">Corporate Custom</span>
+                <span className="text-[22px] sm:text-[26px] font-extrabold text-white [text-shadow:0_2px_4px_rgba(0,0,0,0.2)] tracking-[-0.02em]">$495.99</span>
             </div>
         </div>
     );
