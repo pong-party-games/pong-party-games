@@ -22,16 +22,19 @@ export function HeroSection() {
 
                 {/* Product Image */}
                 <div className="flex items-center justify-center relative w-full lg:order-2">
-                    <BaseballAnimation />
-                    <Image
-                        src={HeroProductImage}
-                        alt="Pong Party Games Product"
-                        width={1792}
-                        height={2400}
-                        priority
-                        fetchPriority="high"
-                        className="w-full h-auto max-w-[280px] sm:max-w-[320px] md:max-w-[360px] lg:max-w-[480px] animate-[float_4s_ease-in-out_infinite] [filter:drop-shadow(0_20px_40px_rgba(0,0,0,0.2))_drop-shadow(0_10px_15px_rgba(0,0,0,0.1))] sm:[filter:drop-shadow(0_30px_60px_rgba(0,0,0,0.25))_drop-shadow(0_10px_20px_rgba(0,0,0,0.15))]"
-                    />
+                    <div className="relative">
+                        <BaseballAnimation />
+                        <Image
+                            src={HeroProductImage}
+                            alt="Pong Party Games Product"
+                            width={1792}
+                            height={2400}
+                            priority
+                            fetchPriority="high"
+                            className="w-full h-auto max-w-[280px] sm:max-w-[320px] md:max-w-[360px] lg:max-w-[480px] animate-[float_4s_ease-in-out_infinite] [filter:drop-shadow(0_20px_40px_rgba(0,0,0,0.2))_drop-shadow(0_10px_15px_rgba(0,0,0,0.1))] sm:[filter:drop-shadow(0_30px_60px_rgba(0,0,0,0.25))_drop-shadow(0_10px_20px_rgba(0,0,0,0.15))]"
+                        />
+                        <TrademarkPatentBadge />
+                    </div>
                 </div>
 
                 {/* Desktop: Left Column - Content / Mobile: Price Below Image */}
@@ -66,6 +69,86 @@ function MadeInUSABadge() {
                 className="rounded-none w-[20px] h-auto sm:w-6"
             />
             <span>Made in USA</span>
+        </div>
+    );
+}
+
+function TrademarkPatentBadge() {
+    return (
+        <div className="absolute -right-2 sm:-right-4 lg:-right-8 top-[60%] -translate-y-1/2 inline-flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2 sm:py-2.5 bg-gradient-to-br from-[var(--color-bright-blue)] to-[#0052a3] rounded-full shadow-[0_4px_16px_rgba(0,102,204,0.4)] w-fit z-20">
+            {/* Ribbon Seal Icon */}
+            <div className="relative flex items-center justify-center">
+                <svg
+                    width="32"
+                    height="32"
+                    viewBox="0 0 48 48"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8"
+                >
+                    {/* Seal Badge Circle */}
+                    <circle
+                        cx="24"
+                        cy="20"
+                        r="14"
+                        fill="#0066CC"
+                        stroke="white"
+                        strokeWidth="2.5"
+                    />
+                    {/* Seal Scalloped Edge */}
+                    <g>
+                        {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map((i) => {
+                            const angle = (i * 30 * Math.PI) / 180;
+                            const x = 24 + Math.cos(angle) * 14;
+                            const y = 20 + Math.sin(angle) * 14;
+                            return (
+                                <circle
+                                    key={i}
+                                    cx={x}
+                                    cy={y}
+                                    r="2.5"
+                                    fill="#0066CC"
+                                    stroke="white"
+                                    strokeWidth="1.5"
+                                />
+                            );
+                        })}
+                    </g>
+                    {/* Check Mark */}
+                    <path
+                        d="M19 20L22 23L29 16"
+                        stroke="white"
+                        strokeWidth="3"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                    />
+                    {/* Ribbon Tails */}
+                    <path
+                        d="M18 30L14 45L18 42L22 45L18 30Z"
+                        fill="#0066CC"
+                        stroke="white"
+                        strokeWidth="1.5"
+                        strokeLinejoin="round"
+                    />
+                    <path
+                        d="M30 30L26 45L30 42L34 45L30 30Z"
+                        fill="#0066CC"
+                        stroke="white"
+                        strokeWidth="1.5"
+                        strokeLinejoin="round"
+                    />
+                </svg>
+            </div>
+            
+            {/* Text Content */}
+            <div className="flex flex-col gap-0.5">
+                <span className="font-[family-name:var(--font-family-body)] text-white text-[9px] sm:text-[10px] font-semibold uppercase tracking-[0.08em] opacity-95">
+                    Trademarked &amp;
+                </span>
+                <span className="font-[family-name:var(--font-family-body)] text-white text-[14px] sm:text-[15px] lg:text-[16px] font-extrabold uppercase tracking-[0.05em] leading-[1]">
+                    Patented
+                </span>
+            </div>
         </div>
     );
 }
