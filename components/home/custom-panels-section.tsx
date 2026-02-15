@@ -95,11 +95,13 @@ export function CustomPanelsSection() {
                 {/* Section Header */}
                 <div className="text-center mb-6 sm:mb-10">
                     <h2 className="font-display text-[32px] sm:text-[52px] font-semibold text-[#1a2b4a] mb-3 sm:mb-4 leading-[1.15] sm:leading-tight">
-                        Customize Your Panel
+                        Showcase Your Brand &amp; Customize Your Game Panels.
                     </h2>
-                    <p className="font-body text-[16px] sm:text-[20px] text-[#4a5568] max-w-[700px] mx-auto leading-relaxed">
-                        Make your game truly unique with custom branding for your company or team.
-                        Perfect for corporate events, team building, and brand promotion.
+                    <p className="font-body text-[16px] sm:text-[20px] text-[#4a5568] max-w-[800px] mx-auto leading-relaxed mb-2">
+                        <strong>Stand out. Drive traffic. Be remembered.</strong>
+                    </p>
+                    <p className="font-body text-[16px] sm:text-[18px] text-[#4a5568] max-w-[900px] mx-auto leading-relaxed">
+                        Create an interactive branded event experience that increases dwell time, generates qualified leads, and delivers memorable client engagement through a professional, fun, and fully customized corporate game.
                     </p>
                 </div>
 

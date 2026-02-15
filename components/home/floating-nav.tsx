@@ -1,16 +1,17 @@
 'use client';
 
-import { Gift, Home, Play, ShoppingCart, Star } from 'lucide-react';
+import { Gift, HelpCircle, Home, Play, ShoppingCart, Star } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 const routes = [
     { path: '/', icon: Home, label: 'Home' },
+    { path: '/shop', icon: ShoppingCart, label: 'Shop' },
     { path: '/how-to-play', icon: Play, label: 'How To Play' },
     { path: '/about-us', icon: Star, label: 'About Us' },
     { path: '/reviews', icon: Star, label: 'Reviews' },
     { path: '/custom-games', icon: Gift, label: 'Custom Games' },
-    { path: '/shop', icon: ShoppingCart, label: 'Shop' }
+    { path: '/faq', icon: HelpCircle, label: 'FAQ' }
 ];
 
 export function FloatingNav() {

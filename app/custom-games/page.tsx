@@ -98,8 +98,8 @@ export default function CustomGamesPage() {
                     <h1 className="font-display text-[48px] sm:text-[58px] md:text-[72px] font-semibold mb-4 sm:mb-5 lg:mb-6">
                         Custom Pong Party Games
                     </h1>
-                    <p className="font-body text-[20px] sm:text-[22px] leading-relaxed text-gray-300 max-w-[700px] mx-auto">
-                        Make it yours with personalized team names, logos, and colors. Perfect for corporate events, team building, and unforgettable celebrations.
+                    <p className="font-body text-[20px] sm:text-[22px] leading-relaxed text-gray-300 max-w-[800px] mx-auto">
+                        Fully personalized with your company or team name, logo, and colors — the ultimate centerpiece for corporate events, team building, and unforgettable company celebrations.
                     </p>
                 </div>
             </div>

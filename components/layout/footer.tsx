@@ -109,6 +109,9 @@ export default function Footer() {
               <Link href="/custom-games" className="block text-gray-200 hover:text-white transition-colors">
                 Custom Games
               </Link>
+              <Link href="/faq" className="block text-gray-200 hover:text-white transition-colors">
+                FAQ
+              </Link>
               <Link href="/refund-policy" className="block text-gray-200 hover:text-white transition-colors">
                 Refund Policy
               </Link>
