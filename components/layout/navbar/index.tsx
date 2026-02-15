@@ -27,8 +27,8 @@ export async function Navbar() {
             prefetch={true}
             className="flex items-center mr-2 lg:mr-6"
           >
-            <div className="flex flex-none items-center justify-center border border-neutral-200 bg-white dark:border-neutral-700 dark:bg-black h-[140px] w-[140px] rounded-xl">
-              <LogoIcon className="h-[64px] w-[64px]" />
+            <div className="flex flex-none items-center justify-center border border-neutral-200 bg-white dark:border-neutral-700 dark:bg-black h-[120px] w-[120px] rounded-xl">
+              <LogoIcon className="h-[80px] w-[80px]" />
             </div>
             <div className="ml-2 flex-none text-sm font-medium uppercase lg:block">
               {SITE_NAME}

@@ -13,8 +13,8 @@ export function BrandLogo() {
             <Image
                 src={LogoImage}
                 alt="Pong Party Games Logo"
-                width={60}
-                height={60}
+                width={120}
+                height={120}
                 className="rounded-none"
             />
         </Link>
