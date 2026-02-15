@@ -10,10 +10,10 @@ import UsaFlagImage from '../../app/assets/images/usa-flag.png';
 
 export function HeroSection() {
     return (
-        <section className="relative px-4 sm:px-6 lg:px-16 pt-[60px] sm:pt-[60px] md:pt-[80px] lg:pt-[20px] pb-[15px] sm:pb-[20px] md:pb-[15px] lg:pb-[20px] bg-[var(--color-white)] flex items-center">
+        <section className="relative px-4 sm:px-6 lg:px-16 pt-[70px] sm:pt-[75px] md:pt-[80px] lg:-mt-[20px] lg:pt-[0px] xl:-mt-[25px] xl:pt-[0px] pb-[15px] sm:pb-[20px] md:pb-[15px] lg:pb-[20px] bg-[var(--color-white)] flex items-center">
             <div className="flex flex-col lg:grid lg:grid-cols-2 gap-3 sm:gap-3 md:gap-2 lg:gap-4 xl:gap-12 items-center max-w-[1400px] mx-auto w-full">
                 {/* Mobile: Title & Subtitle */}
-                <div className="flex flex-col gap-2 sm:gap-1.5 md:gap-1.5 w-full lg:hidden items-center text-center">
+                <div className="flex flex-col gap-2 sm:gap-1.5 md:gap-1.5 w-full lg:hidden items-center text-center mt-2">
                     <MadeInUSABadge />
                     <Headline />
                     <Subheadline />

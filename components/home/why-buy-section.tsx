@@ -35,7 +35,7 @@ const features = [
 
 export default function WhyBuySection() {
     return (
-        <section className="bg-gradient-to-b from-[#f8f9fb] via-[#f5f5f7] to-white py-8 sm:py-20 md:py-24 lg:py-24 px-4 sm:px-6">
+        <section className="bg-gradient-to-b from-[#f8f9fb] via-[#f5f5f7] to-white py-8 sm:py-20 md:py-20 lg:py-16 xl:py-18 px-4 sm:px-6">
             <div className="max-w-[1280px] mx-auto">
                 {/* Section Header */}
                 <div className="text-center mb-8 sm:mb-14 md:mb-16">
