@@ -123,7 +123,7 @@ export default function CustomGamesPage() {
                     </div>
 
                     {/* Customization Showcase */}
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                    <div id="panels" className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto scroll-mt-24">
                         {/* Custom Field Panel Card */}
                         <div className="bg-gradient-to-br from-[#1a2438] via-[#0f1e35] to-[#0a1420] rounded-2xl p-8 shadow-[0_8px_24px_rgba(0,0,0,0.12),inset_0_1px_0_rgba(255,255,255,0.05)] border border-white/10">
                             <div className="relative w-full aspect-[4/3] mb-6 rounded-xl overflow-hidden border border-white/20 shadow-lg">

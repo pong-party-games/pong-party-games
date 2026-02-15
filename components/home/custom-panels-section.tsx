@@ -144,17 +144,41 @@ export function CustomPanelsSection() {
                 {/* Bottom CTA */}
                 <div className="mt-8 sm:mt-12 bg-gradient-to-br from-[#0a1420] via-[#0f1e35] to-[#1a2b4a] rounded-3xl p-6 sm:p-12 text-center shadow-[0_20px_60px_rgba(10,20,32,0.3)]">
                     <h3 className="font-display text-[24px] sm:text-[36px] font-bold text-white mb-2 sm:mb-3 leading-[1.2] sm:leading-tight">
-                        Ready to Create Your Custom Game?
+                        Let's Get On the Field with Your Custom Pong Party Game
                     </h3>
-                    <p className="font-body text-[15px] sm:text-[18px] text-white/80 mb-6 sm:mb-8 max-w-[700px] mx-auto leading-relaxed">
-                        Bring the excitement with a Custom Pong Party Game — the ultimate way to attract clients and potential customers, boost brand visibility, and engage the crowd with a fun, interactive baseball game everyone loves.
+                    <p className="font-body text-[18px] sm:text-[20px] text-white/90 mb-6 font-semibold">
+                        It's simple & fast:
                     </p>
-                    <Link
-                        href="/custom-games/#contact"
-                        className="inline-flex items-center justify-center px-8 sm:px-10 py-3.5 sm:py-4 bg-gradient-to-r from-[#e63946] to-[#ff4757] text-white font-body font-bold text-[16px] sm:text-[18px] rounded-full hover:from-[#d62839] hover:to-[#e63946] transition-all duration-300 shadow-[0_8px_24px_rgba(230,57,70,0.4)] hover:shadow-[0_12px_32px_rgba(230,57,70,0.6)] hover:-translate-y-1 transform"
-                    >
-                        Let's Design Your Custom Game
-                    </Link>
+                    
+                    <div className="bg-white/10 rounded-2xl p-6 sm:p-8 mb-6 sm:mb-8 border border-white/20 max-w-[700px] mx-auto">
+                        <div className="text-left space-y-3 sm:space-y-4">
+                            <p className="font-body text-[15px] sm:text-[17px] text-white/90 leading-relaxed">
+                                <span className="font-bold text-white">1.</span> Email us at{' '}
+                                <a href="mailto:info@pongpartygames.com" className="text-[#ff4757] font-semibold underline hover:text-white transition-colors">
+                                    info@pongpartygames.com
+                                </a>
+                                {' '}with your name, company, and contact number.
+                            </p>
+                            <p className="font-body text-[15px] sm:text-[17px] text-white/90 leading-relaxed">
+                                <span className="font-bold text-white">2.</span> We will contact you & help you design your Custom Pong Party Game for <span className="font-bold text-[#ff4757]">GRAND SLAM</span> results.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                        <Link
+                            href="mailto:info@pongpartygames.com"
+                            className="inline-flex items-center justify-center px-8 sm:px-10 py-3.5 sm:py-4 bg-gradient-to-r from-[#e63946] to-[#ff4757] text-white font-body font-bold text-[16px] sm:text-[18px] rounded-full hover:from-[#d62839] hover:to-[#e63946] transition-all duration-300 shadow-[0_8px_24px_rgba(230,57,70,0.4)] hover:shadow-[0_12px_32px_rgba(230,57,70,0.6)] hover:-translate-y-1 transform"
+                        >
+                            Email Us Now
+                        </Link>
+                        <Link
+                            href="/custom-games/#panels"
+                            className="inline-flex items-center justify-center px-8 sm:px-10 py-3.5 sm:py-4 bg-white/10 text-white font-body font-bold text-[16px] sm:text-[18px] rounded-full transition-all duration-300 border-2 border-white/20 hover:bg-white/20 hover:border-white/30"
+                        >
+                            View Panel Details
+                        </Link>
+                    </div>
                 </div>
             </div>
         </div>
