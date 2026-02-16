@@ -1,5 +1,4 @@
 import { CustomPanelsSection } from 'components/home/custom-panels-section';
-import { FAQSection } from 'components/home/faq-section';
 import { HeroSection } from 'components/home/hero-section';
 import { UseCasesCards } from 'components/home/use-cases-cards';
 import { VideoSection } from 'components/home/video-section';
@@ -23,7 +22,6 @@ export default function HomePage() {
       <WhyBuySection />
       <VideoSection />
       <CustomPanelsSection />
-      <FAQSection />
     </>
   );
 }
