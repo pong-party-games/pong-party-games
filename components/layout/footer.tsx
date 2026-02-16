@@ -36,7 +36,7 @@ export default function Footer() {
               />
             </Link>
             <p className="font-body text-[15px] leading-relaxed text-gray-300 mb-2">
-              The ultimate baseball party game for all ages. Handcrafted in the USA with premium quality materials.
+              The ultimate baseball party game for all ages. Handcrafted in the USA with premium quality American materials.
             </p>
             <Image
               src={UsaFlagFooter}

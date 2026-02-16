@@ -66,7 +66,10 @@ function MadeInUSABadge() {
                 loading="lazy"
                 className="rounded-none w-[20px] sm:w-[24px] md:w-[28px] lg:w-[34px] xl:w-[38px] h-auto"
             />
-            <span>100% Made in USA</span>
+            <div className="flex flex-col leading-tight">
+                <span>Proudly Made in America</span>
+                <span>with American Parts</span>
+            </div>
         </div>
     );
 }
@@ -163,7 +166,7 @@ function Subheadline() {
     return (
         <div className="flex flex-col gap-1 sm:gap-1.5">
             <p className="font-[family-name:var(--font-family-body)] text-[16px] sm:text-[18px] lg:text-[22px] font-bold leading-[1.5] text-[var(--color-charcoal)]">
-                Made for Tailgating - Backyard Parties - Family Fun &amp; Corporate Events
+                Perfect for Tailgates • Backyard Parties • Family Fun • Travel Baseball &amp; Softball • Corporate Events
             </p>
             <p className="font-[family-name:var(--font-family-body)] text-[14px] sm:text-[16px] lg:text-[18px] font-semibold leading-[1.5] text-[var(--color-charcoal)] opacity-90">
                 Fun for ALL AGES — the perfect game for family &amp; friends bonding, entertainment, and lasting memories.
