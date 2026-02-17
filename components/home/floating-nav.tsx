@@ -1,6 +1,6 @@
 'use client';
 
-import { Gift, HelpCircle, Home, Play, ShoppingCart, Star } from 'lucide-react';
+import { Gift, Home, Play, ShieldCheck, ShoppingCart, Star } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
@@ -11,7 +11,7 @@ const routes = [
     { path: '/about-us', icon: Star, label: 'About Us' },
     { path: '/reviews', icon: Star, label: 'Reviews' },
     { path: '/custom-games', icon: Gift, label: 'Custom Games' },
-    { path: '/faq', icon: HelpCircle, label: 'FAQ' }
+    { path: '/why-us', icon: ShieldCheck, label: 'Why Us' }
 ];
 
 export function FloatingNav() {
