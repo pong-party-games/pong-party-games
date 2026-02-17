@@ -109,6 +109,9 @@ export default function Footer() {
               <Link href="/custom-games" className="block text-gray-200 hover:text-white transition-colors">
                 Custom Games
               </Link>
+              <Link href="/why-us" className="block text-gray-200 hover:text-white transition-colors">
+                Why Us
+              </Link>
               <Link href="/faq" className="block text-gray-200 hover:text-white transition-colors">
                 FAQ
               </Link>
@@ -117,7 +120,7 @@ export default function Footer() {
               </Link>
               <Link
                 href="/shop"
-                className="block text-gray-200 hover:text-white transition-colors"
+                className="inline-flex items-center gap-2 mt-2 px-5 py-2.5 bg-[#e63946] hover:bg-[#d32f3f] text-white font-display font-semibold text-[15px] rounded-full shadow-[0_4px_16px_rgba(230,57,70,0.35)] hover:shadow-[0_8px_24px_rgba(230,57,70,0.45)] transition-all duration-300 hover:translate-y-[-2px]"
               >
                 Shop Now
               </Link>
