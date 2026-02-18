@@ -2,10 +2,10 @@ import WhyUsSection from 'components/home/why-us-section';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: 'Why Us | Pong Party Games - Top-Rated Tailgate Game',
+    title: 'Why Pong Party Games? | Not Just Another Tailgate Game',
     description:
-        'Discover what makes Pong Party Games the first indoor/outdoor baseball tailgate game for all ages. Built for family fun, portability, all-weather durability, and corporate events.',
-    keywords: 'why pong party games, best tailgate game, baseball tailgate game, indoor outdoor party game, family tailgate game, corporate tailgate game, portable tailgate game',
+        'Discover why Pong Party Games beats every other tailgate game. The first baseball-inspired indoor/outdoor game designed for all ages. Fast setup, portable, weather-resistant, and built for multiplayer fun.',
+    keywords: 'why pong party games, best tailgate game, baseball tailgate game, portable tailgate games, multiplayer tailgate game, weather resistant outdoor games, family tailgate game, corporate branding games, vs cornhole, vs beer pong',
     openGraph: {
         type: 'website',
     },
