@@ -75,13 +75,16 @@ export default function AboutUsPage() {
                             </h2>
                             <div className="space-y-4 font-body text-[18px] leading-relaxed text-[#2d3748]">
                                 <p>
-                                    <strong className="text-[#1a2b4a]">Mike Whelan</strong>, an avid sports fan and lifelong baseball enthusiast, has channeled his passion into creating Pong Party Games. As a dedicated player in a local Senior baseball league and competitor in national tournaments, Mike's love for the game runs deep.
+                                    <strong className="text-[#1a2b4a]">Mike Whelan</strong>, an avid sports fan and lifelong baseball enthusiast, turned his passion for the game into the creation of Pong Party Games. As an active player in a local Senior Baseball League and a competitor in national tournaments, Mike's connection to baseball goes far beyond the stands. It's a way of life.
                                 </p>
                                 <p>
-                                    His experience coaching his children and grandchildren in softball and baseball has given him a unique perspective on family sports experiences. After years of attending MLB games, tournaments, and tailgates, Mike recognized a gap: there were few engaging activities for families and kids at these events.
+                                    Through years of coaching his children and grandchildren in both baseball and softball, he gained a deep appreciation for the role sports play in bringing families together. His experiences traveling to MLB games, tournaments, and tailgates revealed something missing. There were very few interactive activities that truly engaged kids, parents, and fans of all ages.
+                                </p>
+                                <p>
+                                    Determined to fill that gap, Mike set out to design & patented a game that captures the excitement, strategy, and spirit of baseball while creating a fun, competitive experience everyone can enjoy.
                                 </p>
                                 <p className="text-[#003d99] font-semibold">
-                                    This inspired him to develop a game that captures the spirit of baseball while providing fun for all ages.
+                                    The result is Pong Party Games. Where family, fun, and the love of the game come together.
                                 </p>
                             </div>
                         </div>
@@ -110,13 +113,13 @@ export default function AboutUsPage() {
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
                         <div className="space-y-5 font-body text-[18px] leading-relaxed text-[#2d3748]">
                             <p>
-                                The Pong Party Game is a new <strong className="text-[#003d99]">indoor/outdoor game for all ages</strong>, providing fun, excitement and a competitive atmosphere. Pong Party Games is easy to set up, disassemble, transport & store.
+                                Pong Party Games is an exciting new <strong className="text-[#003d99]">indoor/outdoor baseball game</strong> designed for all ages, delivering fun, energy, and friendly competition at every event. It's quick to set up, easy to take apart, and simple to transport and store, so you can bring the action anywhere.
                             </p>
                             <p>
-                                The game offers a <strong className="text-[#003d99]">combination of skill & luck</strong> giving everyone a chance to have fun while being competitive. The game uses a small footprint so you can play anywhere.
+                                Blending <strong className="text-[#003d99]">skill and luck</strong>, Pong Party Games gives every player a real chance to compete and win, making it perfect for family gatherings, parties, corporate events, and team building. Its compact playing footprint means you can play almost anywhere, indoors or out.
                             </p>
                             <p>
-                                The first game introduced will be the <strong className="text-[#003d99]">baseball edition</strong>. It will help teach the concept of baseball while having family fun. The game's excellent quality makes it easy to maintain and it will never expire.
+                                The first release, the <strong className="text-[#003d99]">Baseball Edition</strong>, introduces players to the concepts of baseball in a fun and engaging way. Great for both learning and family entertainment. Built with outstanding quality and durability, the game is low-maintenance and designed to last for years. It never expires.
                             </p>
                             <p className="text-[19px] font-semibold pt-4 text-[#003d99]">
                                 This patented game will have the capabilities to add other games to the game base, making it more versatile & exciting at all family events.
