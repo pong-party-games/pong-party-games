@@ -128,7 +128,7 @@ export default function ProductGridItems({
                   <button
                     onClick={(e) => handleBuyNow(e, product)}
                     disabled={loadingProduct === product.handle}
-                    className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-gradient-to-br from-[#971919] via-[#b31b1b] to-[#bd1313] text-white font-body font-semibold text-sm rounded-xl hover:from-[#7d1818] hover:to-[#5a1010] transition-all duration-300 shadow-[0_2px_8px_rgba(107,20,20,0.3)] hover:shadow-[0_4px_12px_rgba(107,20,20,0.4)] disabled:opacity-60 disabled:cursor-not-allowed"
+                    className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-gradient-to-br from-[#cb0c0c] via-[#b91515] to-[#6e1212] text-white font-body font-semibold text-sm rounded-xl shadow-[0_2px_8px_rgba(107,20,20,0.3)] hover:shadow-[0_4px_12px_rgba(107,20,20,0.4)] transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed"
                   >
                     {loadingProduct === product.handle ? (
                       <Loader2 className="w-4 h-4 animate-spin" />

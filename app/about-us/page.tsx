@@ -232,7 +232,7 @@ export default function AboutUsPage() {
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
                             <a
                                 href="/shop"
-                                className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-[#b31b2b] to-[#e63946] text-white font-body font-bold text-[17px] rounded-full hover:from-[#991725] hover:to-[#cc1f33] transition-all duration-300 shadow-[0_8px_20px_rgba(230,57,70,0.4)] hover:shadow-[0_12px_28px_rgba(230,57,70,0.5)] hover:-translate-y-1"
+                                className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-br from-[#cb0c0c] via-[#b91515] to-[#6e1212] text-white font-body font-bold text-[17px] rounded-full shadow-[0_8px_20px_rgba(107,20,20,0.5),0_4px_12px_rgba(107,20,20,0.3)] hover:shadow-[0_12px_32px_rgba(107,20,20,0.6),0_6px_16px_rgba(107,20,20,0.4)] transition-all duration-300 hover:-translate-y-1"
                             >
                                 Shop Now
                             </a>

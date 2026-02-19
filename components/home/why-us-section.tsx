@@ -368,13 +368,13 @@ export default function WhyUsSection() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
             <Link
               href="/shop"
-              className="inline-flex items-center gap-2 bg-[#e63946] hover:bg-[#d32f3f] text-white font-display font-semibold text-[16px] sm:text-[17px] px-8 py-4 rounded-full shadow-[0_4px_16px_rgba(230,57,70,0.4)] hover:shadow-[0_8px_24px_rgba(230,57,70,0.5)] transition-all duration-300 hover:translate-y-[-2px]"
+              className="inline-flex items-center gap-2 bg-gradient-to-br from-[#cb0c0c] via-[#b91515] to-[#6e1212] text-white font-display font-semibold text-[16px] sm:text-[17px] px-8 py-4 rounded-full shadow-[0_8px_20px_rgba(107,20,20,0.5),0_4px_12px_rgba(107,20,20,0.3)] hover:shadow-[0_12px_32px_rgba(107,20,20,0.6),0_6px_16px_rgba(107,20,20,0.4)] transition-all duration-300 hover:translate-y-[-2px]"
             >
               Shop Now
             </Link>
             <Link
               href="/custom-games"
-              className="inline-flex items-center gap-2 bg-[#1a2b4a] hover:bg-[#0f1e35] text-white font-display font-semibold text-[16px] sm:text-[17px] px-8 py-4 rounded-full border border-[#1a2b4a] transition-all duration-300 hover:translate-y-[-2px]"
+              className="inline-flex items-center gap-2 bg-[#f0f5ff] text-[#003d99] font-display font-semibold text-[16px] sm:text-[17px] px-8 py-4 rounded-full border-2 border-[#003d99]/20 hover:bg-[#e6f0ff] hover:border-[#003d99]/30 transition-all duration-300 hover:translate-y-[-2px] hover:shadow-[0_6px_16px_rgba(0,61,153,0.15)]"
             >
               Customize Your Game
             </Link>

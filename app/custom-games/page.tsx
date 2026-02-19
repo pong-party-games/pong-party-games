@@ -282,7 +282,7 @@ export default function CustomGamesPage() {
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                             <Link
                                 href="mailto:info@pongpartygames.com"
-                                className="inline-flex items-center justify-center px-8 py-4 bg-[#e63946] text-white font-body text-lg font-bold rounded-full transition-all duration-300 shadow-[0_4px_16px_rgba(230,57,70,0.3)] hover:bg-[#d62839] hover:translate-y-[-2px] hover:shadow-[0_8px_24px_rgba(230,57,70,0.4)]"
+                                className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-br from-[#cb0c0c] via-[#b91515] to-[#6e1212] text-white font-body text-lg font-bold rounded-full shadow-[0_8px_20px_rgba(107,20,20,0.5),0_4px_12px_rgba(107,20,20,0.3)] hover:shadow-[0_12px_32px_rgba(107,20,20,0.6),0_6px_16px_rgba(107,20,20,0.4)] transition-all duration-300 hover:translate-y-[-2px]"
                             >
                                 Email Us Now
                             </Link>

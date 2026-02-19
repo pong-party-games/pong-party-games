@@ -149,7 +149,7 @@ export function CustomPanelsSection() {
                     <p className="font-body text-[18px] sm:text-[20px] text-white/90 mb-6 font-semibold">
                         It's simple & fast:
                     </p>
-                    
+
                     <div className="bg-white/10 rounded-2xl p-6 sm:p-8 mb-6 sm:mb-8 border border-white/20 max-w-[700px] mx-auto">
                         <div className="text-left space-y-3 sm:space-y-4">
                             <p className="font-body text-[15px] sm:text-[17px] text-white/90 leading-relaxed">
@@ -164,11 +164,11 @@ export function CustomPanelsSection() {
                             </p>
                         </div>
                     </div>
-                    
+
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                         <Link
                             href="mailto:info@pongpartygames.com"
-                            className="inline-flex items-center justify-center px-8 sm:px-10 py-3.5 sm:py-4 bg-gradient-to-r from-[#e63946] to-[#ff4757] text-white font-body font-bold text-[16px] sm:text-[18px] rounded-full hover:from-[#d62839] hover:to-[#e63946] transition-all duration-300 shadow-[0_8px_24px_rgba(230,57,70,0.4)] hover:shadow-[0_12px_32px_rgba(230,57,70,0.6)] hover:-translate-y-1 transform"
+                            className="inline-flex items-center justify-center px-8 sm:px-10 py-3.5 sm:py-4 bg-gradient-to-br from-[#cb0c0c] via-[#b91515] to-[#6e1212] text-white font-body font-bold text-[16px] sm:text-[18px] rounded-full shadow-[0_8px_20px_rgba(107,20,20,0.5),0_4px_12px_rgba(107,20,20,0.3)] hover:shadow-[0_12px_32px_rgba(107,20,20,0.6),0_6px_16px_rgba(107,20,20,0.4)] transition-all duration-300 hover:-translate-y-1 transform"
                         >
                             Email Us Now
                         </Link>

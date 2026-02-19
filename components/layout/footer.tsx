@@ -120,7 +120,7 @@ export default function Footer() {
               </Link>
               <Link
                 href="/shop"
-                className="inline-flex items-center gap-2 mt-2 px-5 py-2.5 bg-[#e63946] hover:bg-[#d32f3f] text-white font-display font-semibold text-[15px] rounded-full shadow-[0_4px_16px_rgba(230,57,70,0.35)] hover:shadow-[0_8px_24px_rgba(230,57,70,0.45)] transition-all duration-300 hover:translate-y-[-2px]"
+                className="inline-flex items-center gap-2 mt-2 px-5 py-2.5 bg-gradient-to-br from-[#cb0c0c] via-[#b91515] to-[#6e1212] text-white font-display font-semibold text-[15px] rounded-full shadow-[0_4px_16px_rgba(107,20,20,0.35)] hover:shadow-[0_8px_24px_rgba(107,20,20,0.45)] transition-all duration-300 hover:translate-y-[-2px]"
               >
                 Shop Now
               </Link>

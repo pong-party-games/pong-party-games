@@ -237,7 +237,7 @@ function CTAButtons() {
             </Link>
             <Link
                 href="/custom-games"
-                className="inline-flex items-center justify-center px-6 sm:px-9 py-3 sm:py-4 bg-transparent text-[var(--color-navy)] font-[family-name:var(--font-family-body)] text-[14px] sm:text-[17px] font-bold border-2 border-[var(--color-navy)] rounded-[32px] transition-all duration-[var(--duration-normal)] hover:bg-[var(--color-navy)] hover:text-[var(--color-white)] hover:translate-y-[-3px] hover:shadow-[0_6px_16px_rgba(26,43,74,0.25)]"
+                className="inline-flex items-center justify-center px-6 sm:px-9 py-3 sm:py-4 bg-[#f0f5ff] text-[#003d99] font-[family-name:var(--font-family-body)] text-[14px] sm:text-[17px] font-bold border-2 border-[#003d99]/20 rounded-[32px] transition-all duration-[var(--duration-normal)] hover:bg-[#e6f0ff] hover:border-[#003d99]/30 hover:translate-y-[-3px] hover:shadow-[0_6px_16px_rgba(0,61,153,0.15)]"
             >
                 Customize Game
             </Link>
