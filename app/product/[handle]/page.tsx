@@ -1,5 +1,6 @@
 import { AddToCart } from "components/cart/add-to-cart";
 import { BuyNow } from "components/cart/buy-now-button";
+import { ProductGallery } from "components/product/product-gallery";
 import { HIDDEN_PRODUCT_TAG } from "lib/constants";
 import { getProduct, getProductRecommendations } from "lib/shopify";
 import { Shield, Star } from "lucide-react";
@@ -100,71 +101,33 @@ export default async function ProductPage(props: {
           {/* Product Section */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
             {/* Image Gallery */}
-            <div className="flex flex-row gap-3 lg:flex-col lg:space-y-4">
-              {/* Main Image */}
-              <div className="relative aspect-square flex-1 max-w-[500px] mx-auto lg:mx-0 bg-white rounded-2xl overflow-hidden border border-[#e5e7eb] shadow-[0_4px_16px_rgba(0,0,0,0.08)]">
-                {product.featuredImage?.url && (
-                  <Image
-                    src={product.featuredImage.url}
-                    alt={product.title}
-                    fill
-                    className="object-contain p-6"
-                    priority
-                  />
-                )}
-                {hasDiscount && (
-                  <div className="absolute top-6 right-6 bg-gradient-to-br from-[#2d0808] to-[#6b1414] text-white px-4 py-2 rounded-full text-base font-bold shadow-lg">
-                    Save {Math.round(((compareAtPrice! - price) / compareAtPrice!) * 100)}%
-                  </div>
-                )}
-              </div>
-
-              {/* Thumbnail Images */}
-              {product.images.length > 1 && (
-                <div className="flex flex-col gap-2 lg:grid lg:grid-cols-4 lg:gap-3 w-20 lg:w-auto">
-                  {product.images.slice(0, 4).map((image, index) => (
-                    <div key={index} className="relative aspect-square bg-white rounded-lg overflow-hidden border border-[#e5e7eb] hover:border-[#1a2b4a] cursor-pointer transition-colors">
-                      <Image
-                        src={image.url}
-                        alt={`${product.title} - Image ${index + 1}`}
-                        fill
-                        loading="lazy"
-                        className="object-contain p-1"
-                      />
-                    </div>
-                  ))}
-                </div>
-              )}
-            </div>
+            <ProductGallery
+              images={product.images}
+              productTitle={product.title}
+              hasDiscount={hasDiscount}
+              discountPercent={hasDiscount ? Math.round(((compareAtPrice! - price) / compareAtPrice!) * 100) : undefined}
+            />
 
             {/* Product Info */}
             <div className="flex flex-col">
-              <h1 className="font-display text-4xl sm:text-5xl font-bold text-[#1a2b4a] mb-4">
+              <h1 className="font-display text-2xl sm:text-4xl font-bold text-[#1a2b4a] mb-4">
                 {product.title}
               </h1>
 
-              {/* Rating */}
-              <div className="flex items-center gap-2 mb-6">
-                <div className="flex items-center gap-1">
-                  {[1, 2, 3, 4, 5].map((star) => (
-                    <Star key={star} className="w-5 h-5 fill-[#f59e0b] text-[#f59e0b]" />
-                  ))}
-                </div>
-                <span className="font-body text-sm text-[#6b7280]">(128 reviews)</span>
-              </div>
+
 
               {/* Price */}
               <div className="mb-6">
                 <div className="flex items-baseline gap-3">
-                  <span className="font-display text-5xl font-bold text-[#1a2b4a]">
+                  <span className="font-display text-3xl sm:text-5xl font-bold text-[#1a2b4a]">
                     ${price.toFixed(2)}
                   </span>
                   {hasDiscount && (
                     <>
-                      <span className="font-body text-2xl text-[#6b7280] line-through">
+                      <span className="font-body text-lg sm:text-2xl text-[#6b7280] line-through">
                         ${compareAtPrice!.toFixed(2)}
                       </span>
-                      <span className="font-body text-lg font-semibold text-[#6b1414]">
+                      <span className="font-body text-sm sm:text-lg font-semibold text-[#6b1414]">
                         You Save ${(compareAtPrice! - price).toFixed(2)}
                       </span>
                     </>

@@ -19,7 +19,7 @@ function SubmitButton({
   isPending: boolean;
 }) {
   const buttonClasses =
-    "relative flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-br from-[#0a1420] via-[#1a2438] to-[#0f1e35] p-4 tracking-wide text-white font-body font-bold text-lg shadow-[0_4px_16px_rgba(0,0,0,0.2)] transition-all duration-300";
+    "relative flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-br from-[#0a1420] via-[#1a2438] to-[#0f1e35] p-3 sm:p-4 tracking-wide text-white font-body font-bold text-sm sm:text-lg shadow-[0_4px_16px_rgba(0,0,0,0.2)] transition-all duration-300";
   const disabledClasses = "cursor-not-allowed opacity-60 hover:opacity-60";
   const activeClasses = "hover:from-[#152840] hover:to-[#1a2b4a] hover:shadow-[0_8px_24px_rgba(0,0,0,0.3)] hover:translate-y-[-2px]";
 
