@@ -268,7 +268,7 @@ export default function CustomGamesPage() {
                             <div className="text-left space-y-4">
                                 <p className="font-body text-lg text-white/90 leading-relaxed">
                                     <span className="font-bold text-white">1.</span> Email us at{' '}
-                                    <a href="mailto:info@pongpartygames.com" className="text-[#ff4757] font-semibold underline hover:text-white transition-colors">
+                                    <a href="mailto:info@pongpartygames.com?subject=Custom%20Pong%20Party%20Game%20Inquiry&body=Hi%20Pong%20Party%20Games%20Team%2C%0D%0A%0D%0AI%20am%20interested%20in%20creating%20a%20custom%20pong%20party%20game.%0D%0A%0D%0AName%3A%20%0D%0ACompany%3A%20%0D%0AContact%20Number%3A%20%0D%0A%0D%0APlease%20contact%20me%20to%20discuss%20design%20options%20and%20pricing.%0D%0A%0D%0AThank%20you!" className="text-[#ff4757] font-semibold underline hover:text-white transition-colors">
                                         info@pongpartygames.com
                                     </a>
                                     {' '}with your name, company, and contact number.
@@ -281,7 +281,7 @@ export default function CustomGamesPage() {
 
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                             <Link
-                                href="mailto:info@pongpartygames.com"
+                                href="mailto:info@pongpartygames.com?subject=Custom%20Pong%20Party%20Game%20Inquiry&body=Hi%20Pong%20Party%20Games%20Team%2C%0D%0A%0D%0AI%20am%20interested%20in%20creating%20a%20custom%20pong%20party%20game.%0D%0A%0D%0AName%3A%20%0D%0ACompany%3A%20%0D%0AContact%20Number%3A%20%0D%0A%0D%0APlease%20contact%20me%20to%20discuss%20design%20options%20and%20pricing.%0D%0A%0D%0AThank%20you!"
                                 className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-br from-[#cb0c0c] via-[#b91515] to-[#6e1212] text-white font-body text-lg font-bold rounded-full shadow-[0_8px_20px_rgba(107,20,20,0.5),0_4px_12px_rgba(107,20,20,0.3)] hover:shadow-[0_12px_32px_rgba(107,20,20,0.6),0_6px_16px_rgba(107,20,20,0.4)] transition-all duration-300 hover:translate-y-[-2px]"
                             >
                                 Email Us Now
