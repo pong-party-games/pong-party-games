@@ -3,7 +3,6 @@ import { HeroSection } from 'components/home/hero-section';
 import { UseCasesCards } from 'components/home/use-cases-cards';
 import { VideoSection } from 'components/home/video-section';
 import WhyBuySection from 'components/home/why-buy-section';
-import WhyUsSection from 'components/home/why-us-section';
 
 export const metadata = {
   title: 'Pong Party Games | Best Tailgate & Outdoor Party Games',
@@ -21,7 +20,6 @@ export default function HomePage() {
       <HeroSection />
       <UseCasesCards />
       <WhyBuySection />
-      <WhyUsSection />
       <VideoSection />
       <CustomPanelsSection />
     </>
