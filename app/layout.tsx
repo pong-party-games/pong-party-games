@@ -6,18 +6,29 @@ import Footer from 'components/layout/footer';
 import { GeistSans } from 'geist/font/sans';
 import { getCart } from 'lib/shopify';
 import { baseUrl } from 'lib/utils';
+import type { Metadata } from 'next';
 import { ReactNode } from 'react';
 import { Toaster } from 'sonner';
 import './globals.css';
 
 const { SITE_NAME } = process.env;
 
-export const metadata = {
+export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
     default: SITE_NAME!,
     template: `%s | ${SITE_NAME}`,
   },
+  icons: {
+    icon: [
+      { url: '/favicon.ico' },
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+    ],
+    apple: [{ url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }],
+    shortcut: ['/favicon.ico'],
+  },
+  manifest: '/site.webmanifest',
   robots: {
     follow: true,
     index: true,
