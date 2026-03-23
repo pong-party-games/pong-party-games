@@ -70,7 +70,7 @@ export default function ProductGridItems({
         const compareAtPrice = product.compareAtPriceRange?.maxVariantPrice?.amount
           ? parseFloat(product.compareAtPriceRange.maxVariantPrice.amount)
           : null;
-        const hasDiscount = compareAtPrice && compareAtPrice > price;
+        const hasDiscount = compareAtPrice !== null && compareAtPrice > price;
 
         return (
           <Grid.Item key={product.handle} className="animate-fadeIn">

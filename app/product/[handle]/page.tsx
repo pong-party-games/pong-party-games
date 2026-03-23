@@ -59,7 +59,7 @@ export default async function ProductPage(props: {
   const compareAtPrice = product.compareAtPriceRange?.maxVariantPrice?.amount
     ? parseFloat(product.compareAtPriceRange.maxVariantPrice.amount)
     : null;
-  const hasDiscount = compareAtPrice && compareAtPrice > price;
+  const hasDiscount = compareAtPrice !== null && compareAtPrice > price;
 
   const productJsonLd = {
     "@context": "https://schema.org",
