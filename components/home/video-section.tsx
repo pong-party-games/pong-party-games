@@ -1,6 +1,7 @@
 'use client';
 
 import { Pause, Play, Volume2, VolumeX } from 'lucide-react';
+import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 
 export function VideoSection() {
@@ -99,9 +100,15 @@ export function VideoSection() {
     return (
         <section className="py-8 sm:py-14 lg:py-16 bg-white">
             <div className="container mx-auto px-4 sm:px-6">
-                <h2 className="font-display text-4xl sm:text-5xl font-semibold text-[#1a2b4a] text-center mb-6 sm:mb-10 tracking-tight leading-tight sm:leading-tight leading-[1.15]">
+                <h2 className="font-display text-4xl sm:text-5xl font-semibold text-[#1a2b4a] text-center mb-3 sm:mb-4 tracking-tight leading-tight sm:leading-tight leading-[1.15]">
                     See Pong Party Games in Action
                 </h2>
+                <p className="font-body text-base sm:text-lg text-[#6b7280] text-center mb-6 sm:mb-10 max-w-2xl mx-auto">
+                    Watch how the first patented baseball tailgate game brings families and friends together.{' '}
+                    <Link href="/watch/pong-party-games-in-action" className="text-[#0066cc] font-semibold hover:underline">
+                        View full video page
+                    </Link>
+                </p>
                 <div
                     className="max-w-[1200px] mx-auto overflow-hidden rounded-2xl shadow-[0_25px_50px_rgba(0,0,0,0.2)] relative group"
                     onMouseEnter={() => setIsHovered(true)}

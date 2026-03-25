@@ -166,10 +166,10 @@ function Subheadline() {
     return (
         <div className="flex flex-col gap-1 sm:gap-1.5">
             <p className="font-[family-name:var(--font-family-body)] text-[16px] sm:text-[18px] lg:text-[22px] font-bold leading-[1.5] text-[var(--color-charcoal)]">
-                Perfect for Tailgates • Backyard Parties • Family Fun • Travel Baseball &amp; Softball • Corporate Events
+                The First Patented Baseball-Inspired Tailgate Game
             </p>
             <p className="font-[family-name:var(--font-family-body)] text-[14px] sm:text-[16px] lg:text-[18px] font-semibold leading-[1.5] text-[var(--color-charcoal)] opacity-90">
-                Fun for ALL AGES — the perfect game for family &amp; friends bonding, entertainment, and lasting memories.
+                Fun for ALL AGES — sets up in under 5 minutes, plays on any surface, no batteries needed. Perfect for tailgates, backyard parties, travel baseball, and corporate events.
             </p>
         </div>
     );

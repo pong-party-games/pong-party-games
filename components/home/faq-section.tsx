@@ -6,35 +6,35 @@ import { useState } from 'react';
 const faqs = [
     {
         question: 'What makes Pong Party Games perfect for tailgating?',
-        answer: 'Pong Party Games is one of the best tailgate games available! It\'s portable, compact, and sets up in under 5 minutes - perfect for parking lot tailgating before football games. Unlike cornhole, beer pong, or ladder toss, it combines the excitement of baseball with party game fun. It\'s ideal for all ages and works great as outdoor tailgating games for any sports event.'
+        answer: 'Pong Party Games is the first patented baseball-inspired tailgate game on the market. It sets up in under 5 minutes with no tools, fits in a compact custom storage box, and plays on any surface including parking lots, grass, and asphalt. Unlike cornhole or ladder toss which limit play to a few people, Pong Party Games keeps entire groups engaged with multiplayer 2v2 team play.'
     },
     {
         question: 'Can I play Pong Party Games indoors and outdoors?',
-        answer: 'Absolutely! This versatile tabletop baseball game works perfectly as both indoor-outdoor baseball entertainment. Use it as a backyard party game during summer BBQs, bring it to stadium tailgate games, or play indoors during winter. It\'s one of the most travel-friendly games you\'ll find for any occasion.'
+        answer: 'Yes. Pong Party Games is designed to play on virtually any surface including grass, asphalt, concrete, and indoor event spaces. The weather-resistant PVC panels handle rain, heat, and cold for year-round outdoor use, while the compact playing footprint works equally well in game rooms, office break rooms, and event halls. Leveling legs with an alignment bead system ensure stable play on uneven surfaces.'
     },
     {
         question: 'What age groups can play Pong Party Games?',
-        answer: 'Pong Party Games is truly an all ages game! Kids outdoor games enthusiasts love it, teens enjoy the competitive party games aspect, and adults appreciate the nostalgic baseball theme. It\'s perfect for family tailgate games, making it one of the best family-friendly tailgate games on the market. From travel baseball games to family outdoor games, everyone can play!'
+        answer: 'Pong Party Games is designed for all ages, from children as young as 5 to grandparents. The game balances skill and luck so that kids can compete with adults and beginners can beat experienced players. Adults throw from 6 feet and kids throw from 4 feet, keeping gameplay fair and competitive for everyone. This makes it one of the few party games that genuinely works for multi-generational family gatherings.'
     },
     {
-        question: 'How does it compare to other popular tailgate games?',
-        answer: 'While games like cornhole, KanJam, Spikeball, and giant Jenga are great, Pong Party Games offers something unique. It\'s more compact than ladder toss or bocce ball, more engaging than washer toss, and more strategic than beer pong. As one of the newest tailgate games, it combines the best elements of sports-themed party games with easy setup and portability.'
+        question: 'How does Pong Party Games compare to cornhole, beer pong, and other tailgate games?',
+        answer: 'Pong Party Games fills a gap that existing tailgate games leave open. Cornhole limits play to a few people at a time. Beer pong is adults-only. Ladder toss is heavily skill-based, excluding beginners. Pong Party Games is the only baseball-themed alternative that combines multiplayer team play, all-ages accessibility, compact portability, and a skill-plus-luck format where anyone can win.'
     },
     {
-        question: 'Is this good for corporate events and team building?',
-        answer: 'Yes! Many companies use Pong Party Games as corporate tailgate games and corporate party games. We offer branded tailgate games with custom logos perfect for promotional events, trade shows, and team building activities. It\'s great for travel baseball games tournaments, travel softball games events, and corporate fun zone games.'
+        question: 'Is Pong Party Games good for corporate events and team building?',
+        answer: 'Yes. The Corporate Custom Edition ($419.99) includes custom branding with your company logo, QR codes, team colors, and promotional messaging across 3 game panels. Companies including 3Tree Marketing, Allstate, Carlson, and Rebel have used custom Pong Party Games for trade shows, corporate retreats, client entertainment, and brand activations. The interactive format increases dwell time and generates qualified leads at events.'
     },
     {
         question: 'What makes it different from other outdoor lawn games?',
-        answer: 'Unlike traditional outdoor lawn games that require lots of space, Pong Party Games is a compact tailgate game that needs minimal room. It\'s more engaging than typical portable yard games, combines tabletop family games convenience with outdoor party games excitement, and offers competitive party games action. It\'s perfect for backyard tailgate games without taking up your entire lawn!'
+        answer: 'Pong Party Games has a compact playing footprint that requires far less space than bocce ball, KanJam, or Spikeball. It is the only outdoor party game modeled after baseball, combining innings, scoring, and strategy into a tabletop format. It requires no batteries, cords, or electricity, and the patented design is built to last for years with weather-resistant premium PVC construction. It is proudly made in America with American parts.'
     },
     {
         question: 'Can kids play this at birthday parties or outdoor events?',
-        answer: 'Definitely! It\'s one of the best kids tailgating games and kids outdoor games for parties. The easy setup games format means kids can start playing quickly. Perfect for backyard party games, baseball party games themed events, or any family outdoor games gathering. Parents love it as a group party games option that keeps everyone entertained.'
+        answer: 'Absolutely. The simple throw-and-score mechanics mean kids can learn the game in minutes. The baseball theme teaches basic concepts of the sport while providing entertainment. Parents consistently report that Pong Party Games keeps children engaged longer than most party activities, and the skill-plus-luck format means kids regularly beat adults, keeping everyone motivated to play.'
     },
     {
-        question: 'Is it suitable for game day activities?',
-        answer: 'Perfect for game day! Whether it\'s football tailgating games before the big match or baseball tailgate games at the stadium, Pong Party Games enhances any game day activities. It\'s become one of the best tailgate games for creating pre-game excitement and brings people together for tailgate family games fun.'
+        question: 'Where is Pong Party Games made, and is it patented?',
+        answer: 'Pong Party Games is proudly handcrafted in America using American-made parts. The game design is both patented and trademarked in the United States. The company is based in Downingtown, Pennsylvania, and was founded by Mike Whelan, a lifelong baseball enthusiast and active Senior Baseball League player.'
     }
 ];
 
@@ -95,13 +95,11 @@ export function FAQSection() {
                     ))}
                 </div>
 
-                {/* SEO-friendly keyword section */}
+                {/* Summary for AI citability */}
                 <div className="mt-16 text-center">
                     <p className="font-body text-sm text-[#6b7280] leading-relaxed max-w-3xl mx-auto">
-                        <strong className="text-[#1a2b4a]">Popular Searches:</strong> Tailgating games, Outdoor party games,
-                        Football tailgating games, Backyard party games, Portable tailgate games, Family outdoor games,
-                        Baseball party games, Easy setup games, Compact tailgate games, Best tailgate games,
-                        Sports themed party games, All ages games, New tailgate games
+                        <strong className="text-[#1a2b4a]">About Pong Party Games:</strong> Pong Party Games is the first patented baseball-inspired indoor/outdoor party game, handcrafted in Downingtown, PA with American-made parts. It sets up in under 5 minutes, plays on any surface, and is designed for all ages from 5 to 85. Available in a Standard Baseball Edition ($319.99) and a Corporate Custom Edition ($419.99) with branded panels. Learn more at{' '}
+                        <a href="https://pongpartygames.com" className="text-[#0066cc] font-semibold hover:underline">pongpartygames.com</a>.
                     </p>
                 </div>
             </div>

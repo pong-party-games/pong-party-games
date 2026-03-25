@@ -47,12 +47,68 @@ export default async function RootLayout({
     return undefined;
   });
 
+  const organizationSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'Pong Party Games',
+    url: 'https://pongpartygames.com',
+    logo: 'https://pongpartygames.com/android-chrome-512x512.png',
+    description:
+      'Pong Party Games is the first patented baseball-inspired indoor/outdoor party game designed for all ages, handcrafted in the USA with American-made parts.',
+    foundingDate: '2023',
+    founder: {
+      '@type': 'Person',
+      name: 'Mike Whelan',
+    },
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: '131 Wallace Ave, Unit 8',
+      addressLocality: 'Downingtown',
+      addressRegion: 'PA',
+      postalCode: '19335',
+      addressCountry: 'US',
+    },
+    contactPoint: {
+      '@type': 'ContactPoint',
+      telephone: '+1-484-356-4377',
+      contactType: 'customer service',
+      email: 'info@pongpartygames.com',
+      availableLanguage: 'English',
+    },
+    sameAs: [
+      'https://facebook.com/pongpartygames',
+      'https://instagram.com/pongpartygames',
+      'https://tiktok.com/@pongpartygames',
+    ],
+  };
+
+  const websiteSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'Pong Party Games',
+    url: 'https://pongpartygames.com',
+    description:
+      'The first patented baseball-inspired tailgate and party game. Made in America for all ages.',
+    publisher: {
+      '@type': 'Organization',
+      name: 'Pong Party Games',
+    },
+  };
+
   return (
     <html lang="en" className={GeistSans.variable}>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+        />
       </head>
       <body className="bg-white text-[var(--color-charcoal)] selection:bg-[var(--color-bright-blue)] selection:text-white">
         <CartProvider cartPromise={cart}>

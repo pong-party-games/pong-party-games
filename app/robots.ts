@@ -9,22 +9,36 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
         disallow: ["/api/", "/search/frontpage"],
       },
-      // AI Crawlers - Allow indexing but no training
+      // AI Crawlers - Explicitly allow for GEO visibility
       {
         userAgent: ["GPTBot", "ChatGPT-User"],
-        disallow: "/",
+        allow: "/",
+        disallow: ["/api/"],
       },
       {
-        userAgent: ["CCBot", "anthropic-ai", "Claude-Web"],
-        disallow: "/",
+        userAgent: ["Google-Extended"],
+        allow: "/",
+        disallow: ["/api/"],
       },
       {
-        userAgent: ["Google-Extended", "PerplexityBot"],
-        disallow: "/",
+        userAgent: ["PerplexityBot"],
+        allow: "/",
+        disallow: ["/api/"],
+      },
+      {
+        userAgent: ["anthropic-ai", "Claude-Web", "ClaudeBot"],
+        allow: "/",
+        disallow: ["/api/"],
+      },
+      {
+        userAgent: ["CCBot"],
+        allow: "/",
+        disallow: ["/api/"],
       },
       {
         userAgent: ["Omgilibot", "FacebookBot"],
-        disallow: "/",
+        allow: "/",
+        disallow: ["/api/"],
       },
     ],
     sitemap: `${baseUrl}/sitemap.xml`,

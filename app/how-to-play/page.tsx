@@ -2,13 +2,68 @@ import { AlertCircle, Award, Target, TrendingUp, Users, Zap } from 'lucide-react
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: 'How To Play | Best Tailgate & Outdoor Party Game Rules',
-    description: 'Learn how to play the ultimate tailgating games and outdoor party games. Easy setup in 5 minutes. Perfect for football tailgating, backyard parties, and family outdoor games. Complete rules and gameplay guide.',
+    title: 'How To Play Pong Party Games | Complete Rules & Setup Guide',
+    description: 'Learn how to play Pong Party Games in minutes. Tool-free setup in under 5 minutes. Throw balls into cups representing Singles, Doubles, Triples, and Home Runs. Play 1v1 or 2v2 on any surface. Adults throw from 6 feet, kids from 4 feet.',
 };
 
 export default function HowToPlayPage() {
+    const howToSchema = {
+        '@context': 'https://schema.org',
+        '@type': 'HowTo',
+        name: 'How to Play Pong Party Games: Baseball Edition',
+        description:
+            'Complete guide to playing Pong Party Games, the first patented baseball-inspired tailgate game. Learn setup, rules, scoring, and winning strategies.',
+        totalTime: 'PT30M',
+        estimatedCost: {
+            '@type': 'MonetaryAmount',
+            currency: 'USD',
+            value: '319.99',
+        },
+        step: [
+            {
+                '@type': 'HowToStep',
+                name: 'Set Up the Game',
+                text: 'Assemble the game with tool-free setup in under 5 minutes. Place on any flat surface. Use leveling legs for uneven terrain.',
+            },
+            {
+                '@type': 'HowToStep',
+                name: 'Choose Teams',
+                text: 'Flip a coin to determine Home vs Visitors. Play 1v1 or form 2v2 teams. Visitors bat (throw) first.',
+            },
+            {
+                '@type': 'HowToStep',
+                name: 'Set Throwing Distance',
+                text: 'Adults throw from 6 feet away from the board. Kids throw from 4 feet. Mark a throw line that players cannot cross.',
+            },
+            {
+                '@type': 'HowToStep',
+                name: 'Throw Balls Into Cups',
+                text: 'Throw balls aiming for the 4 cups on the baseball diamond. Single cup (1B) advances runners 1 base, Double (2B) advances 2, Triple (3B) advances 3, and HR/Walk cup awards a walk or home run.',
+            },
+            {
+                '@type': 'HowToStep',
+                name: 'Record Outs',
+                text: 'Miss all cups = 1 out. Ball bounces out of board = 2 outs. Hand crosses throw line = automatic out. After 3 outs, the inning ends.',
+            },
+            {
+                '@type': 'HowToStep',
+                name: 'Score Home Runs',
+                text: 'Sink a ball in the Single, Double, and Triple cups in the same inning to score a Home Run. Additional balls in the HR cup also count as home runs.',
+            },
+            {
+                '@type': 'HowToStep',
+                name: 'Win the Game',
+                text: 'Play the agreed number of innings. The home team gets the last chance to tie or win. The team with the most runs wins.',
+            },
+        ],
+    };
+
     return (
         <div className="bg-gradient-to-b from-[#f8f9fb] via-white to-[#f5f7fa] min-h-screen -mt-[200px]">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
+            />
             {/* Hero Section */}
             <div className="bg-gradient-to-br from-[#0a1420] via-[#0f1e35] to-[#1a2b4a] text-white py-20 sm:py-20 lg:py-24 shadow-[0_20px_60px_rgba(10,20,32,0.4),inset_0_1px_0_rgba(255,255,255,0.1)]">
                 <div className="max-w-[1200px] mx-auto px-4 sm:px-6 text-center pt-48 sm:pt-40 md:pt-40 lg:pt-20">

@@ -3,8 +3,8 @@ import Image from 'next/image';
 import MomCerraImage from '../assets/images/momcerra.webp';
 
 export const metadata = {
-    title: 'Reviews | Best Tailgate Games Customer Reviews',
-    description: 'Read customer reviews for the best tailgate games and outdoor party games. See why families love our portable tailgating games for football games, backyard parties, and outdoor events.'
+    title: 'Customer Reviews | Pong Party Games - 5-Star Rated Baseball Tailgate Game',
+    description: 'Read verified customer reviews for Pong Party Games, rated 5 out of 5 stars. Customers praise the portability, quality construction, and all-ages fun at tailgates, baseball tournaments, backyard parties, and corporate events.',
 };
 
 const reviews = [
@@ -53,8 +53,42 @@ const reviews = [
 ];
 
 export default function ReviewsPage() {
+    const reviewSchema = {
+        '@context': 'https://schema.org',
+        '@type': 'Product',
+        name: 'Pong Party Games: Baseball Edition',
+        aggregateRating: {
+            '@type': 'AggregateRating',
+            ratingValue: '5',
+            bestRating: '5',
+            worstRating: '1',
+            ratingCount: '7',
+            reviewCount: '7',
+        },
+        review: [
+            {
+                '@type': 'Review',
+                author: { '@type': 'Person', name: 'Mom Cerra' },
+                datePublished: '2026-01-25',
+                reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+                reviewBody: 'As a busy baseball mom, I always bring Pong Party Games along when we travel to my son\'s tournaments. With so much downtime between games, it\'s important to have activities that keep the players engaged without draining their energy. Pong Party Games is the perfect solution.',
+            },
+            ...reviews.map((r) => ({
+                '@type': 'Review' as const,
+                author: { '@type': 'Person' as const, name: r.name },
+                datePublished: new Date(r.date).toISOString().split('T')[0],
+                reviewRating: { '@type': 'Rating' as const, ratingValue: String(r.rating), bestRating: '5' },
+                reviewBody: r.text,
+            })),
+        ],
+    };
+
     return (
         <div className="bg-gradient-to-b from-[#f8f9fb] via-white to-[#f5f7fa] min-h-screen -mt-[200px]">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }}
+            />
             {/* Hero Section */}
             <div className="bg-gradient-to-br from-[#0a1420] via-[#0f1e35] to-[#1a2b4a] text-white py-20 sm:py-20 lg:py-24 shadow-[0_20px_60px_rgba(10,20,32,0.4),inset_0_1px_0_rgba(255,255,255,0.1)]">
                 <div className="max-w-[1200px] mx-auto px-4 sm:px-6 text-center pt-48 sm:pt-40 md:pt-40 lg:pt-20">

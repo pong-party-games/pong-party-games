@@ -36,7 +36,7 @@ export default function Footer() {
               />
             </Link>
             <p className="font-body text-[15px] leading-relaxed text-gray-300 mb-2">
-              The ultimate baseball party game for all ages. Handcrafted in the USA with premium quality American materials.
+              The first patented baseball-inspired indoor/outdoor party game. Handcrafted in Downingtown, PA with American-made parts. Designed for all ages, from backyard parties to corporate events. Rated 5/5 stars by verified customers.
             </p>
             <Image
               src={UsaFlagFooter}

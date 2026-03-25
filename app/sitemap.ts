@@ -1,5 +1,6 @@
 import { getProducts } from "lib/shopify";
 import { baseUrl, validateEnvironmentVariables } from "lib/utils";
+import { getVideoRoute, siteVideos } from "lib/video";
 import { MetadataRoute } from "next";
 
 type Route = {
@@ -20,16 +21,27 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const staticRoutes = [
     "",
     "/shop",
+    "/watch",
     "/how-to-play",
     "/about-us",
     "/reviews",
     "/custom-games",
+    "/why-us",
+    "/faq",
     "/refund-policy",
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: currentDate,
     changeFrequency: "weekly" as const,
-    priority: route === "" ? 1.0 : 0.8,
+    priority: route === "" ? 1.0 : route === "/faq" || route === "/why-us" ? 0.85 : 0.8,
+  }));
+
+  // Video watch pages
+  const videoRoutes = siteVideos.map((video) => ({
+    url: `${baseUrl}${getVideoRoute(video.slug)}`,
+    lastModified: video.uploadDate,
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
   }));
 
   const productsPromise = getProducts({}).then((products) =>
@@ -50,5 +62,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     fetchedRoutes = [];
   }
 
-  return [...staticRoutes, ...fetchedRoutes];
+  return [...staticRoutes, ...videoRoutes, ...fetchedRoutes];
 }

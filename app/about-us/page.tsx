@@ -7,8 +7,8 @@ import MikeFounderImage from '../assets/images/mike-founder.jpeg';
 import MikeWithLopezImage from '../assets/images/mike-with-lopez.png';
 
 export const metadata: Metadata = {
-    title: 'About Us | Premium Tailgate & Outdoor Party Games',
-    description: 'Learn about Pong Party Games - Premium tailgating games and outdoor party games handcrafted in the USA. Perfect for football tailgating, backyard parties, corporate events, and family outdoor games.',
+    title: 'About Pong Party Games | Founded by Mike Whelan | Made in USA',
+    description: 'Pong Party Games was created by Mike Whelan, a lifelong baseball enthusiast and Senior Baseball League player from Downingtown, PA. The patented game brings baseball-inspired family entertainment to tailgates, parties, and events nationwide.',
 };
 
 const features = [
@@ -54,7 +54,7 @@ export default function AboutUsPage() {
                         About Us
                     </h1>
                     <p className="font-body text-[20px] sm:text-[22px] leading-relaxed text-gray-300 max-w-[700px] mx-auto">
-                        Where passion for baseball meets family fun. Discover the story behind America's newest favorite party game.
+                        The story behind the first patented baseball-inspired party game made in America. Created by Mike Whelan in Downingtown, Pennsylvania.
                     </p>
                 </div>
             </div>

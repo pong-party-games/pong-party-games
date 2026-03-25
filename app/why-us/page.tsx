@@ -2,10 +2,9 @@ import WhyUsSection from 'components/home/why-us-section';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: 'Why Pong Party Games? | Not Just Another Tailgate Game',
+    title: 'Why Pong Party Games? | Pong Party Games vs Cornhole, Beer Pong & Ladder Toss',
     description:
-        'Discover why Pong Party Games beats every other tailgate game. The first baseball-inspired indoor/outdoor game designed for all ages. Fast setup, portable, weather-resistant, and built for multiplayer fun.',
-    keywords: 'why pong party games, best tailgate game, baseball tailgate game, portable tailgate games, multiplayer tailgate game, weather resistant outdoor games, family tailgate game, corporate branding games, vs cornhole, vs beer pong',
+        'Pong Party Games is the first baseball-inspired indoor/outdoor tailgate game built for all ages. Compared to cornhole (2-player), beer pong (adults only), and ladder toss (skill-heavy), it offers multiplayer fun, 5-minute setup, weather-resistant PVC, and custom branding options.',
     openGraph: {
         type: 'website',
     },
