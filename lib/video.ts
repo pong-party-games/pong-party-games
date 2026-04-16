@@ -22,7 +22,7 @@ export const siteVideos: SiteVideo[] = [
     name: 'Pong Party Games in Action',
     description:
       'Watch Pong Party Games in action and see how the baseball-inspired party game plays at tailgates, backyard parties, and events.',
-    contentPath: '/Pong-Party-Games.mov',
+    contentPath: '/Pong-Party-Games.mp4',
     thumbnailPath: '/images/pong-party-games-watch-thumbnail.png',
     uploadDate: '2026-02-02',
     duration: 'PT49S',

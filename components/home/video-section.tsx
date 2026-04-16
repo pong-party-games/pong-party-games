@@ -123,9 +123,9 @@ export function VideoSection() {
                         preload="metadata"
                         className="w-full h-auto max-h-[70vh] block"
                     >
-                        <source src="/Pong-Party-Games.mov" type="video/mp4" />
+                        <source src="/Pong-Party-Games.mp4" type="video/mp4" />
                         <div className="bg-gray-100 p-12 text-center">
-                            <p className="text-gray-600">Video not available. Please add Pong-Party-Games.mov or Pong-Party-Games.mp4 to the public folder.</p>
+                            <p className="text-gray-600">Video not available. Please add Pong-Party-Games.mp4 or Pong-Party-Games.mp4 to the public folder.</p>
                         </div>
                     </video>
 

@@ -11,7 +11,7 @@ type VideoPlayerProps = {
 
 export function VideoPlayer({
   className,
-  src = '/Pong-Party-Games.mov',
+  src = '/Pong-Party-Games.mp4',
   mimeType = 'video/mp4',
 }: VideoPlayerProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -128,9 +128,8 @@ export function VideoPlayer({
       </video>
 
       <div
-        className={`absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent p-4 transition-opacity duration-300 ${
-          isHovered ? 'opacity-100' : 'opacity-0'
-        }`}
+        className={`absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent p-4 transition-opacity duration-300 ${isHovered ? 'opacity-100' : 'opacity-0'
+          }`}
       >
         <div className="mb-3">
           <input
