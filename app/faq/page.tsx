@@ -52,7 +52,7 @@ export default function FAQPage() {
                 name: 'Is Pong Party Games good for corporate events and team building?',
                 acceptedAnswer: {
                     '@type': 'Answer',
-                    text: 'Yes. Pong Party Games offers a Corporate Custom Edition ($419.99) with custom branding including company logos, QR codes, team colors, and promotional messaging on 3 panels. Companies like 3Tree Marketing, Allstate, Carlson, and Rebel have used custom games for corporate events, trade shows, and client entertainment.',
+                    text: 'Yes. Pong Party Games offers a Corporate Custom Edition ($395.99) with custom branding including company logos, QR codes, team colors, and promotional messaging on 3 panels. Companies like 3Tree Marketing, Allstate, Carlson, and Rebel have used custom games for corporate events, trade shows, and client entertainment.',
                 },
             },
             {

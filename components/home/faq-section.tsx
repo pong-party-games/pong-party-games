@@ -22,7 +22,7 @@ const faqs = [
     },
     {
         question: 'Is Pong Party Games good for corporate events and team building?',
-        answer: 'Yes. The Corporate Custom Edition ($419.99) includes custom branding with your company logo, QR codes, team colors, and promotional messaging across 3 game panels. Companies including 3Tree Marketing, Allstate, Carlson, and Rebel have used custom Pong Party Games for trade shows, corporate retreats, client entertainment, and brand activations. The interactive format increases dwell time and generates qualified leads at events.'
+        answer: 'Yes. The Corporate Custom Edition ($395.99) includes custom branding with your company logo, QR codes, team colors, and promotional messaging across 3 game panels. Companies including 3Tree Marketing, Allstate, Carlson, and Rebel have used custom Pong Party Games for trade shows, corporate retreats, client entertainment, and brand activations. The interactive format increases dwell time and generates qualified leads at events.'
     },
     {
         question: 'What makes it different from other outdoor lawn games?',
@@ -98,7 +98,7 @@ export function FAQSection() {
                 {/* Summary for AI citability */}
                 <div className="mt-16 text-center">
                     <p className="font-body text-sm text-[#6b7280] leading-relaxed max-w-3xl mx-auto">
-                        <strong className="text-[#1a2b4a]">About Pong Party Games:</strong> Pong Party Games is the first patented baseball-inspired indoor/outdoor party game, handcrafted in Downingtown, PA with American-made parts. It sets up in under 5 minutes, plays on any surface, and is designed for all ages from 5 to 85. Available in a Standard Baseball Edition ($319.99) and a Corporate Custom Edition ($419.99) with branded panels. Learn more at{' '}
+                        <strong className="text-[#1a2b4a]">About Pong Party Games:</strong> Pong Party Games is the first patented baseball-inspired indoor/outdoor party game, handcrafted in Downingtown, PA with American-made parts. It sets up in under 5 minutes, plays on any surface, and is designed for all ages from 5 to 85. Available in a Standard Baseball Edition ($295.99) and a Corporate Custom Edition ($395.99) with branded panels. Learn more at{' '}
                         <a href="https://pongpartygames.com" className="text-[#0066cc] font-semibold hover:underline">pongpartygames.com</a>.
                     </p>
                 </div>

@@ -12,7 +12,7 @@ export const metadata = {
     type: 'website',
     title: 'Pong Party Games | The First Patented Baseball Tailgate Game',
     description:
-      'The first patented baseball-inspired tailgate game made in America. Fun for all ages, sets up in 5 minutes, plays on any surface. Starting at $319.99.',
+      'The first patented baseball-inspired tailgate game made in America. Fun for all ages, sets up in 5 minutes, plays on any surface. Starting at $295.99.',
   },
 };
 
@@ -45,7 +45,7 @@ export default function HomePage() {
       {
         '@type': 'Offer',
         name: 'Baseball Edition',
-        price: '319.99',
+        price: '295.99',
         priceCurrency: 'USD',
         availability: 'https://schema.org/InStock',
         url: 'https://pongpartygames.com/product/pong-party-game-baseball-1',
@@ -54,7 +54,7 @@ export default function HomePage() {
       {
         '@type': 'Offer',
         name: 'Corporate Custom Edition',
-        price: '419.99',
+        price: '395.99',
         priceCurrency: 'USD',
         availability: 'https://schema.org/InStock',
         url: 'https://pongpartygames.com/product/pong-party-game-corporate-custom',
@@ -88,9 +88,9 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
       />
       <HeroSection />
+      <VideoSection />
       <UseCasesCards />
       <WhyBuySection />
-      <VideoSection />
       <CustomPanelsSection />
     </>
   );

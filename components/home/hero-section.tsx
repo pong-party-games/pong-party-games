@@ -206,8 +206,7 @@ function PricingBoxes() {
             <Link href="/product/pong-party-game-baseball-1" className="relative flex flex-col gap-1 px-4 sm:px-5 py-3 sm:py-3.5 bg-gradient-to-br from-[#f8f9fa] to-[#e9ecef] rounded-[12px] sm:rounded-[16px] border border-[rgba(26,43,74,0.12)] shadow-[0_2px_8px_rgba(0,0,0,0.04),inset_0_1px_0_rgba(255,255,255,0.8)] transition-all duration-[var(--duration-normal)] hover:translate-y-[-2px] hover:shadow-[0_4px_12px_rgba(0,0,0,0.08)] before:content-[''] before:absolute before:top-0 before:left-0 before:right-0 before:h-[2px] before:bg-gradient-to-r before:from-transparent before:via-[rgba(26,43,74,0.1)] before:to-transparent cursor-pointer">
                 <span className="text-[13px] sm:text-[15px] md:text-[16px] font-bold text-[var(--color-charcoal)] tracking-[0.05em] uppercase">Regular</span>
                 <div className="flex items-baseline gap-2">
-                    <span className="text-[22px] sm:text-[26px] font-extrabold text-[var(--color-navy)] tracking-[-0.02em]">$319.99</span>
-                    <span className="text-[14px] sm:text-[16px] font-semibold text-[#6c757d] line-through">$395.99</span>
+                    <span className="text-[22px] sm:text-[26px] font-extrabold text-[var(--color-navy)] tracking-[-0.02em]">$295.99</span>
                 </div>
             </Link>
 
@@ -218,8 +217,7 @@ function PricingBoxes() {
                 </div>
                 <span className="text-[13px] sm:text-[15px] md:text-[16px] font-bold text-white tracking-[0.05em] [text-shadow:0_1px_2px_rgba(0,0,0,0.2)] uppercase">Corporate Custom</span>
                 <div className="flex items-baseline gap-2">
-                    <span className="text-[22px] sm:text-[26px] font-extrabold text-white [text-shadow:0_2px_4px_rgba(0,0,0,0.2)] tracking-[-0.02em]">$419.99</span>
-                    <span className="text-[14px] sm:text-[16px] font-semibold text-[rgba(255,255,255,0.7)] line-through">$495.99</span>
+                    <span className="text-[22px] sm:text-[26px] font-extrabold text-white [text-shadow:0_2px_4px_rgba(0,0,0,0.2)] tracking-[-0.02em]">$395.99</span>
                 </div>
             </Link>
         </div>

@@ -22,7 +22,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "",
     "/shop",
     "/watch",
-    "/how-to-play",
+    "/how-to-play-ppg-baseball",
     "/about-us",
     "/reviews",
     "/custom-games",

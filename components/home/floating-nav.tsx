@@ -7,7 +7,7 @@ import { usePathname } from 'next/navigation';
 const routes = [
     { path: '/', icon: Home, label: 'Home' },
     { path: '/shop', icon: ShoppingCart, label: 'Shop' },
-    { path: '/how-to-play', icon: Play, label: 'How To Play' },
+    { path: '/how-to-play-ppg-baseball', icon: Play, label: 'How To Play' },
     { path: '/about-us', icon: Star, label: 'About Us' },
     { path: '/reviews', icon: Star, label: 'Reviews' },
     { path: '/custom-games', icon: Gift, label: 'Custom Games' },

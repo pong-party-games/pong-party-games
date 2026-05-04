@@ -237,7 +237,7 @@ export default function AboutUsPage() {
                                 Shop Now
                             </a>
                             <a
-                                href="/how-to-play"
+                                href="/how-to-play-ppg-baseball"
                                 className="inline-flex items-center justify-center px-8 py-4 bg-white/10 text-white font-body font-bold text-[17px] rounded-full hover:bg-white/20 transition-all duration-300 border-2 border-white/30 hover:border-white/50"
                             >
                                 Learn How To Play

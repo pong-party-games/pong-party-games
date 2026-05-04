@@ -17,7 +17,7 @@ export default function HowToPlayPage() {
         estimatedCost: {
             '@type': 'MonetaryAmount',
             currency: 'USD',
-            value: '319.99',
+            value: '295.99',
         },
         step: [
             {

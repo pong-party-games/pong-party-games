@@ -97,7 +97,7 @@ export default function Footer() {
           <div>
             <h3 className="font-display text-[18px] font-semibold mb-5">Quick Links</h3>
             <nav className="space-y-3 font-body text-[15px] mb-8">
-              <Link href="/how-to-play" className="block text-gray-200 hover:text-white transition-colors">
+              <Link href="/how-to-play-ppg-baseball" className="block text-gray-200 hover:text-white transition-colors">
                 How To Play
               </Link>
               <Link href="/about-us" className="block text-gray-200 hover:text-white transition-colors">
